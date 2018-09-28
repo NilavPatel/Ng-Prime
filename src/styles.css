@@ -17,3 +17,9 @@
 .login-panel .login-panel-content{
     padding: 20px 0 20px 0;
 }
+
+.login-panel .logo-img{
+    height: 100px;
+    width: 80%;
+    margin-left:10%;
+}

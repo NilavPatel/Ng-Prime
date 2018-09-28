@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import {MegaMenuModule} from 'primeng/megamenu';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     InputTextModule,
     ButtonModule,
     PanelModule,
-    ToastModule
+    ToastModule,
+    MegaMenuModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

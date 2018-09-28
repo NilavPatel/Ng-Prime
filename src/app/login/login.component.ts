@@ -24,11 +24,10 @@ export class LoginComponent implements OnInit {
   onClickLogin() {
     var isValidUser = this.loginService.validateUser(this.userName, this.password);
     if (isValidUser) {
-      this.messageService.add({ severity: 'success', summary: 'Login successfully.', detail: '' });
       this.router.navigate(['/home']);
       return;
     }
-    this.messageService.add({ severity: 'error', summary: 'Invalid user.' });
+    this.messageService.add({ severity: 'error', summary: '', detail: 'Invalid user.' });
     return;
   }
 
