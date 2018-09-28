@@ -1,6 +1,6 @@
 # Angular + PrimeNg
 
-##Run below command to create project with angular CLI
+## Run below command to create project with angular CLI
 `````
 ng new Ng-Prime
 cd Ng-Prime
