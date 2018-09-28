@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.login-panel {
+    width: 400px;
+    margin-left: -200px;
+    height:400px;
+    margin-top:-200px;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+}
+
+.login-panel .ui-grid-row{
+    padding: 0.5em;
+}
+
+.login-panel .login-panel-content{
+    padding: 20px 0 20px 0;
+}

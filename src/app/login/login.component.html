@@ -1,0 +1,37 @@
+<p-toast position="top-right"></p-toast>
+<div class="login-panel">
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+      <p-panel header="Ng-Prime Login">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid login-panel-content">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">
+              <span class="ui-float-label">
+                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="userName">
+                <label for="float-input-username">Username</label>
+              </span>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">
+              <span class="ui-float-label">
+                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password">
+                <label for="float-input-password">Password</label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-6">
+              <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickLogin()"></button>
+            </div>
+            <div class="ui-g-6">
+              <button pButton type="button" label="Signin" class="ui-button-raised"></button>
+            </div>
+          </div>
+        </p-footer>
+      </p-panel>
+    </div>
+  </div>
+</div>
