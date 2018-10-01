@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   onClickLogin() {
     var isValidUser = this.loginService.validateUser(this.userName, this.password);
     if (isValidUser) {
+      localStorage.setItem('currentUser', this.userName);
       this.router.navigate(['/home']);
       return;
     }

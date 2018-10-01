@@ -2,3 +2,15 @@
     height:50px;
     width:200px;
 }
+
+.header-menu {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.header-menu-item{
+    float: right;
+    height: 100%;
+    width:100px;
+    cursor: pointer;
+}

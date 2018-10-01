@@ -8,6 +8,7 @@ import { MessageService } from 'primeng/api';
 import { NgPrimeModule } from './app.ngprime.module'
 
 import { AppComponent } from './app.component';
+import { AuthGuard } from './app.authguard';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
@@ -16,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -39,7 +40,7 @@ const appRoutes: Routes = [
     ),
     NgPrimeModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
