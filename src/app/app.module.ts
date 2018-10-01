@@ -4,14 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-//TODO: create new module and import through that module
-// prime NG components
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { PanelModule } from 'primeng/panel';
-import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import {MegaMenuModule} from 'primeng/megamenu';
+import { NgPrimeModule } from './app.ngprime.module'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -43,11 +37,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
-    InputTextModule,
-    ButtonModule,
-    PanelModule,
-    ToastModule,
-    MegaMenuModule
+    NgPrimeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
