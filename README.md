@@ -1,3 +1,5 @@
+<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/company-logo.png" width="400" height="100">
+
 # Angular + PrimeNg
 
 ## Run below command to create project with angular CLI
