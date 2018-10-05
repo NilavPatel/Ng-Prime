@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { ToastModule } from 'primeng/toast';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -13,12 +14,16 @@ import { MegaMenuModule } from 'primeng/megamenu';
         ButtonModule,
         PanelModule,
         ToastModule,
-        MegaMenuModule
+        MegaMenuModule,
+        TableModule
     ],
-    exports: [InputTextModule,
+    exports: [
+        InputTextModule,
         ButtonModule,
         PanelModule,
         ToastModule,
-        MegaMenuModule]
+        MegaMenuModule,
+        TableModule
+    ]
 })
 export class NgPrimeModule { }
