@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-department-list',
@@ -11,17 +12,14 @@ export class DepartmentListComponent implements OnInit {
 
   departments: any[];
 
-  constructor() {
+  constructor(private departmentService: DepartmentService) {
     this.columns = [
       { field: 'Name', header: 'Name' },
       { field: 'Description', header: 'Description' }];
   }
 
   ngOnInit() {
-    this.departments = [
-    { Id: 1, Name: ".Net", Description: ".Net" },
-    { Id: 2, Name: "HR", Description: "HR" },
-    { Id: 3, Name: "PHP", Description: "PHP" }];
+    this.departments = this.departmentService.getAllDepartments();
   }
 
 }
