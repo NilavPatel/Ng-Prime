@@ -8,6 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DepartmentComponent } from './department/department.component';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, },
@@ -17,6 +20,12 @@ const appRoutes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
             { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard] },
+            {
+                path: 'departments', component: DepartmentComponent, canActivate: [AuthGuard],
+                children: [{ path: '', redirectTo: 'department-list', pathMatch: 'full' },
+                { path: 'department-list', component: DepartmentListComponent, canActivate: [AuthGuard] },
+                { path: 'department-detail', component: DepartmentDetailComponent, canActivate: [AuthGuard] }]
+            },
             { path: 'aboutus', component: AboutusComponent, canActivate: [AuthGuard] },
             { path: 'contactus', component: ContactusComponent, canActivate: [AuthGuard] }
         ]

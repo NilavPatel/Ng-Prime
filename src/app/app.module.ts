@@ -19,6 +19,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DepartmentComponent } from './department/department.component';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     DashboardComponent,
     EmployeesComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    DepartmentComponent,
+    DepartmentListComponent,
+    DepartmentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     NgPrimeModule
   ],
   providers: [MessageService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [DepartmentComponent, DepartmentListComponent, DepartmentDetailComponent]
 })
 export class AppModule { }

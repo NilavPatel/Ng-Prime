@@ -6,10 +6,10 @@
           </th>
       </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-car>
+  <ng-template pTemplate="body" let-employee>
       <tr>
           <td *ngFor="let col of columns">
-                  {{car[col.field]}}
+                  {{employee[col.field]}}
           </td>
       </tr>
   </ng-template>

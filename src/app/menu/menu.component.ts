@@ -19,6 +19,9 @@ export class MenuComponent implements OnInit {
                 label: 'Employees', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/employees']
             },
             {
+                label: 'Departments', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/departments']
+            },
+            {
                 label: 'About Us', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/aboutus']
             },
             {
