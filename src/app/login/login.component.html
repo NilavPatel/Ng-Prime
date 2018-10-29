@@ -6,23 +6,23 @@
         <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid login-panel-content">
           <div class="ui-grid-row">
             <div class="ui-grid-col-12">
-              <img src="../assets/images/company-logo.png" class="logo-img"> 
+              <img src="../assets/images/company-logo.png" class="logo-img">
             </div>
           </div>
           <div class="ui-grid-row">
             <div class="ui-grid-col-12">
-              <span class="ui-float-label">
-                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="userName">
-                <label for="float-input-username">Username</label>
-              </span>
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="userName" placeholder="user name">
+              </div>
             </div>
           </div>
           <div class="ui-grid-row">
             <div class="ui-grid-col-12">
-              <span class="ui-float-label">
-                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password">
-                <label for="float-input-password">Password</label>
-              </span>
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password" placeholder="password">
+              </div>
             </div>
           </div>
         </div>

@@ -5,12 +5,18 @@
 
 .header-menu {
     display: inline-block;
-    list-style-type: none;
+    list-style-type: none;    
 }
 
 .header-menu-item{
     float: right;
-    height: 100%;
-    width:100px;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
+}
+
+.header-menu-item{
+ font-size: 40px;
+ color:#2F4E6A;
+ text-align: center;
 }
