@@ -1,7 +1,8 @@
-<a [routerLink]="['/home/departments/department-list']">Back To List</a>
+<h1>Department Details:</h1>
 <p>
-  Department Name = {{department.Name}}
+  <b>Department Name :</b> {{department.Name}}
 </p>
 <p>
-  Department Description = {{department.Description}}
+  <b>Department Description :</b> {{department.Description}}
 </p>
+<button pButton type="button" label="Back To List" class="ui-button-secondary prime-button"  [routerLink]="['/home/departments/department-list']"></button>

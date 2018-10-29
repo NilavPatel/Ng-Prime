@@ -2,3 +2,10 @@ body{
     margin: 0px;
     color: #2F4E6A;
 }
+.ui-state-active{
+    background-color: #eaeaea;
+    border-right: 3px solid black;
+}
+.prime-button{
+    width:150px !important;
+}
