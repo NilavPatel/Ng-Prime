@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Prime NG
 import { MessageService } from 'primeng/api';
 import { NgPrimeModule } from './app.ngprime.module'
@@ -45,6 +45,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     NgPrimeModule
   ],

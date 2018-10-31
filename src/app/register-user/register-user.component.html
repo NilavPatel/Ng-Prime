@@ -1,45 +1,59 @@
-<p-toast position="top-right"></p-toast>
 <div class="user-regisration">
   <div class="ui-g ui-fluid">
     <div class="ui-g-12">
-      <p-panel header="User Registration">
-        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
-                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="name" placeholder="user name">
+      <form [formGroup]="userform" (ngSubmit)="onClickRegisterUser()">
+        <p-panel header="User Registration">
+          <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-12">
+                <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                  <input id="float-input-username" type="text" size="30" pInputText formControlName="name" placeholder="user name"
+                    required>
+                </div>
+              </div>
+              <div class="ui-grid-col-4">
+                <p-message severity="error" text="User name is required" *ngIf="!userform.controls['name'].valid&&userform.controls['name'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-12">
+                <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+                  <input id="float-input-password" type="password" size="30" pInputText formControlName="password"
+                    placeholder="password" required>
+                </div>
+              </div>
+              <div class="ui-grid-col-4">
+                <p-message severity="error" text="Password is required" *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-12">
+                <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
+                  <input id="float-input-emailid" type="email" size="30" pInputText formControlName="emailId"
+                    placeholder="Email Id" required>
+                </div>
+              </div>
+              <div class="ui-grid-col-4">
+                <p-message severity="error" text="Email is required" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].errors['required'] && (!userform.controls['emailId'].valid&&userform.controls['emailId'].dirty)"></p-message>
+                <p-message severity="error" text="Email is invalid" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].errors['email'] && (!userform.controls['emailId'].valid&&userform.controls['emailId'].dirty)"></p-message>
               </div>
             </div>
           </div>
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
-                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password" placeholder="password">
+          <p-footer>
+            <div class="ui-g ui-fluid">
+              <div class="ui-g-6">
+                <button pButton type="submit" label="Register" class="ui-button-raised" [disabled]="!userform.valid"></button>
+              </div>
+              <div class="ui-g-6">
+                <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickGoToLogin()"></button>
               </div>
             </div>
-          </div>
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
-                <input id="float-input-emailid" type="text" size="30" pInputText [(ngModel)]="emailId" placeholder="Email Id">
-              </div>
-            </div>
-          </div>
-        </div>
-        <p-footer>
-          <div class="ui-g ui-fluid">
-            <div class="ui-g-6">
-              <button pButton type="button" label="Register" class="ui-button-raised" (click)="onClickRegisterUser()"></button>
-            </div>
-            <div class="ui-g-6">
-              <button pButton type="button" label="Cancel" class="ui-button-raised" (click)="onClickClear()"></button>
-            </div>
-          </div>
-        </p-footer>
-      </p-panel>
+          </p-footer>
+        </p-panel>
+      </form>
     </div>
   </div>
 </div>

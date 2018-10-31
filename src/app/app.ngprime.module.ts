@@ -5,6 +5,7 @@ import { PanelModule } from 'primeng/panel';
 import { ToastModule } from 'primeng/toast';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { TableModule } from 'primeng/table';
+import { MessageModule} from 'primeng/message';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { TableModule } from 'primeng/table';
         PanelModule,
         ToastModule,
         MegaMenuModule,
-        TableModule
+        TableModule,
+        MessageModule
     ],
     exports: [
         InputTextModule,
@@ -23,7 +25,8 @@ import { TableModule } from 'primeng/table';
         PanelModule,
         ToastModule,
         MegaMenuModule,
-        TableModule
+        TableModule,
+        MessageModule
     ]
 })
 export class NgPrimeModule { }

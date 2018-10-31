@@ -21,7 +21,7 @@
             <div class="ui-grid-col-12">
               <div class="ui-inputgroup">
                 <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
-                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password" placeholder="password">
+                <input id="float-input-password" type="password" size="30" pInputText [(ngModel)]="password" placeholder="password">
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
               <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickLogin()"></button>
             </div>
             <div class="ui-g-6">
-              <button pButton type="button" label="Signin" class="ui-button-raised" [routerLink]="['/register']"></button>
+              <button pButton type="button" label="Register" class="ui-button-raised" [routerLink]="['/register']"></button>
             </div>
           </div>
         </p-footer>
