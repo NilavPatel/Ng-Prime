@@ -1,10 +1,10 @@
 body{
     margin: 0px;
-    color: #2F4E6A;
+    color: #2F4E6A !important;
 }
 .ui-state-active{
     background-color: #eaeaea;
-    border-right: 3px solid black;
+    border-right: 3px solid #2F4E6A;
 }
 .prime-button{
     width:150px !important;

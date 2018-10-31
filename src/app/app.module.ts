@@ -22,6 +22,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DepartmentDetailComponent } from './department/department-detail/depart
     ContactusComponent,
     DepartmentComponent,
     DepartmentListComponent,
-    DepartmentDetailComponent
+    DepartmentDetailComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,6 @@ import { DepartmentDetailComponent } from './department/department-detail/depart
   ],
   providers: [MessageService, AuthGuard],
   bootstrap: [AppComponent],
-  exports: [DepartmentComponent, DepartmentListComponent, DepartmentDetailComponent]
+  exports: [DepartmentComponent, DepartmentListComponent, DepartmentDetailComponent, RegisterUserComponent]
 })
 export class AppModule { }

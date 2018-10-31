@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   password: string;
 
-  constructor(private loginService: LoginService, private router: Router, private messageService: MessageService) { }
+  constructor(private userService: UserService, private router: Router, private messageService: MessageService) { }
 
   ngOnInit() {
     this.userName = "";
@@ -22,9 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   onClickLogin() {
-    var isValidUser = this.loginService.validateUser(this.userName, this.password);
-    if (isValidUser) {
-      localStorage.setItem('currentUser', this.userName);
+    let user: User = this.userService.getUserByUserNameAndPassword(this.userName, this.password);
+    if (user) {
+      localStorage.setItem('currentUser', user.userId.toString());
       this.router.navigate(['/home']);
       return;
     }

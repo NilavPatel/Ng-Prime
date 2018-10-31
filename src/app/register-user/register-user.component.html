@@ -1,0 +1,45 @@
+<p-toast position="top-right"></p-toast>
+<div class="user-regisration">
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+      <p-panel header="User Registration">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="name" placeholder="user name">
+              </div>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+                <input id="float-input-password" type="text" size="30" pInputText [(ngModel)]="password" placeholder="password">
+              </div>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
+                <input id="float-input-emailid" type="text" size="30" pInputText [(ngModel)]="emailId" placeholder="Email Id">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-6">
+              <button pButton type="button" label="Register" class="ui-button-raised" (click)="onClickRegisterUser()"></button>
+            </div>
+            <div class="ui-g-6">
+              <button pButton type="button" label="Cancel" class="ui-button-raised" (click)="onClickClear()"></button>
+            </div>
+          </div>
+        </p-footer>
+      </p-panel>
+    </div>
+  </div>
+</div>
