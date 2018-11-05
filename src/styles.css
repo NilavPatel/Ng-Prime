@@ -9,3 +9,7 @@ body{
 .prime-button{
     width:150px !important;
 }
+
+.ui-megamenu{
+    width: 100% !important;
+}
