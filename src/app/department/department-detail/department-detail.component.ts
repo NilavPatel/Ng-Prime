@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DepartmentService } from '../department.service';
-import { Department } from 'src/app/models/department.model';
 
 @Component({
   selector: 'app-department-detail',
@@ -10,7 +9,7 @@ import { Department } from 'src/app/models/department.model';
 })
 export class DepartmentDetailComponent implements OnInit {
 
-  department: Department;
+  department: object;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,8 +18,8 @@ export class DepartmentDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams
-      .subscribe(params => {
-        this.department = this.departmentService.getDepartmentById(parseInt(params.Id));
+      .subscribe(params => {        
+         this.department = this.departmentService.getDepartmentById(parseInt(params.Id));
       });
   }
 }
