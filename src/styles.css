@@ -1,6 +1,10 @@
+html, body{
+    height:100%;
+}
 body{
     margin: 0px;
     color: #2F4E6A !important;
+    background-color: #F2F8FA;
 }
 .ui-state-active{
     background-color: #eaeaea;
@@ -9,7 +13,24 @@ body{
 .prime-button{
     width:150px !important;
 }
-
 .ui-megamenu{
     width: 100% !important;
+}
+.layout-menu .ui-megamenu{
+    border: none;
+}
+body .ui-card {
+    color: #2F4E6A !important;
+}
+.overview-box-1 .ui-card-body{
+    background-color: #37A2F4;
+}
+.overview-box-2 .ui-card-body{
+    background-color: #71BD3E;
+}
+.overview-box-3 .ui-card-body{
+    background-color: #D79733;
+}
+.overview-box-4 .ui-card-body{
+    background-color: #DE8072;
 }
