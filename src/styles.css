@@ -5,6 +5,9 @@ body{
     margin: 0px;
     color: #2F4E6A !important;
     background-color: #F2F8FA;
+    background-image: url(assets/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .ui-state-active{
     background-color: #eaeaea;
@@ -33,4 +36,7 @@ body .ui-card {
 }
 .overview-box-4 .ui-card-body{
     background-color: #DE8072;
+}
+.layout-header, .layout-footer{    
+    background: transparent;
 }

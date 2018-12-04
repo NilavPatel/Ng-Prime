@@ -1,6 +1,5 @@
 .layout-header{
-    padding:0px;
-    background-color: #ffffff;
+    padding:0px;    
     box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
 .layout-footer{
@@ -8,8 +7,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
-    background-color: #ffffff;
+    width: 100%;    
     box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.8)
 }
 .layout-menu{
