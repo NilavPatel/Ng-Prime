@@ -53,3 +53,11 @@ import { RouterModule, Routes } from '@angular/router';
 ng build
 ng serve
 `````
+
+### login page
+
+![image login](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/login-page.png)
+
+### dashboard page
+
+![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/dashboard-page.png)

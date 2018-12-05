@@ -6,8 +6,6 @@ body{
     color: #2F4E6A !important;
     background-color: #F2F8FA;
     background-image: url(assets/images/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .ui-state-active{
     background-color: #eaeaea;
