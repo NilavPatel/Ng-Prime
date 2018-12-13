@@ -4,7 +4,7 @@ html, body{
 body{
     margin: 0px;
     color: #2F4E6A !important;
-    background-color: #F2F8FA;
+    background-color: #F2F8FA;    
     background-image: url(assets/images/background.png);
 }
 .ui-state-active{
@@ -37,4 +37,26 @@ body .ui-card {
 }
 .layout-header, .layout-footer{    
     background: transparent;
+}
+.layout{
+    height:100%;
+}
+.layout-header{
+    height:7%
+}
+.layout-footer{
+    height:5%
+}
+.layout-main{
+    height: 88%
+}
+.layout-menu{
+    height:100%;
+}
+.layout-content{
+    height:100%;
+}
+.full-height{
+    height:100%;
+    overflow: auto;
 }
