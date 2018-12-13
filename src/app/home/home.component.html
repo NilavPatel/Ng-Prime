@@ -1,22 +1,23 @@
 <p-toast position="top-right"></p-toast>
 
-<div class="ui-g ui-fluid layout">
-  <div class="ui-g-12 layout-header">
-    <app-header></app-header>
-  </div>
-  <div class="ui-g-12 layout-main">
-    <div class="ui-g-2 layout-menu">
-      <p-card styleClass="full-height">
-        <app-menu></app-menu>
-      </p-card>
-    </div>
-    <div class="ui-g-10 layout-content">
-      <p-card styleClass="full-height">
-        <router-outlet></router-outlet>
-      </p-card>
-    </div>
-  </div>
-  <div class="ui-g-12 layout-footer">
-    <app-footer></app-footer>
-  </div>
-</div>
+<header>
+  <app-header></app-header>
+</header>
+
+<section>
+  <nav>
+    <p-card>
+      <app-menu></app-menu>
+    </p-card>
+  </nav>
+  
+  <article>
+    <p-card>
+      <router-outlet></router-outlet>
+    </p-card>
+  </article>
+</section>
+
+<footer>
+  <app-footer></app-footer>
+</footer>
