@@ -10,9 +10,10 @@ export class DepartmentService {
 
     constructor() {
         this.departments = [
-            { Id: 1, Name: ".Net", Description: ".Net" },
+            { Id: 1, Name: ".net", Description: ".Net" },
             { Id: 2, Name: "HR", Description: "HR" },
-            { Id: 3, Name: "PHP", Description: "PHP" }];
+            { Id: 3, Name: "Admin", Description: "Admin" },
+            { Id: 4, Name: "PHP", Description: "PHP" }];
     }
 
     getAllDepartments() {
@@ -23,6 +24,16 @@ export class DepartmentService {
         var data;
         this.departments.forEach(element => {
             if (element.Id === id) {
+                data = element;
+            }
+        });
+        return data;
+    }
+
+    getDepartmentByName(name: string) {        
+        var data;
+        this.departments.forEach(element => {
+            if (element.Name === name) {
                 data = element;
             }
         });

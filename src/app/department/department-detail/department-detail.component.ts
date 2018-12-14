@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DepartmentService } from '../department.service';
 import { Department } from 'src/app/models/department.model';
+import { ViewDataService } from '../../services/viewData.service';
 
 @Component({
   selector: 'app-department-detail',
@@ -15,12 +16,21 @@ export class DepartmentDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private departmentService: DepartmentService) { }
+    private departmentService: DepartmentService,
+    private viewDataService: ViewDataService) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.route.queryParams
       .subscribe(params => {
-        this.department = this.departmentService.getDepartmentById(parseInt(params.Id));
+        if(params.Id){
+          this.department = this.departmentService.getDepartmentById(parseInt(params.Id));
+        }
+        if(params.getViewData && params.getViewData == "true"){
+          var viewData = this.viewDataService.getViewData();
+          if(viewData.prevView =="employees"){
+            this.department = this.departmentService.getDepartmentByName(viewData.data);
+          }
+        }
       });
   }
 }

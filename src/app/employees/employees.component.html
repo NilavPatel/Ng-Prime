@@ -10,7 +10,8 @@
         <ng-template pTemplate="body" let-employee>
             <tr>
                 <td *ngFor="let col of columns">
-                    {{employee[col.field]}}
+                    <div *ngIf="col.field != 'Department'">{{employee[col.field]}}</div>
+                    <div *ngIf="col.field == 'Department'"><a (click)="goToDepartment(employee[col.field])">{{employee[col.field]}}</a></div>
                 </td>
             </tr>
         </ng-template>
