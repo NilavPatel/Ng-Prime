@@ -1,8 +1,11 @@
-<h1>Department Details:</h1>
-<p>
-  <b>Department Name :</b> {{department.Name}}
-</p>
-<p>
-  <b>Department Description :</b> {{department.Description}}
-</p>
-<button pButton type="button" label="Back To List" class="ui-button-secondary prime-button"  [routerLink]="['/home/departments/department-list']"></button>
+<p-panel header="Department Details">
+  <p>
+    <b>Department Name :</b> {{department.Name}}
+  </p>
+  <p>
+    <b>Department Description :</b> {{department.Description}}
+  </p>
+  <p-footer>
+    <button pButton type="button" label="Back To List" class="ui-button-secondary prime-button" [routerLink]="['/home/departments/department-list']"></button>
+  </p-footer>
+</p-panel>

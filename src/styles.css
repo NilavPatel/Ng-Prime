@@ -55,6 +55,10 @@ article{
     padding-bottom: 65px; 
     padding-top:0px;
 }
+nav .ui-card{
+    height:200px;
+    overflow: auto;
+}
 }
 .ui-state-active{
     background-color: #eaeaea;

@@ -1,16 +1,18 @@
-<p-table [value]="employees">
-  <ng-template pTemplate="header">
-      <tr>
-          <th *ngFor="let col of columns">
-              {{col.header}}
-          </th>
-      </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-employee>
-      <tr>
-          <td *ngFor="let col of columns">
-                  {{employee[col.field]}}
-          </td>
-      </tr>
-  </ng-template>
-</p-table>
+<p-panel header="Employees List">
+    <p-table [value]="employees">
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-employee>
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{employee[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-panel>
