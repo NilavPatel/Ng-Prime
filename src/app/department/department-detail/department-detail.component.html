@@ -6,6 +6,6 @@
     <b>Department Description :</b> {{department.Description}}
   </p>
   <p-footer>
-    <button pButton type="button" label="Back To List" class="ui-button-secondary prime-button" [routerLink]="['/home/departments/department-list']"></button>
+    <button pButton type="button" label="Back" class="ui-button-secondary prime-button" (click)="back()"></button>
   </p-footer>
 </p-panel>

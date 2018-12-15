@@ -14,7 +14,7 @@
                     {{department[col.field]}}
                 </td>
                 <td>
-                    <a [routerLink]="['/home/departments/department-detail']" [queryParams]="{Id:department.Id}">Details</a>
+                    <a (click)="goToDepartmentDetails(department.Id)">Details</a>
                 </td>
             </tr>
         </ng-template>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewDataService } from '../services/viewData.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import{ViewData} from '../models/viewData.model';
+import { ViewData } from '../models/viewData.model';
 
 @Component({
   selector: 'app-employees',
@@ -14,7 +14,7 @@ export class EmployeesComponent implements OnInit {
 
   employees: any[];
 
-  constructor(private viewDataService:ViewDataService, private router: Router) { }
+  constructor(private viewDataService: ViewDataService, private router: Router) { }
 
   ngOnInit() {
     this.columns = [
@@ -25,27 +25,29 @@ export class EmployeesComponent implements OnInit {
     ];
 
     this.employees = [
-      { Name: 'Nilav', Department: '.net', Address: 'Ahmedabad, Gujarat', Age: '26' },
-      { Name: 'Nilav1', Department: '.net', Address: 'Surat, Gujarat', Age: '25' },
-      { Name: 'Nilav2', Department: 'PHP', Address: 'Ahmedabad, Gujarat', Age: '25' },
-      { Name: 'Nilav3', Department: '.net', Address: 'Ahmedabad, Gujarat', Age: '30' },
-      { Name: 'Nilav4', Department: 'HR', Address: 'Baroda, Gujarat', Age: '25' },
-      { Name: 'Nilav5', Department: 'HR', Address: 'Ahmedabad, Gujarat', Age: '28' },
-      { Name: 'Nilav6', Department: 'Admin', Address: 'Ahmedabad, Gujarat', Age: '26' },
-      { Name: 'Nilav7', Department: '.net', Address: 'Surat, Gujarat', Age: '25' },
-      { Name: 'Nilav8', Department: '.net', Address: 'Ahmedabad, Gujarat', Age: '27' },
-      { Name: 'Nilav9', Department: 'Admin', Address: 'Baroda, Gujarat', Age: '25' },
-      { Name: 'Nilav10', Department: '.net', Address: 'Ahmedabad, Gujarat', Age: '35' }
+      { Name: 'Nilav', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: '26' },
+      { Name: 'Nilav1', Department: '.net', DepartmentId: 1, Address: 'Surat, Gujarat', Age: '25' },
+      { Name: 'Nilav2', Department: 'PHP', DepartmentId: 4, Address: 'Ahmedabad, Gujarat', Age: '25' },
+      { Name: 'Nilav3', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: '30' },
+      { Name: 'Nilav4', Department: 'HR', DepartmentId: 2, Address: 'Baroda, Gujarat', Age: '25' },
+      { Name: 'Nilav5', Department: 'HR', DepartmentId: 2, Address: 'Ahmedabad, Gujarat', Age: '28' },
+      { Name: 'Nilav6', Department: 'Admin', DepartmentId: 3, Address: 'Ahmedabad, Gujarat', Age: '26' },
+      { Name: 'Nilav7', Department: '.net', DepartmentId: 1, Address: 'Surat, Gujarat', Age: '25' },
+      { Name: 'Nilav8', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: '27' },
+      { Name: 'Nilav9', Department: 'Admin', DepartmentId: 3, Address: 'Baroda, Gujarat', Age: '25' },
+      { Name: 'Nilav10', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: '35' }
     ];
   }
 
-  goToDepartment(department: string) {
+  goToDepartmentDetails(department: number) {
     var viewData = new ViewData();
     viewData.data = department;
-    viewData.nextView = "department-detail";
-    viewData.prevView = "employees";
+    viewData.nextView = "/home/departments/department-detail";
+    viewData.prevView = "/home/employees";
+
     this.viewDataService.setViewData(viewData);
-    this.router.navigate(['/home/departments/department-detail'], { queryParams: { getViewData: true } });
+
+    this.router.navigate(['/home/departments/department-detail'], { queryParams: { isRedirected: true } });
   }
 
 }
