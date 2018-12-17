@@ -3,20 +3,10 @@
     width:200px;
 }
 
-.header-menu {
-    display: inline-block;
-    list-style-type: none;    
+.header-right .icon{
+    border-left:1px solid #2F4E6A;
 }
 
-.header-menu-item{
-    float: right;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-}
-
-.header-menu-item{
- font-size: 40px;
- color:#2F4E6A;
- text-align: center;
+.header-right a:hover{
+    color:#2F4E6A;
 }
