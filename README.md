@@ -54,10 +54,14 @@ ng build
 ng serve
 `````
 
-### login page
+### Login page
 
 ![image login](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/login-page.png)
 
-### dashboard page
+### Dashboard page
 
 ![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/dashboard-page.png)
+
+### Responsive  layout for desktop, tablet and mobile
+
+![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/responsive.png)
