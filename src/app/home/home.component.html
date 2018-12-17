@@ -1,23 +1,22 @@
 <p-toast position="top-right"></p-toast>
 
-<header>
-  <app-header></app-header>
-</header>
-
-<section>
-  <nav>
-    <p-card>
-      <app-menu></app-menu>
-    </p-card>
-  </nav>
-  
-  <article>
-    <p-card>
-      <router-outlet></router-outlet>
-    </p-card>
-  </article>
-</section>
-
-<footer>
-  <app-footer></app-footer>
-</footer>
+<div class="wrapper">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="main">
+    <div class="sidebar">
+      <p-card>
+        <app-menu></app-menu>
+      </p-card>
+    </div>
+    <div class="content">
+      <p-card>
+        <router-outlet></router-outlet>
+      </p-card>
+    </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>

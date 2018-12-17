@@ -1,93 +1,118 @@
-html, body{
-    height:100%;
-}
-body{
-    margin: 0px;
-    color: #2F4E6A !important;
-    background-color: #F2F8FA;    
-    background-image: url(assets/images/background.png);    
-}
-/* Style the header */
-header {
-    background-color:white;    
-    text-align: center;
-}
-  
-/* Create two columns/boxes that floats next to each other */
-nav {
-    float: left;
-    width: 20%;
-    padding:15px;
+html,
+body {
+	height: 100%;
 }
 
-article {
-    float: left;    
-    width: 80%;    
-    padding-right: 15px;
-    padding-top: 15px;
-    padding-bottom: 65px; 
+body {
+	margin: 0px;
+	color: #2F4E6A !important;
+	background-color: #F2F8FA;
+	background-image: url(assets/images/background.png);
 }
 
-/* Clear floats after the columns */
-section:after {
-    content: "";
-    display: table;
-    clear: both;
+.wrapper {
+	position: relative;
+	min-height: 100%;
 }
 
-/* Style the footer */
-footer {
-    background-color: white;    
-    text-align: center;
-    bottom:0px;
-    position: fixed;
-    width:100%;
+.header {
+	background-color: white;
+	height: 70px;
+}
+
+.footer {
+	background-color: white;
+	text-align: center;
+	padding: 10px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 40px;
+}
+
+.main {
+	height: 100%;
+	min-height: 100%;
+	display: flex;
+	padding-bottom: 40px;
+}
+
+.sidebar {
+	width: 15%;
+	padding: 15px;
+}
+
+.content {
+	width: 85%;
+	padding: 15px 15px 15px 0px;
+}
+
+/* for tablet or smaller size laptop screens*/
+@media(max-width: 1024px) and (min-width: 769px){
+    .sidebar {
+        width: 25%;
+    }
+    .content {
+        width: 75%;
+    }
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-nav, article {
-    width: 100%;
-    height: auto;
+/* for mobiles*/
+@media (max-width: 768px) {
+	.main {
+		display: block;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.content {
+		width: 100%;
+		padding: 0px 15px 15px 15px;
+	}
+	.sidebar .ui-card {
+		max-height: 200px;
+		overflow: scroll;
+	}
 }
-article{
-    padding-left: 15px;
-    padding-bottom: 65px; 
-    padding-top:0px;
+
+.ui-state-active {
+	background-color: #eaeaea;
+	border-right: 3px solid #2F4E6A;
 }
-nav .ui-card{
-    height:200px;
-    overflow: auto;
+
+.prime-button {
+	width: 150px !important;
 }
+
+.ui-megamenu {
+	width: 100% !important;
 }
-.ui-state-active{
-    background-color: #eaeaea;
-    border-right: 3px solid #2F4E6A;
+
+nav .ui-megamenu {
+	border: none;
 }
-.prime-button{
-    width:150px !important;
-}
-.ui-megamenu{
-    width: 100% !important;
-}
-nav .ui-megamenu{
-    border: none;
-}
+
 body .ui-card {
-    color: #2F4E6A !important;
+	color: #2F4E6A !important;
 }
-.overview-box-1 .ui-card-body{
-    background-color: #37A2F4;
+
+.overview-box-1 .ui-card-body {
+	background-color: #37A2F4;
 }
-.overview-box-2 .ui-card-body{
-    background-color: #71BD3E;
+
+.overview-box-2 .ui-card-body {
+	background-color: #71BD3E;
 }
-.overview-box-3 .ui-card-body{
-    background-color: #D79733;
+
+.overview-box-3 .ui-card-body {
+	background-color: #D79733;
 }
-.overview-box-4 .ui-card-body{
-    background-color: #DE8072;
+
+.overview-box-4 .ui-card-body {
+	background-color: #DE8072;
 }
-.color-red{
-    color:red;
+
+.color-red {
+	color: red;
 }
