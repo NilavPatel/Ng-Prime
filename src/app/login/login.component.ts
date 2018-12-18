@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { MessageService } from 'primeng/api';
 import { User } from '../models/user.model';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private router: Router, private messageService: MessageService) { }
+  constructor(private userService: UserService, private router: Router, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.userName = "";
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home']);
       return;
     }
-    this.messageService.add({ severity: 'error', summary: '', detail: 'Invalid user.' });
+    this.notificationService.addSingle('error', '', 'Invalid user.');
     return;
   }
 

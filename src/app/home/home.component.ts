@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { NotificationService } from '../services/notification.service';
 import { LoaderService } from '../services/loader.service';
 
 @Component({
@@ -7,12 +7,13 @@ import { LoaderService } from '../services/loader.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit ,OnInit {
+export class HomeComponent implements AfterViewInit, OnInit {
 
-  constructor(private messageService: MessageService, private loaderService: LoaderService) { }
+  constructor(private notificationService: NotificationService, private loaderService: LoaderService) { }
 
   ngOnInit() {
     this.loaderService.display(true);
+    this.notificationService.addSingle("success", "", "Login successfully.");
   }
 
   ngAfterViewInit(): void {

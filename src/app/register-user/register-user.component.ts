@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-register-user',
@@ -18,7 +19,7 @@ export class RegisterUserComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder) { }
+  constructor(private userService: UserService, private router: Router, private fb: FormBuilder, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.userform = this.fb.group({
@@ -32,6 +33,7 @@ export class RegisterUserComponent implements OnInit {
     let isRegistered: boolean = this.userService.addUser(this.userform.controls["name"].value, this.userform.controls["password"].value, this.userform.controls["emailId"].value);
     if (isRegistered) {
       this.router.navigate(['/login']);
+      this.notificationService.addSingle("success", "", "User registered.")
     }
   }
 
