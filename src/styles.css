@@ -38,12 +38,12 @@ body {
 }
 
 .sidebar {
-	width: 20%;
+	width: 15%;
 	padding: 10px;
 }
 
 .content {
-	width: 80%;
+	width: 85%;
 	padding: 10px 10px 10px 0px;
 }
 
@@ -106,11 +106,11 @@ body {
 	width: 150px !important;
 }
 
-.ui-megamenu {
+.sidebar .ui-megamenu {
 	width: 100% !important;
 }
 
-nav .ui-megamenu {
+.sidebar .ui-megamenu {
 	border: none;
 }
 
