@@ -32,7 +32,7 @@ export class RouteStateService {
         this.navigate(currentViewState.viewName);
     }
 
-    private removeAllRouteStates() {
+    removeAllRouteStates() {
         this.routeStates = [];
     }
 

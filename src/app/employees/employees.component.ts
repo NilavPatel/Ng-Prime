@@ -46,7 +46,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.loaderService.display(false);
-    }, 3000);
+    }, 1000);
   }
 
 }
