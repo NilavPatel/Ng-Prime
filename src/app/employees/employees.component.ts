@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ViewDataService } from '../services/viewData.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ViewData } from '../models/viewData.model';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css']
 })
-export class EmployeesComponent implements OnInit {
-
+export class EmployeesComponent implements OnInit, AfterViewInit {
   columns: any[];
 
   employees: any[];
 
-  constructor(private viewDataService: ViewDataService, private router: Router) { }
+  constructor(private viewDataService: ViewDataService, private router: Router, private loaderService: LoaderService) { }
 
   ngOnInit() {
+    this.loaderService.display(true);
+
     this.columns = [
       { field: 'Name', header: 'Name' },
       { field: 'Department', header: 'Department' },
@@ -48,6 +50,12 @@ export class EmployeesComponent implements OnInit {
     this.viewDataService.setViewData(viewData);
 
     this.router.navigate(['/home/departments/department-detail'], { queryParams: { isRedirected: true } });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.loaderService.display(false);
+    }, 3000);
   }
 
 }

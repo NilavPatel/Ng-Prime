@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { MessageModule } from 'primeng/message';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { ChartModule } from 'primeng/chart';
         TableModule,
         MessageModule,
         CardModule,
-        ChartModule
+        ChartModule,
+        ProgressSpinnerModule
     ],
     exports: [
         InputTextModule,
@@ -32,7 +34,8 @@ import { ChartModule } from 'primeng/chart';
         TableModule,
         MessageModule,
         CardModule,
-        ChartModule
+        ChartModule,
+        ProgressSpinnerModule
     ]
 })
 export class NgPrimeModule { }

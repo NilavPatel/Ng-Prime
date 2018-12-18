@@ -23,6 +23,7 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [
@@ -49,8 +50,19 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     AppRoutingModule,
     NgPrimeModule
   ],
-  providers: [MessageService, AuthGuard],
-  bootstrap: [AppComponent],
-  exports: [DepartmentComponent, DepartmentListComponent, DepartmentDetailComponent, RegisterUserComponent]
+  providers: [
+    MessageService,
+    AuthGuard,
+    LoaderService
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  exports: [
+    DepartmentComponent,
+    DepartmentListComponent,
+    DepartmentDetailComponent,
+    RegisterUserComponent
+  ]
 })
 export class AppModule { }
