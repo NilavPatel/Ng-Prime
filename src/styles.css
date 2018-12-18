@@ -93,6 +93,10 @@ body {
     color:#2F4E6A;
 }
 
+.fa{
+	color:#2F4E6A !important;
+}
+
 .ui-state-active {
 	background-color: #eaeaea;
 	border-right: 3px solid #2F4E6A;

@@ -13,19 +13,19 @@ export class MenuComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {
-                label: 'Home', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/dashboard']
+                label: 'Home', icon: 'fa fa-home', routerLink: ['/home/dashboard']
             },
             {
-                label: 'Employees', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/employees']
+                label: 'Employees', icon: 'fa fa-users', routerLink: ['/home/employees']
             },
             {
-                label: 'Departments', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/departments']
+                label: 'Departments', icon: 'fa fa-sitemap', routerLink: ['/home/departments']
             },
             {
-                label: 'About Us', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/aboutus']
+                label: 'About Us', icon: 'fa fa-info-circle', routerLink: ['/home/aboutus']
             },
             {
-                label: 'Contact Us', icon: 'pi pi-fw pi-caret-right', routerLink: ['/home/contactus']
+                label: 'Contact Us', icon: 'fa fa-envelope', routerLink: ['/home/contactus']
             }
         ];
     }

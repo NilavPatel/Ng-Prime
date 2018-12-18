@@ -12,14 +12,24 @@ npm install @angular/animations --save
 `````
 
 ## Add css dependencies to index.html
-`````
-<link rel="stylesheet" type="text/css" href="/node_modules/primeicons/primeicons.css" />
-<link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/nova-light/theme.css" />
-<link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+`````javascript
+add css and js files to angular.json file
+
+            "styles": [              
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/nova-light/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "./node_modules/chart.js/dist/Chart.js"
+            ]
 `````
 
+
 ## Add modules to app.module.ts
-`````
+`````javascript
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -35,7 +45,7 @@ export class YourAppModule { }
 `````
 	
 ## Add new componenets
-`````
+`````javascript
 ng generate component login
 ng generate component home
 ng generate component menu
@@ -44,15 +54,22 @@ ng generate component footer
 `````
 
 ## Add routing dependency to app.module.ts
-````
+````javascript
 import { RouterModule, Routes } from '@angular/router';
 ````
 
 ## Build and Run project
-`````
+`````javascript
 ng build
 ng serve
 `````
+
+## features
+````
+1. custom loader service
+2. custom notification service
+3. font awesome icons
+````
 
 ### Login page
 
