@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentService } from '../department.service';
-import { ViewData } from '../../models/viewData.model';
-import { ViewDataService } from '../../services/viewData.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { RouteState } from '../../models/routeState.model';
+import { Router } from '@angular/router';
+import { RouteStateService } from '../../services/routeState.service';
 
 @Component({
   selector: 'app-department-list',
@@ -15,7 +15,7 @@ export class DepartmentListComponent implements OnInit {
 
   departments: any[];
 
-  constructor(private departmentService: DepartmentService, private viewDataService: ViewDataService, private router: Router) {
+  constructor(private departmentService: DepartmentService, private routeStateService: RouteStateService, private router: Router) {
     this.columns = [
       { field: 'Name', header: 'Name' },
       { field: 'Description', header: 'Description' }];
@@ -26,14 +26,12 @@ export class DepartmentListComponent implements OnInit {
   }
 
   goToDepartmentDetails(department: number) {
-    var viewData = new ViewData();
-    viewData.data = department;
-    viewData.nextView = "/home/departments/department-detail";
-    viewData.prevView = "/home/departments/department-list";
+    var routeState = new RouteState();
+    routeState.viewName = "/home/departments/department-detail";
+    routeState.data = department;
 
-    this.viewDataService.setViewData(viewData);
-
-    this.router.navigate(['/home/departments/department-detail'], { queryParams: { isRedirected: true } });
+    this.routeStateService.pushRouteState(routeState);
+    this.routeStateService.goToView(routeState.viewName);
   }
 
 }

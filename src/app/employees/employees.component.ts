@@ -1,8 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ViewDataService } from '../services/viewData.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ViewData } from '../models/viewData.model';
 import { LoaderService } from '../services/loader.service';
+import { RouteState } from '../models/routeState.model';
+import { RouteStateService } from '../services/routeState.service';
 
 @Component({
   selector: 'app-employees',
@@ -14,7 +13,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
 
   employees: any[];
 
-  constructor(private viewDataService: ViewDataService, private router: Router, private loaderService: LoaderService) { }
+  constructor(private loaderService: LoaderService, private routeStateService: RouteStateService) { }
 
   ngOnInit() {
     this.loaderService.display(true);
@@ -42,14 +41,12 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   }
 
   goToDepartmentDetails(department: number) {
-    var viewData = new ViewData();
-    viewData.data = department;
-    viewData.nextView = "/home/departments/department-detail";
-    viewData.prevView = "/home/employees";
+    var routeState = new RouteState();
+    routeState.viewName = "/home/departments/department-detail";
+    routeState.data = department;
 
-    this.viewDataService.setViewData(viewData);
-
-    this.router.navigate(['/home/departments/department-detail'], { queryParams: { isRedirected: true } });
+    this.routeStateService.pushRouteState(routeState);
+    this.routeStateService.goToView(routeState.viewName);
   }
 
   ngAfterViewInit(): void {

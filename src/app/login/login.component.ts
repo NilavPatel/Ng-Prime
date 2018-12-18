@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { User } from '../models/user.model';
 import { NotificationService } from '../services/notification.service';
+import { RouteState } from '../models/routeState.model';
+import { RouteStateService } from '../services/routeState.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private router: Router, private notificationService: NotificationService) { }
+  constructor(private userService: UserService, private notificationService: NotificationService, private routeStateService: RouteStateService) { }
 
   ngOnInit() {
     this.userName = "";
@@ -26,7 +27,10 @@ export class LoginComponent implements OnInit {
     let user: User = this.userService.getUserByUserNameAndPassword(this.userName, this.password);
     if (user) {
       localStorage.setItem('currentUser', user.userId.toString());
-      this.router.navigate(['/home']);
+      debugger;
+      var routeState = new RouteState();
+      routeState.viewName = '/home';
+      this.routeStateService.pushParentRouteState(routeState);
       return;
     }
     this.notificationService.addSingle('error', '', 'Invalid user.');

@@ -25,6 +25,7 @@ import { DepartmentDetailComponent } from './department/department-detail/depart
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { LoaderService } from './services/loader.service';
 import { NotificationService } from './services/notification.service';
+import { RouteStateService } from './services/routeState.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NotificationService } from './services/notification.service';
     MessageService,
     AuthGuard,
     LoaderService,
-    NotificationService
+    NotificationService,
+    RouteStateService
   ],
   bootstrap: [
     AppComponent

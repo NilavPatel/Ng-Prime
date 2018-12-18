@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DepartmentService } from '../department.service';
 import { Department } from 'src/app/models/department.model';
-import { ViewDataService } from '../../services/viewData.service';
-import { ViewData } from 'src/app/models/viewData.model';
+import { RouteStateService } from '../../services/routeState.service';
 
 @Component({
   selector: 'app-department-detail',
@@ -14,25 +12,16 @@ export class DepartmentDetailComponent implements OnInit {
 
   department: Department;
 
-  viewData: ViewData;
-
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
     private departmentService: DepartmentService,
-    private viewDataService: ViewDataService) { }
+    private routeStateService: RouteStateService) { }
 
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(params => {
-        if (params.isRedirected && params.isRedirected == "true") {
-          this.viewData = this.viewDataService.getViewData();
-          this.department = this.departmentService.getDepartmentById(this.viewData.data);
-        }
-      });
+    var routeState = this.routeStateService.getCurrentRouteState();
+    this.department = this.departmentService.getDepartmentById(routeState.data);
   }
 
   back() {
-    this.router.navigate([this.viewData.prevView]);
+    this.routeStateService.back();
   }
 }
