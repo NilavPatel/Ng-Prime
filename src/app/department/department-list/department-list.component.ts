@@ -26,12 +26,7 @@ export class DepartmentListComponent implements OnInit {
   }
 
   goToDepartmentDetails(department: number) {
-    var routeState = new RouteState();
-    routeState.viewName = "/home/departments/department-detail";
-    routeState.data = department;
-
-    this.routeStateService.pushRouteState(routeState);
-    this.routeStateService.goToView(routeState.viewName);
+    this.routeStateService.loadNewRouteState("/home/departments/department-detail", department, false);
   }
 
 }

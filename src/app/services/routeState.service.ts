@@ -10,48 +10,34 @@ export class RouteStateService {
         this.routeStates = [];
     }
 
-    pushParentRouteState(routeState: RouteState) {
-        this.removeAllRouteStates();
-        this.routeStates.push(routeState);
-        this.goToView(routeState.viewName);
-    }
+    loadNewRouteState(viewName: string, data: any, isParent: boolean) {
+        var routeState = new RouteState();
+        routeState.viewName = viewName;
+        routeState.data = data;
 
-    pushRouteState(routeState: RouteState) {
-        this.routeStates.push(routeState);
-        this.goToView(routeState.viewName);
-    }
-
-    sliceRouteStateUpto(id: number) {
-        var index;
-        for (var i = 0; this.routeStates.length; i++) {
-            if (this.routeStates[i].id === id) {
-                index = i;
-                break;
-            }
+        if (isParent) {
+            this.removeAllRouteStates();
         }
-        if (i) {
-            this.routeStates = this.routeStates.slice(0, index + 1);
-        }
-        var currentViewState = this.getCurrentRouteState();
-        this.goToView(currentViewState.viewName);
-    }
-
-    private removeAllRouteStates() {
-        this.routeStates = [];
-    }
-
-    goToView(path: string) {
-        this.router.navigate([path]);
+        this.routeStates.push(routeState);
+        this.navigate(routeState.viewName);
     }
 
     getCurrentRouteState(): RouteState {
         return this.routeStates[this.routeStates.length - 1];
     }
 
-    back() {
+    loadPrevRouteState() {
         this.routeStates.pop();
         var currentViewState = this.getCurrentRouteState();
-        this.goToView(currentViewState.viewName);
+        this.navigate(currentViewState.viewName);
+    }
+
+    private removeAllRouteStates() {
+        this.routeStates = [];
+    }
+
+    private navigate(path: string) {
+        this.router.navigate([path]);
     }
 
 }

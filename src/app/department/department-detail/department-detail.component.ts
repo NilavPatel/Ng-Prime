@@ -22,6 +22,6 @@ export class DepartmentDetailComponent implements OnInit {
   }
 
   back() {
-    this.routeStateService.back();
+    this.routeStateService.loadPrevRouteState();
   }
 }

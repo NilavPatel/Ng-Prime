@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LoaderService } from '../services/loader.service';
-import { RouteState } from '../models/routeState.model';
 import { RouteStateService } from '../services/routeState.service';
 
 @Component({
@@ -41,12 +40,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   }
 
   goToDepartmentDetails(department: number) {
-    var routeState = new RouteState();
-    routeState.viewName = "/home/departments/department-detail";
-    routeState.data = department;
-
-    this.routeStateService.pushRouteState(routeState);
-    this.routeStateService.goToView(routeState.viewName);
+    this.routeStateService.loadNewRouteState("/home/departments/department-detail", department, false);
   }
 
   ngAfterViewInit(): void {
