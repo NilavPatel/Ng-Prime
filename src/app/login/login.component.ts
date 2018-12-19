@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     let user: User = this.userService.getUserByUserNameAndPassword(this.userName, this.password);
     if (user) {      
       this.sessionService.setSessionValue("currentUser", user);
-      this.routeStateService.loadNewRouteState('/home', null, true);
+      this.routeStateService.loadNewRouteState("Home",'/home', null, true);
       return;
     }
     this.notificationService.addSingle('error', '', 'Invalid user.');

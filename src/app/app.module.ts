@@ -27,6 +27,7 @@ import { LoaderService } from './services/loader.service';
 import { NotificationService } from './services/notification.service';
 import { RouteStateService } from './services/routeState.service';
 import { SessionService } from './services/session.service';
+import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SessionService } from './services/session.service';
     DepartmentComponent,
     DepartmentListComponent,
     DepartmentDetailComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    HeaderBreadcrumbComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
         CardModule,
         ChartModule,
         ProgressSpinnerModule,
-        OverlayPanelModule
+        OverlayPanelModule,
+        BreadcrumbModule
     ],
     exports: [
         InputTextModule,
@@ -38,7 +40,8 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
         CardModule,
         ChartModule,
         ProgressSpinnerModule,
-        OverlayPanelModule
+        OverlayPanelModule,
+        BreadcrumbModule
     ]
 })
 export class NgPrimeModule { }

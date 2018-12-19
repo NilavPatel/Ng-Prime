@@ -3,6 +3,7 @@ export class RouteState {
         this.id = Math.floor(Math.random()*90000) + 10000;
     }
     id: number;
-    viewName: string;
+    path: string;
     data: any;
+    title: string;
 }

@@ -40,7 +40,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   }
 
   goToDepartmentDetails(department: number) {
-    this.routeStateService.loadNewRouteState("/home/departments/department-detail", department, false);
+    this.routeStateService.loadNewRouteState("Department details","/home/departments/department-detail", department, false);
   }
 
   ngAfterViewInit(): void {

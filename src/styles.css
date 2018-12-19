@@ -137,3 +137,9 @@ body .ui-card {
 .color-red {
 	color: red;
 }
+
+.header-breadcrumb {
+	border: none !important;
+	padding-top: 0px !important;
+	padding-left: 0px !important;
+}

@@ -4,40 +4,83 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class RouteStateService {
-    routeStates: RouteState[];
 
     constructor(private router: Router) {
-        this.routeStates = [];
     }
 
-    loadNewRouteState(viewName: string, data: any, isParent: boolean) {
-        var routeState = new RouteState();
-        routeState.viewName = viewName;
-        routeState.data = data;
-
+    loadNewRouteState(title: string, path: string, data: any, isParent: boolean) {
         if (isParent) {
             this.removeAllRouteStates();
         }
-        this.routeStates.push(routeState);
-        this.navigate(routeState.viewName);
+        
+        var routeStates = this.getFromStorage();
+
+        var routeState = new RouteState();
+        routeState.title = title;
+        routeState.path = path;
+        routeState.data = data;
+
+        routeStates.push(routeState);
+        this.saveToStorage(routeStates);
+        this.navigate(routeState.path);
     }
 
     getCurrentRouteState(): RouteState {
-        return this.routeStates[this.routeStates.length - 1];
+        var routeStates = this.getFromStorage();
+        return routeStates[routeStates.length - 1];
+    }
+
+    getAllRouteStates(): RouteState[] {
+        var routeStates = this.getFromStorage();
+        return routeStates;
     }
 
     loadPrevRouteState() {
-        this.routeStates.pop();
+        var routeStates = this.getFromStorage();
+        routeStates.pop();
+        this.saveToStorage(routeStates);
         var currentViewState = this.getCurrentRouteState();
-        this.navigate(currentViewState.viewName);
+        this.navigate(currentViewState.path);
     }
 
     removeAllRouteStates() {
-        this.routeStates = [];
+        this.removeFromStorage();
     }
 
     private navigate(path: string) {
         this.router.navigate([path]);
+    }
+
+    loadRouteUptoId(id: number) {
+        var result = [];
+        var isFound = false;
+        var routeStates = this.getFromStorage();
+        routeStates.forEach(route => {
+            if (isFound) {
+                return;
+            }
+            result.push(route);
+            if (route.id === id) {
+                isFound = true;
+            }
+        });
+        routeStates = result;
+        this.saveToStorage(routeStates);
+        var currentViewState = this.getCurrentRouteState();
+        this.navigate(currentViewState.path);
+    }
+
+    saveToStorage(routeStates: any) {
+        localStorage.setItem("routeState", JSON.stringify(routeStates));
+    }
+
+    getFromStorage() {
+        var routeStates = JSON.parse(localStorage.getItem("routeState"));
+        return (routeStates === undefined || routeStates === null) ? [] : routeStates;
+    }
+
+    removeFromStorage() {
+        localStorage.removeItem("routeState");
     }
 
 }
