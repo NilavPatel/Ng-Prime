@@ -8,7 +8,7 @@ import { MessageService } from 'primeng/api';
 import { NgPrimeModule } from './app.ngprime.module'
 // app related
 import { AppComponent } from './app.component';
-import { AuthGuard } from './app.authguard';
+import { AuthGuard } from './gaurds/auth.gaurd';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
