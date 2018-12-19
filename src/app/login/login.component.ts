@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 import { NotificationService } from '../services/notification.service';
 import { RouteStateService } from '../services/routeState.service';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,12 @@ export class LoginComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private notificationService: NotificationService, private routeStateService: RouteStateService) { }
+  constructor(
+    private userService: UserService,
+    private notificationService: NotificationService,
+    private routeStateService: RouteStateService,
+    private sessionService: SessionService
+  ) { }
 
   ngOnInit() {
     this.userName = "";
@@ -24,9 +30,8 @@ export class LoginComponent implements OnInit {
 
   onClickLogin() {
     let user: User = this.userService.getUserByUserNameAndPassword(this.userName, this.password);
-    if (user) {
-      localStorage.setItem('currentUser', user.userId.toString());
-
+    if (user) {      
+      this.sessionService.setSessionValue("currentUser", user);
       this.routeStateService.loadNewRouteState('/home', null, true);
       return;
     }

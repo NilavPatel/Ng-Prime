@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RouteStateService } from '../services/routeState.service';
+import { SessionService } from '../services/session.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,20 @@ import { RouteStateService } from '../services/routeState.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, private routeStateService: RouteStateService) { }
+  user: User;
+
+  constructor(
+    private router: Router,
+    private routeStateService: RouteStateService,
+    private sessionService: SessionService) { }
 
   ngOnInit() {
+    this.user = this.sessionService.getSessionValue("currentUser");
   }
 
   logout() {
     this.routeStateService.removeAllRouteStates();
-    localStorage.removeItem('currentUser');
+    this.sessionService.removeSessionValue('currentUser');
     this.router.navigate(['/login']);
   }
 

@@ -1,12 +1,43 @@
-.header-logo-img{
+.header-name-img{
+    display: block;
     height:50px;
     width:200px;
 }
 
-.header-right .icon{
+.header-logo-img{
+    display: none;
+}
+
+.header-right{
+    display: flex;
+}
+
+.header-right .header-right-item{    
+    height: 50px;
     border-left:1px solid #2F4E6A;
+}
+
+.header-right-item .user-name{
+    font-size: 50%;
+    padding:5px;
 }
 
 .header-right a:hover{
     color:#2F4E6A;
+}
+
+@media (max-width: 768px) {
+    .header-name-img{
+        display: none;
+    }
+    
+    .header-logo-img{
+        display: block;
+        height:50px;
+        width:70px;
+    }
+
+    .header-right-item .user-name{
+        display: none;
+    }
 }

@@ -9,6 +9,7 @@ import { MessageModule } from 'primeng/message';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
         MessageModule,
         CardModule,
         ChartModule,
-        ProgressSpinnerModule
+        ProgressSpinnerModule,
+        OverlayPanelModule
     ],
     exports: [
         InputTextModule,
@@ -35,7 +37,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
         MessageModule,
         CardModule,
         ChartModule,
-        ProgressSpinnerModule
+        ProgressSpinnerModule,
+        OverlayPanelModule
     ]
 })
 export class NgPrimeModule { }

@@ -26,6 +26,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { LoaderService } from './services/loader.service';
 import { NotificationService } from './services/notification.service';
 import { RouteStateService } from './services/routeState.service';
+import { SessionService } from './services/session.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { RouteStateService } from './services/routeState.service';
     AuthGuard,
     LoaderService,
     NotificationService,
-    RouteStateService
+    RouteStateService,
+    SessionService
   ],
   bootstrap: [
     AppComponent
