@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^5.5.0",
     "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
+    "primeflex": "^1.0.0-rc.1",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.0-beta.1",
     "rxjs": "~6.3.3",

@@ -47,6 +47,11 @@ body {
 	padding: 10px 10px 10px 0px;
 }
 
+.logo-img{
+	height: 100%;
+	width: 100%;
+}
+
 /* for tablet or smaller size laptop screens*/
 @media(max-width: 1024px) and (min-width: 769px){
     .sidebar {
@@ -54,7 +59,7 @@ body {
     }
     .content {
         width: 75%;
-    }
+	}
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
@@ -87,7 +92,7 @@ body {
 
 .icon{
     line-height: 50px;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
     padding:10px;
     color:#2F4E6A;
@@ -142,4 +147,10 @@ body .ui-card {
 	border: none !important;
 	padding-top: 0px !important;
 	padding-left: 0px !important;
+}
+.form-component{
+	width:100%
+}
+.login-panel{
+	height:100%
 }

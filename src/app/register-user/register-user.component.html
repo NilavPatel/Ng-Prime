@@ -1,53 +1,67 @@
 <div class="user-regisration">
-  <div class="ui-g ui-fluid">
-    <div class="ui-g-12">
+  <div class="p-grid p-nogutter p-justify-center p-align-center" style="height:100%">
+    <div class="p-xl-4 p-lg-4 p-md-8 p-sm-10">
       <form [formGroup]="userform" (ngSubmit)="onClickRegisterUser()">
         <p-panel header="User Registration">
-          <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
-            <div class="ui-grid-row">
-              <div class="ui-grid-col-12">
-                <div class="ui-inputgroup">
-                  <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
-                  <input id="float-input-username" type="text" size="30" pInputText formControlName="name" placeholder="user name"
-                    required>
-                </div>
-              </div>
-              <div class="ui-grid-col-4">
-                <p-message severity="error" text="User name is required" *ngIf="!userform.controls['name'].valid&&userform.controls['name'].dirty"></p-message>
+          <div class="p-grid">
+
+            <div class="p-xl-4 p-xl-offset-4 p-lg-4 p-lg-offset-4 p-md-8 p-md-offset-2 p-sm-10 p-sm-offset-1">
+              <img src="../assets/images/company-name.png" class="logo-img">
+            </div>
+
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                <input id="float-input-username" type="text" size="30" pInputText formControlName="name" placeholder="user name"
+                  required>
               </div>
             </div>
-            <div class="ui-grid-row">
-              <div class="ui-grid-col-12">
-                <div class="ui-inputgroup">
-                  <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
-                  <input id="float-input-password" type="password" size="30" pInputText formControlName="password"
-                    placeholder="password" required>
-                </div>
-              </div>
-              <div class="ui-grid-col-4">
-                <p-message severity="error" text="Password is required" *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
+
+            <div class="p-col-12" *ngIf="userform.controls['name'].errors && userform.controls['name'].dirty">
+              <p-message severity="error" text="User name is required" *ngIf="userform.controls['name'].errors['required']"></p-message>
+            </div>
+
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+                <input id="float-input-password" type="password" size="30" pInputText formControlName="password"
+                  placeholder="password" required>
               </div>
             </div>
-            <div class="ui-grid-row">
-              <div class="ui-grid-col-12">
-                <div class="ui-inputgroup">
-                  <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
-                  <input id="float-input-emailid" type="email" size="30" pInputText formControlName="emailId"
-                    placeholder="Email Id" required>
-                </div>
+
+            <div class="p-col-12" *ngIf="userform.controls['password'].errors && userform.controls['password'].dirty">
+              <p-message severity="error" text="Password is required" *ngIf="userform.controls['password'].errors['required']"></p-message>
+              <p-message severity="error" text="Minimum 6 characters required." *ngIf="userform.controls['password'].errors['minlength'] "></p-message>
+            </div>
+
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
+                <input id="float-input-emailid" type="email" size="30" pInputText formControlName="emailId" placeholder="Email Id"
+                  required>
               </div>
-              <div class="ui-grid-col-4">
-                <p-message severity="error" text="Email is required" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].errors['required'] && (!userform.controls['emailId'].valid&&userform.controls['emailId'].dirty)"></p-message>
-                <p-message severity="error" text="Email is invalid" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].errors['email'] && (!userform.controls['emailId'].valid&&userform.controls['emailId'].dirty)"></p-message>
-              </div>
+            </div>
+
+            <div class="p-col-12" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].dirty">
+              <p-message severity="error" text="Email is required" *ngIf="userform.controls['emailId'].errors['required']"></p-message>
+              <p-message severity="error" text="Email is invalid" *ngIf="userform.controls['emailId'].errors['email']"></p-message>
+            </div>
+
+            <div class="p-col-12">
+              <p-calendar formControlName="birthDate" placeholder="Birth date" styleClass="form-component" [showIcon]=true></p-calendar>
+            </div>
+
+            <div class="p-col-12" *ngIf="userform.controls['birthDate'].errors && userform.controls['birthDate'].dirty">
+              <p-message severity="error" text="Birthdate is required" *ngIf="userform.controls['birthDate'].errors['required']"></p-message>
+              <p-message severity="error" text="Minimum age should be 10 years." *ngIf="userform.controls['birthDate'].errors['invalidBirthDate']"></p-message>
             </div>
           </div>
           <p-footer>
-            <div class="ui-g ui-fluid">
-              <div class="ui-g-6">
+            <div class="p-grid">
+              <div class="p-col-6">
                 <button pButton type="submit" label="Register" class="ui-button-raised" [disabled]="!userform.valid"></button>
               </div>
-              <div class="ui-g-6">
+              <div class="p-col-6">
                 <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickGoToLogin()"></button>
               </div>
             </div>

@@ -1,36 +1,30 @@
 <div class="login-panel">
-  <div class="ui-g ui-fluid">
-    <div class="ui-g-12">
+  <div class="p-grid p-nogutter p-justify-center	p-align-center" style="height:100%">
+    <div class="p-xl-4 p-lg-4 p-md-8 p-sm-10">
       <p-panel header="Ng-Prime Login">
-        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid login-panel-content">
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <img src="../assets/images/company-name.png" class="logo-img">
+        <div class="p-grid">
+          <div class="p-xl-4 p-xl-offset-4 p-lg-4 p-lg-offset-4 p-md-8 p-md-offset-2 p-sm-10 p-sm-offset-1">
+            <img src="../assets/images/company-name.png" class="logo-img">
+          </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+              <input id="input-username" type="text" size="30" pInputText [(ngModel)]="userName" placeholder="user name">
             </div>
           </div>
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
-                <input id="float-input-username" type="text" size="30" pInputText [(ngModel)]="userName" placeholder="user name">
-              </div>
-            </div>
-          </div>
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">
-              <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
-                <input id="float-input-password" type="password" size="30" pInputText [(ngModel)]="password" placeholder="password">
-              </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+              <input id="input-password" type="password" size="30" pInputText [(ngModel)]="password" placeholder="password">
             </div>
           </div>
         </div>
         <p-footer>
-          <div class="ui-g ui-fluid">
-            <div class="ui-g-6">
+          <div class="p-grid">
+            <div class="p-col-6">
               <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickLogin()"></button>
             </div>
-            <div class="ui-g-6">
+            <div class="p-col-6">
               <button pButton type="button" label="Register" class="ui-button-raised" [routerLink]="['/register']"></button>
             </div>
           </div>

@@ -11,6 +11,8 @@ import { ChartModule } from 'primeng/chart';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { CalendarModule } from 'primeng/calendar';
+
 
 @NgModule({
     declarations: [
@@ -27,7 +29,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
         ChartModule,
         ProgressSpinnerModule,
         OverlayPanelModule,
-        BreadcrumbModule
+        BreadcrumbModule,
+        CalendarModule
     ],
     exports: [
         InputTextModule,
@@ -41,7 +44,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
         ChartModule,
         ProgressSpinnerModule,
         OverlayPanelModule,
-        BreadcrumbModule
+        BreadcrumbModule,
+        CalendarModule
     ]
 })
 export class NgPrimeModule { }
