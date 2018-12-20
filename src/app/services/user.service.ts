@@ -10,7 +10,7 @@ export class UserService {
 
     constructor() {
         let user = {
-            userId: 1, userName: "admin", password: "admin123", emailId: "admin@nilavpatel.com", birthDate: new Date('28/10/1992')
+            userId: 1, userName: "admin", password: "admin123", emailId: "admin@nilavpatel.com", birthDate: new Date('10/28/1992')
         };
         this.users.push(user);
     }

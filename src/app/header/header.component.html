@@ -11,4 +11,5 @@
 <p-overlayPanel #op>
     <div><b>User Name: </b><i [innerHtml]="user.userName"></i></div>
     <div><b>Email Id: </b><i [innerHtml]="user.emailId"></i></div>
+    <div><b>Birthdate: </b><i [innerHtml]="user.birthDate | date:'dd/MM/yyyy'"></i></div>
 </p-overlayPanel>
