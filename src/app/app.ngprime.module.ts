@@ -12,6 +12,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { CalendarModule } from 'primeng/calendar';
+import { SidebarModule } from 'primeng/sidebar';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,10 @@ import { CalendarModule } from 'primeng/calendar';
         ProgressSpinnerModule,
         OverlayPanelModule,
         BreadcrumbModule,
-        CalendarModule
+        CalendarModule,
+        SidebarModule,
+        DynamicDialogModule,
+        InputTextareaModule
     ],
     exports: [
         InputTextModule,
@@ -44,7 +50,10 @@ import { CalendarModule } from 'primeng/calendar';
         ProgressSpinnerModule,
         OverlayPanelModule,
         BreadcrumbModule,
-        CalendarModule
+        CalendarModule,
+        SidebarModule,
+        DynamicDialogModule,
+        InputTextareaModule
     ]
 })
 export class NgPrimeModule { }

@@ -14,21 +14,24 @@ export class HeaderComponent implements OnInit {
 
   user: User;
 
+  displayNotifications: boolean;
+
   notifications: notification[];
 
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
-    private sessionService: SessionService) {    
+    private sessionService: SessionService) {
+    this.displayNotifications = false;
   }
 
   ngOnInit() {
     this.user = this.sessionService.getSessionValue("currentUser");
     this.notifications = [];
-    for(var i=1; i<= 5; i++){
-      var notificationObj = new notification("Message "+ i, new Date(), null)
+    for (var i = 1; i <= 5; i++) {
+      var notificationObj = new notification("Message " + i, new Date(), null)
       this.notifications.push(notificationObj);
-    }    
+    }
   }
 
   logout() {
@@ -37,6 +40,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-
+  showNotificationSidebar() {
+    this.displayNotifications = true;
+  }
 
 }

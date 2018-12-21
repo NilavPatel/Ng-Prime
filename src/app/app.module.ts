@@ -28,6 +28,7 @@ import { NotificationService } from './services/notification.service';
 import { RouteStateService } from './services/routeState.service';
 import { SessionService } from './services/session.service';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
+import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb
     DepartmentListComponent,
     DepartmentDetailComponent,
     RegisterUserComponent,
-    HeaderBreadcrumbComponent
+    HeaderBreadcrumbComponent,
+    ContactUsMailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,9 @@ import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb
     DepartmentListComponent,
     DepartmentDetailComponent,
     RegisterUserComponent
+  ],
+  entryComponents: [
+    ContactUsMailDialogComponent
   ]
 })
 export class AppModule { }
