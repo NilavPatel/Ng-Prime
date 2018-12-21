@@ -41,3 +41,10 @@
         display: none;
     }
 }
+
+.notification-message{
+    min-height:25px;
+    width: 200px;
+    border-bottom: 1px solid #2F4E6A;
+    padding:5px;
+}

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RouteStateService } from '../services/routeState.service';
 import { SessionService } from '../services/session.service';
 import { User } from '../models/user.model';
+import { notification } from '../models/notification.model';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,21 @@ export class HeaderComponent implements OnInit {
 
   user: User;
 
+  notifications: notification[];
+
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
-    private sessionService: SessionService) { }
+    private sessionService: SessionService) {    
+  }
 
   ngOnInit() {
     this.user = this.sessionService.getSessionValue("currentUser");
+    this.notifications = [];
+    for(var i=1; i<= 5; i++){
+      var notificationObj = new notification("Message "+ i, new Date(), null)
+      this.notifications.push(notificationObj);
+    }    
   }
 
   logout() {
@@ -27,5 +36,7 @@ export class HeaderComponent implements OnInit {
     this.sessionService.removeSessionValue('currentUser');
     this.router.navigate(['/login']);
   }
+
+
 
 }

@@ -1,15 +1,26 @@
 <div class="logo">
-  <img src="../assets/images/company-name.png" class="header-name-img">
-  <img src="../assets/images/company-logo.png" class="header-logo-img">
+    <img src="../assets/images/company-name.png" class="header-name-img">
+    <img src="../assets/images/company-logo.png" class="header-logo-img">
 </div>
-<div class="header-right">        
-    <div class="header-right-item" (click)="op.toggle($event)"><a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fas fa-user"></i></a></div>
-    <div class="header-right-item"><a class="icon"><i class="fas fa-bell"></i></a></div>
-    <div class="header-right-item"><a class="icon" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a></div>
+<div class="header-right">
+    <div class="header-right-item" (click)="userdetails.toggle($event)">
+        <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fas fa-user"></i></a>
+        <p-overlayPanel #userdetails>
+            <div><b>User Name: </b><i [innerHtml]="user.userName"></i></div>
+            <div><b>Email Id: </b><i [innerHtml]="user.emailId"></i></div>
+            <div><b>Birthdate: </b><i [innerHtml]="user.birthDate | date:'dd/MM/yyyy'"></i></div>
+        </p-overlayPanel>
+    </div>
+    <div class="header-right-item" (click)="notificationsTemp.toggle($event)">
+        <a class="icon"><i class="fas fa-bell"></i></a>
+        <p-overlayPanel #notificationsTemp>
+            <div *ngFor="let notification of notifications; let i=index" class="notification-message">
+                <div><b>Message: </b><i [innerHtml]="notification.message"></i></div>
+                <div><i>Created On: </i><i [innerHtml]="notification.createdOn | date:'dd/MM/yyyy'"></i></div>
+            </div>
+        </p-overlayPanel>
+    </div>
+    <div class="header-right-item">
+        <a class="icon" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
 </div>
-
-<p-overlayPanel #op>
-    <div><b>User Name: </b><i [innerHtml]="user.userName"></i></div>
-    <div><b>Email Id: </b><i [innerHtml]="user.emailId"></i></div>
-    <div><b>Birthdate: </b><i [innerHtml]="user.birthDate | date:'dd/MM/yyyy'"></i></div>
-</p-overlayPanel>

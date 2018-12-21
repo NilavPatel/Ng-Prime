@@ -46,6 +46,7 @@ ng serve
 3. font awesome icons
 4. state management service to maintain state on page refresh
 5. back button functionality for views
+6. Add custom validations and form validations into form group
 ````
 
 ### Login page
