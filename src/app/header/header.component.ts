@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.userIdle.stopWatching();
     this.routeStateService.removeAllRouteStates();
     this.sessionService.removeSessionValue('currentUser');
     this.router.navigate(['/login']);
