@@ -47,6 +47,9 @@ ng serve
 4. state management service to maintain state on page refresh
 5. back button functionality for views
 6. Add custom validations and form validations into form group
+7. sidebar in notification icon click
+8. custom dialog box on contact us page
+9. user inactivity tracing, auto logout on 5 minute inactivity
 ````
 
 ### Login page

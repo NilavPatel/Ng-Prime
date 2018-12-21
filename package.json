@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^7.0.4",
     "@angular/router": "^7.0.4",
     "@fortawesome/fontawesome-free": "^5.5.0",
+    "angular-user-idle": "^2.0.0",
     "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
     "primeflex": "^1.0.0-rc.1",

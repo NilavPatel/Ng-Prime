@@ -29,6 +29,7 @@ import { RouteStateService } from './services/routeState.service';
 import { SessionService } from './services/session.service';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
 import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
+import { UserIdleModule } from 'angular-user-idle';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-u
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgPrimeModule
+    NgPrimeModule,
+    UserIdleModule.forRoot({idle: 300, timeout: 1, ping: null})
   ],
   providers: [
     MessageService,

@@ -4,6 +4,7 @@ import { RouteStateService } from '../services/routeState.service';
 import { SessionService } from '../services/session.service';
 import { User } from '../models/user.model';
 import { notification } from '../models/notification.model';
+import { UserIdleService } from 'angular-user-idle';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
-    private sessionService: SessionService) {
+    private sessionService: SessionService,
+    private userIdle: UserIdleService) {
     this.displayNotifications = false;
   }
 
@@ -32,6 +34,17 @@ export class HeaderComponent implements OnInit {
       var notificationObj = new notification("Message " + i, new Date(), null)
       this.notifications.push(notificationObj);
     }
+
+    //Start watching for user inactivity.
+    this.userIdle.startWatching();
+
+    // Start watching when user idle is starting.
+    this.userIdle.onTimerStart().subscribe();
+
+    // Start watch when time is up.
+    this.userIdle.onTimeout().subscribe(() => {      
+      this.logout();
+    });
   }
 
   logout() {
