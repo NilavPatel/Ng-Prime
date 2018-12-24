@@ -1,4 +1,4 @@
-<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/company-name.png" width="400" height="100">
+<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/company-name.png" width="300" height="80">
 
 # Angular + PrimeNg
 
@@ -34,9 +34,11 @@ import { InputTextModule } from 'primeng/inputtext';
 ## Add routing into separate module app.routing.module.ts
 
 ## Build and Run project
-`````javascript
-ng build
-ng serve
+`````
+Run below commands in console
+1. npm install
+2. ng build
+3. ng serve
 `````
 
 ## features
@@ -56,9 +58,9 @@ ng serve
 
 ![image login](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/login-page.png)
 
-### Dashboard page
+### Details page
 
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/dashboard-page.png)
+![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/details-page.png)
 
 ### Responsive  layout for desktop, tablet and mobile
 
