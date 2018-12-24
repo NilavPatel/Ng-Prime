@@ -70,12 +70,6 @@ import { UserIdleModule } from 'angular-user-idle';
   bootstrap: [
     AppComponent
   ],
-  exports: [
-    DepartmentComponent,
-    DepartmentListComponent,
-    DepartmentDetailComponent,
-    RegisterUserComponent
-  ],
   entryComponents: [
     ContactUsMailDialogComponent
   ]
