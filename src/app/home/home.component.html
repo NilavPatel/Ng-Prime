@@ -1,20 +1,18 @@
-<div class="wrapper">
-  <div class="header">
+<div class="vbox viewport">
+  <header>
     <app-header></app-header>
-  </div>
-  <div class="main">
-    <div class="sidebar">
+  </header>
+  <section class="main hbox space-between">
+    <nav>
+      <app-menu></app-menu>
+    </nav>
+    <article>
       <p-card>
-        <app-menu></app-menu>
-      </p-card>
-    </div>
-    <div class="content">
-      <p-card>        
         <router-outlet></router-outlet>
       </p-card>
-    </div>
-  </div>
-  <div class="footer">
+    </article>
+  </section>
+  <footer>
     <app-footer></app-footer>
-  </div>
+  </footer>
 </div>

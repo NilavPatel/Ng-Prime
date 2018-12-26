@@ -1,84 +1,10 @@
-html,
-body {
+html,body {
 	height: 100%;
 }
 
 body {
-	margin: 0px;
-	color: #2F4E6A !important;
-	background-color: #F2F8FA;
-	background-image: url(assets/images/background.png);
-}
-
-.wrapper {
-	position: relative;
-	min-height: 100%;
-}
-
-.header {
-	background-color: white;
-	height: 50px;
-}
-
-.footer {
-	background-color: white;
-	text-align: center;
-	padding: 10px;
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	height: 40px;
-}
-
-.main {
-	height: 100%;
-	min-height: 100%;
-	display: flex;
-	padding-bottom: 40px;
-}
-
-.sidebar {
-	width: 15%;
-	padding: 10px;
-}
-
-.content {
-	width: 85%;
-	padding: 10px 10px 10px 0px;
-}
-
-.logo-img{
-	height: 100%;
-	width: 100%;
-}
-
-/* for tablet or smaller size laptop screens*/
-@media(max-width: 1024px) and (min-width: 769px){
-    .sidebar {
-        width: 25%;
-    }
-    .content {
-        width: 75%;
-	}
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-/* for mobiles*/
-@media (max-width: 768px) {
-	.main {
-		display: block;
-	}
-	.sidebar {
-		width: 100%;
-	}
-	.content {
-		width: 100%;
-		padding: 0px 10px 10px 10px;
-	}
-	.sidebar .ui-card {
-		max-height: 200px;
-		overflow: scroll;
-	}
+	margin: 0px;	
+	background-color:  #F2F8FA;
 }
 
 .header img {
@@ -95,7 +21,6 @@ body {
     font-size: 25px;
     cursor: pointer;
     padding:10px;
-    color:#2F4E6A;
 }
 
 .fa{
@@ -168,4 +93,112 @@ body .ui-card {
     vertical-align: middle;
     background-color: red;
     border-radius: 10px;
+}
+
+html, body, .viewport {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.vbox {
+  display: -webkit-flex;
+  display:    -moz-flex;
+  display:     -ms-flex;
+  display:         flex;
+
+  -webkit-flex-direction: column;
+	 -moz-flex-direction: column;
+	  -ms-flex-direction: column;
+		  flex-direction: column;
+}
+
+.hbox {
+  display: -webkit-flex;
+  display:    -moz-flex;
+  display:     -ms-flex;
+  display:         flex;
+
+  -webkit-flex-direction: row;
+	 -moz-flex-direction: row;
+	  -ms-flex-direction: row;
+		  flex-direction: row;
+}
+
+.space-between {
+  -webkit-justify-content: space-between;
+	 -moz-justify-content: space-between;
+	  -ms-justify-content: space-between;
+		  justify-content: space-between;
+}
+
+header, footer {
+  height: 50px;
+  background-color: #517fa4;
+ background-image: -webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
+  color:white !important;
+}
+
+.header-right a{
+	color:white !important;
+}
+
+footer div{
+	text-align: center;
+	padding:10px;
+}
+
+.main {
+  -webkit-flex: 1;
+	 -moz-flex: 1;
+	  -ms-flex: 1;
+		  flex: 1;
+}
+
+article {
+  -webkit-flex: 5;
+	 -moz-flex: 5;
+	  -ms-flex: 5;
+		  flex: 5;
+		padding:10px;
+		overflow:auto;	
+}
+
+article .ui-card{
+	min-height:100%;
+}
+
+aside, nav {
+  -webkit-flex: 1;
+	 -moz-flex: 1;
+	  -ms-flex: 1;
+		  flex: 1;
+		  overflow:auto;
+}
+
+nav .ui-megamenu{
+	width: 100%;
+	min-height:100%;
+	border-radius: 0px;
+	background-color:lightgray;
+}
+
+.logo-img{
+	height: 100%;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.hbox{
+		flex-direction: column;
+	}
+
+	nav{
+		margin:10px;
+		flex:2;
+	}
+
+	article{
+		padding-top:0px;
+	}
 }
