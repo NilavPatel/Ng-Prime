@@ -11,6 +11,9 @@ export class HeaderBreadcrumbComponent implements OnInit {
 
   private items: MenuItem[];
 
+  home: MenuItem;
+  
+
   constructor(private routeStateService: RouteStateService) {
     this.items = [];
   }
@@ -20,6 +23,8 @@ export class HeaderBreadcrumbComponent implements OnInit {
     routes.forEach(route => {
       this.items.push({ label: route.title, command: () => { this.onClickBreadcrumb(route.id); } });
     });
+
+    this.home = {icon: 'pi pi-home'};
   }
 
   onClickBreadcrumb(id: number) {

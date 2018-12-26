@@ -4,7 +4,7 @@ html,body {
 
 body {
 	margin: 0px;	
-	background-color:  #F2F8FA;
+	background-color:  #eaeff2;
 }
 
 .header img {
@@ -24,12 +24,11 @@ body {
 }
 
 .fa{
-	color:#2F4E6A !important;
+	color:white !important;
 }
 
 .ui-state-active {
-	background-color: #eaeaea;
-	border-right: 3px solid #2F4E6A;
+	background-color: #517fa4;
 }
 
 .prime-button {
@@ -69,9 +68,7 @@ body .ui-card {
 }
 
 .header-breadcrumb {
-	border: none !important;
-	padding-top: 0px !important;
-	padding-left: 0px !important;
+	margin-bottom:10px;
 }
 .form-component{
 	width:100%
@@ -166,6 +163,7 @@ article {
 
 article .ui-card{
 	min-height:100%;
+	background: #f7f9fa;
 }
 
 aside, nav {
@@ -180,9 +178,24 @@ nav .ui-megamenu{
 	width: 100%;
 	min-height:100%;
 	border-radius: 0px;
-	background-color:lightgray;
+	background-color:#1d3242;	
+	border:none;
 }
 
+nav .ui-menuitem-text{
+	color:white !important;
+}
+
+body .ui-megamenu .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+	background-color: #517fa4 !important;
+  }
+
+nav .ui-menuitem-active{
+	background-color: #517fa4 !important;
+}
+nav .ui-menuitem-link:hover{
+	background-color: #517fa4 !important;
+}
 .logo-img{
 	height: 100%;
 	width: 100%;
