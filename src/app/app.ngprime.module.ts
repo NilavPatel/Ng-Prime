@@ -15,6 +15,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { SidebarModule } from 'primeng/sidebar';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessagesModule } from 'primeng/messages'
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
         CalendarModule,
         SidebarModule,
         DynamicDialogModule,
-        InputTextareaModule
+        InputTextareaModule,
+        MessagesModule
     ],
     exports: [
         InputTextModule,
@@ -53,7 +55,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
         CalendarModule,
         SidebarModule,
         DynamicDialogModule,
-        InputTextareaModule
+        InputTextareaModule,
+        MessagesModule
     ]
 })
 export class NgPrimeModule { }

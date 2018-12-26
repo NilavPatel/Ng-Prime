@@ -11,6 +11,8 @@ export class DashboardComponent implements OnInit {
 
   doughnutChartData: any;
 
+  msgs: any[];
+
   constructor() {
     this.barChartData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -31,22 +33,25 @@ export class DashboardComponent implements OnInit {
     }
 
     this.doughnutChartData = {
-      labels: ['Active','Inactive','Deleted'],
+      labels: ['Active', 'Inactive', 'Deleted'],
       datasets: [
-          {
-              data: [300, 50, 100],
-              backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ],
-              hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ]
-          }]    
-      };
+        {
+          data: [300, 50, 100],
+          backgroundColor: [
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56"
+          ],
+          hoverBackgroundColor: [
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56"
+          ]
+        }]
+    };
+
+    this.msgs = [];
+    this.msgs.push({ severity: 'success', summary: '', detail: 'welcome to NG-prime sample.' });
   }
 
   ngOnInit() {
