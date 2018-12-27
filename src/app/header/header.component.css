@@ -1,7 +1,7 @@
 .header-name-img{
     display: block;
     height:50px;    
-    width:100%;
+    width:98%;
 }
 
 .header-logo-img{
@@ -23,7 +23,7 @@
 }
 
 .header-right a:hover{
-    color:#2F4E6A;
+    color:lightblue;
 }
 
 @media (max-width: 768px) {
@@ -45,6 +45,10 @@
 .notification-message{
     min-height:25px;
     width: 200px;
-    border-bottom: 1px solid #2F4E6A;
+    border-bottom: 1px solid lightblue;
     padding:5px;
+}
+
+.toggle-menu-button{
+    background-color: #1d3242;
 }
