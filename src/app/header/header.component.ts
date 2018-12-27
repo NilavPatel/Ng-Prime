@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RouteStateService } from '../services/routeState.service';
 import { SessionService } from '../services/session.service';
@@ -19,12 +19,16 @@ export class HeaderComponent implements OnInit {
 
   notifications: notification[];
 
+  isMenuVisible: boolean;
+
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
-    private userIdle: UserIdleService) {
+    private userIdle: UserIdleService,
+    private renderer: Renderer2) {
     this.displayNotifications = false;
+    this.isMenuVisible = true;
   }
 
   ngOnInit() {
@@ -42,7 +46,7 @@ export class HeaderComponent implements OnInit {
     this.userIdle.onTimerStart().subscribe();
 
     // Start watch when time is up.
-    this.userIdle.onTimeout().subscribe(() => {      
+    this.userIdle.onTimeout().subscribe(() => {
       this.logout();
     });
   }
@@ -56,6 +60,16 @@ export class HeaderComponent implements OnInit {
 
   showNotificationSidebar() {
     this.displayNotifications = true;
+  }
+
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+    const menuElement: HTMLElement = document.getElementById('navigation-menu');
+    if (this.isMenuVisible) {
+      this.renderer.setStyle(menuElement, 'flex', '1');
+    } else {
+      this.renderer.setStyle(menuElement, 'flex', '0');
+    }
   }
 
 }

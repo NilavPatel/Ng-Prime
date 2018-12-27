@@ -52,6 +52,7 @@ Run below commands in console
 7. sidebar in notification icon click
 8. custom dialog box on contact us page
 9. user inactivity tracing, auto logout on 5 minute inactivity
+10. Show/Hide menu bar on click
 ````
 
 ### Login page

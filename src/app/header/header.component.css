@@ -2,6 +2,7 @@
     display: block;
     height:50px;
     width:200px;
+    max-width:100%;
 }
 
 .header-logo-img{
@@ -14,7 +15,7 @@
 
 .header-right .header-right-item{    
     height: 50px;
-    border-left:1px solid #2F4E6A;
+    border-left:1px solid #517fa4;
 }
 
 .header-right-item .user-name{
