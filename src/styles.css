@@ -79,7 +79,8 @@ body .ui-card {
 
 .login-panel, .user-regisration {
 	height: 100%;
-	background-image: url(assets/images/background.png);
+	background-color: #517fa4;
+    background-image: -webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
 }
 
 .badge {
@@ -211,12 +212,20 @@ nav .ui-menuitem-icon{
 
 .ui-state-active {
 	background-color: #517fa4;
-	border-right:5px solid white;
+	border-right:5px solid lightblue;	;
+}
+
+.ui-state-active span{
+	color:lightblue !important
 }
 
 .logo-img {
 	height: 100%;
 	width: 100%;
+}
+
+.toggle-menu-button{	
+	text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -231,6 +240,6 @@ nav .ui-menuitem-icon{
 		padding-top: 0px;
 	}
 	.toggle-menu-button{
-		display: none;
+		display: none;		
 	}
 }
