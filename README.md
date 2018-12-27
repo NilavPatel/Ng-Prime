@@ -55,6 +55,11 @@ Run below commands in console
 10. Show/Hide menu bar on click
 ````
 
+## Browser support
+````
+Chrome, Firefox, Edge, IE 11/10
+````
+
 ### Login page
 
 ![image login](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/login-page.png)
