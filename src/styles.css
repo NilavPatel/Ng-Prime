@@ -160,11 +160,10 @@ footer div {
 }
 
 article {
-	-webkit-flex: 5;
-	-moz-flex: 5;
-	-ms-flex: 5;
-	flex: 5;
-	padding: 10px;
+	-webkit-flex: 10;
+	-moz-flex: 10;
+	-ms-flex: 10;
+	flex: 10;	
 	overflow: auto;
 }
 
@@ -175,10 +174,10 @@ article .ui-card {
 
 aside,
 nav {
-	-webkit-flex: 1;
-	-moz-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	-ms-flex: 2;
+	flex: 2;
 	overflow: auto;
 }
 
@@ -242,4 +241,61 @@ nav .ui-menuitem-icon{
 	.toggle-menu-button{
 		display: none;		
 	}
+}
+.header-name-img{
+    display: block;
+    height:50px;    
+    width:100%;
+}
+
+.header-logo-img{
+    display: none;
+}
+
+.header-right{
+    display: flex;
+}
+
+.header-right .header-right-item{    
+    height: 50px;
+    border-left:1px solid #517fa4;
+}
+
+.header-right-item .user-name{
+    font-size: 50%;
+    padding:5px;
+}
+
+.header-right a:hover{
+    color:lightblue;
+}
+
+@media (max-width: 768px) {
+    .header-name-img{
+        display: none;
+    }
+    
+    .header-logo-img{
+        display: block;
+        height:50px;
+        width:70px;
+    }
+
+    .header-right-item .user-name{
+        display: none;
+    }
+}
+
+.notification-message{
+    min-height:25px;
+    width: 200px;
+    border-bottom: 1px solid lightblue;
+    padding:5px;
+}
+
+.toggle-menu-button{
+    background-color: #1d3242;
+}
+.pad10{
+	padding:10px;
 }

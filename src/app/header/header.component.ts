@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
     this.isMenuVisible = !this.isMenuVisible;
     const menuElement: HTMLElement = document.getElementById('navigation-menu');
     if (this.isMenuVisible) {
-      this.renderer.setStyle(menuElement, 'flex', '1');
+      this.renderer.setStyle(menuElement, 'flex', '2');
     } else {
       this.renderer.setStyle(menuElement, 'flex', '0');
     }
