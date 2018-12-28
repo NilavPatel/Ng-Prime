@@ -194,15 +194,15 @@ nav .ui-menuitem-text {
 }
 
 body .ui-megamenu .ui-menuitem.ui-menuitem-active>.ui-menuitem-link {
-	background-color: #517fa4 !important;
+	background-color: #1e5375 !important;
 }
 
 nav .ui-menuitem-active {
-	background-color: #517fa4 !important;
+	background-color: #1e5375 !important;
 }
 
 nav .ui-menuitem-link:hover {
-	background-color: #517fa4 !important;
+	background-color: #1e5375 !important;
 }
 
 nav .ui-menuitem-icon{
@@ -210,7 +210,7 @@ nav .ui-menuitem-icon{
 }
 
 .ui-state-active {
-	background-color: #517fa4;
+	background-color: #1e5375;
 	border-right:5px solid lightblue;	;
 }
 
@@ -225,6 +225,7 @@ nav .ui-menuitem-icon{
 
 .toggle-menu-button{	
 	text-align: center;
+	background-color: #1d3242;
 }
 
 @media (max-width: 768px) {
@@ -293,9 +294,6 @@ nav .ui-menuitem-icon{
     padding:5px;
 }
 
-.toggle-menu-button{
-    background-color: #1d3242;
-}
 .pad10{
 	padding:10px;
 }
