@@ -1,11 +1,26 @@
+:root {
+	--main-bg-color: #eaeff2;
+	--font-awesome-color: white;	
+
+	--header-footer-color: white;	
+	--header-footer-background: #517fa4;
+	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
+
+	--menubar-background: #1d3242;
+	--menubar-text : white;	
+	--menubar-active-bg:#1e5375;	
+	--menubar-active-text:lightblue;
+  }
+  
+
 html,
 body {
-	height: 100%;
+	height: 100%;	
 }
 
 body {
 	margin: 0px;
-	background-color: #eaeff2;
+	background-color: var(--main-bg-color);
 }
 
 .header img {
@@ -22,15 +37,14 @@ body {
 	font-size: 25px;
 	cursor: pointer;
 	padding: 10px;
-	color:white;
 }
 
 .icon:hover{
-	color:white;
+	color:var(--font-awesome-color);
 }
 
-.fa {
-	color: white !important;
+.fa, .fas{
+	color: var(--font-awesome-color) !important;
 }
 
 .prime-button {
@@ -43,10 +57,6 @@ body {
 
 .sidebar .ui-megamenu {
 	border: none;
-}
-
-body .ui-card {
-	color: #2F4E6A !important;
 }
 
 .overview-box-1 .ui-card-body {
@@ -79,8 +89,8 @@ body .ui-card {
 
 .login-panel, .user-regisration {
 	height: 100%;
-	background-color: #517fa4;
-    background-image: -webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
+	background-color: var(--header-footer-background);
+    background-image: var(--header-footer-background-image);
 }
 
 .badge {
@@ -138,13 +148,16 @@ body,
 header,
 footer {
 	height: 50px;
-	background-color: #517fa4;
-	background-image: -webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
-	color: white !important;
+	background-color: var(--header-footer-background);
+	background-image: var(--header-footer-background-image);	
 }
 
-.header-right a {
-	color: white !important;
+header a{
+	color: var(--header-footer-color) !important;
+}
+
+header .pi{
+	color:black;
 }
 
 footer div {
@@ -185,24 +198,20 @@ nav .ui-megamenu {
 	width: 100%;
 	min-height: 100%;
 	border-radius: 0px;
-	background-color: #1d3242;
+	background-color: var(--menubar-background);
 	border: none;
 }
 
 nav .ui-menuitem-text {
-	color: white !important;
+	color: var(--menubar-text) !important;
 }
 
 body .ui-megamenu .ui-menuitem.ui-menuitem-active>.ui-menuitem-link {
-	background-color: #1e5375 !important;
-}
-
-nav .ui-menuitem-active {
-	background-color: #1e5375 !important;
+	background-color: var(--menubar-active-bg) !important;
 }
 
 nav .ui-menuitem-link:hover {
-	background-color: #1e5375 !important;
+	background-color: var(--menubar-active-bg) !important;
 }
 
 nav .ui-menuitem-icon{
@@ -210,12 +219,12 @@ nav .ui-menuitem-icon{
 }
 
 .ui-state-active {
-	background-color: #1e5375;
-	border-right:5px solid lightblue;	;
+	background-color: var(--menubar-active-bg);
+	border-right:5px solid var(--menubar-active-text);	;
 }
 
 .ui-state-active span{
-	color:lightblue !important
+	color:var(--menubar-active-text) !important
 }
 
 .logo-img {
@@ -225,7 +234,7 @@ nav .ui-menuitem-icon{
 
 .toggle-menu-button{	
 	text-align: center;
-	background-color: #1d3242;
+	background-color: var(--menubar-background);
 }
 
 @media (max-width: 768px) {
@@ -259,16 +268,12 @@ nav .ui-menuitem-icon{
 
 .header-right .header-right-item{    
     height: 50px;
-    border-left:1px solid #517fa4;
+    border-left:1px solid var(--header-footer-background);
 }
 
 .header-right-item .user-name{
     font-size: 50%;
     padding:5px;
-}
-
-.header-right a:hover{
-    color:lightblue;
 }
 
 @media (max-width: 768px) {
@@ -290,7 +295,7 @@ nav .ui-menuitem-icon{
 .notification-message{
     min-height:25px;
     width: 200px;
-    border-bottom: 1px solid lightblue;
+    border-bottom: 1px solid var(--header-footer-background);
     padding:5px;
 }
 
