@@ -237,21 +237,6 @@ nav .ui-menuitem-icon{
 	background-color: var(--menubar-background);
 }
 
-@media (max-width: 768px) {
-	.hbox {
-		flex-direction: column;
-	}
-	nav {
-		margin: 10px;
-		flex: 2;
-	}
-	article {
-		padding-top: 0px;
-	}
-	.toggle-menu-button{
-		display: none;		
-	}
-}
 .header-name-img{
     display: block;
     height:50px;    
@@ -276,8 +261,32 @@ nav .ui-menuitem-icon{
     padding:5px;
 }
 
+.notification-message{
+    min-height:25px;
+    width: 200px;
+    border-bottom: 1px solid var(--header-footer-background);
+    padding:5px;
+}
+
+.pad10{
+	padding:10px;
+}
+
 @media (max-width: 768px) {
-    .header-name-img{
+	.hbox {
+		flex-direction: column;
+	}
+	nav {
+		margin: 10px;
+		flex: 4;
+	}
+	article {
+		padding-top: 0px;
+	}
+	.toggle-menu-button{
+		display: none;		
+	}
+	.header-name-img{
         display: none;
     }
     
@@ -290,15 +299,4 @@ nav .ui-menuitem-icon{
     .header-right-item .user-name{
         display: none;
     }
-}
-
-.notification-message{
-    min-height:25px;
-    width: 200px;
-    border-bottom: 1px solid var(--header-footer-background);
-    padding:5px;
-}
-
-.pad10{
-	padding:10px;
 }
