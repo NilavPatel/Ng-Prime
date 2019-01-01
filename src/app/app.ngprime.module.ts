@@ -15,30 +15,9 @@ import { CalendarModule } from 'primeng/calendar';
 import { SidebarModule } from 'primeng/sidebar';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { MessagesModule } from 'primeng/messages'
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
-    declarations: [
-    ],
-    imports: [
-        InputTextModule,
-        ButtonModule,
-        PanelModule,
-        ToastModule,
-        MegaMenuModule,
-        TableModule,
-        MessageModule,
-        CardModule,
-        ChartModule,
-        ProgressSpinnerModule,
-        OverlayPanelModule,
-        BreadcrumbModule,
-        CalendarModule,
-        SidebarModule,
-        DynamicDialogModule,
-        InputTextareaModule,
-        MessagesModule
-    ],
     exports: [
         InputTextModule,
         ButtonModule,
