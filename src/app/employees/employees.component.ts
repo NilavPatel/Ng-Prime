@@ -12,10 +12,14 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
 
   employees: any[];
 
+  pageSize: number;
+
   constructor(private loaderService: LoaderService, private routeStateService: RouteStateService) { }
 
   ngOnInit() {
     this.loaderService.display(true);
+
+    this.pageSize = 10;
 
     this.columns = [
       { field: 'Name', header: 'Name' },

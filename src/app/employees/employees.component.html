@@ -1,6 +1,10 @@
 <app-header-breadcrumb></app-header-breadcrumb>
-<p-panel header="Employees List">    
-    <p-table [value]="employees">
+<p-panel header="Employees List">
+    <div class="p-grid">
+        <div class="p-col"><label style="float:right;">Page Size:</label></div>
+        <div class="p-col-2"><input type="text" pInputText [(ngModel)]="pageSize"></div>
+    </div>
+    <p-table [value]="employees" [paginator]="true" [rows]="pageSize">
         <ng-template pTemplate="header">
             <tr>
                 <th *ngFor="let col of columns">
