@@ -150,6 +150,7 @@ footer {
 	height: 50px;
 	background-color: var(--header-footer-background);
 	background-image: var(--header-footer-background-image);	
+	color: var(--header-footer-color)
 }
 
 header a{
