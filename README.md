@@ -53,6 +53,7 @@ Run below commands in console
 8. custom dialog box on contact us page
 9. user inactivity tracing, auto logout on 5 minute inactivity
 10. Show/Hide menu bar on click
+11. Theme chooser for dark and light theme at runtime.
 ````
 
 ## Browser support
