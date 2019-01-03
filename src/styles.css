@@ -1,3 +1,4 @@
+
 .dark-theme {
 	--main-bg-color: #eaeff2;
 	--font-awesome-color: white;	
@@ -13,17 +14,17 @@
 }
 
 .light-theme {
-	--main-bg-color: #e8f5e9;
-	--font-awesome-color: white;	
+	--main-bg-color: WhiteSmoke;
+	--font-awesome-color: black;	
 
-	--header-footer-color: white;	
-	--header-footer-background: #1b5e20;
-	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(#aed581), to(#1b5e20));
+	--header-footer-color: black;	
+	--header-footer-background: White;
+	--header-footer-background-image:black;
 
-	--menubar-background: #2e7d32;
-	--menubar-text : white;	
-	--menubar-active-bg:#66bb6a;	
-	--menubar-active-text:#1b5e20;
+	--menubar-background: DarkGray;
+	--menubar-text : black;	
+	--menubar-active-bg:lightgray;	
+	--menubar-active-text:black;
 }
 
 html,
