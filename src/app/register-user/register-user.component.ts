@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { UserService } from '../core/services/user.service';
 import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { NotificationService } from '../services/notification.service';
-import { birthDateValidator } from '../validators/date.validators';
+import { NotificationService } from '../core/services/notification.service';
+import { birthDateValidator } from '../core/validators/date.validators';
 
 @Component({
   selector: 'app-register-user',

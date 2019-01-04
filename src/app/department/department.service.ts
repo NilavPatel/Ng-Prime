@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 @Injectable({
     providedIn: 'root',

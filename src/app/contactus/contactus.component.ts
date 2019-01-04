@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactUsMailDialogComponent } from '../contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { DialogService } from 'primeng/api';
-import { NotificationService } from '../services/notification.service';
+import { NotificationService } from '../core/services/notification.service';
 
 @Component({
   selector: 'app-contactus',

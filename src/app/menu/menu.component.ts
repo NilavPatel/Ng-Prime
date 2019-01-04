@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { RouteStateService } from '../services/routeState.service';
+import { RouteStateService } from '../core/services/routeState.service';
 
 @Component({
     selector: 'app-menu',

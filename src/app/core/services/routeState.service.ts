@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RouteState } from '../models/RouteState.model';
+import { RouteState } from '../../core/models/RouteState.model';
 import { Router } from '@angular/router';
 
 @Injectable()

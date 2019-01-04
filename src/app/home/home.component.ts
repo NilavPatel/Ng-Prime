@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { NotificationService } from '../services/notification.service';
-import { LoaderService } from '../services/loader.service';
+import { NotificationService } from '../core/services/notification.service';
+import { LoaderService } from '../core/services/loader.service';
 
 @Component({
   selector: 'app-home',

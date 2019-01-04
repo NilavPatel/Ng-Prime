@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { LoaderService } from '../services/loader.service';
-import { RouteStateService } from '../services/routeState.service';
+import { LoaderService } from '../core/services/loader.service';
+import { RouteStateService } from '../core/services/routeState.service';
 
 @Component({
   selector: 'app-employees',

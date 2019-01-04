@@ -8,7 +8,7 @@ import { MessageService } from 'primeng/api';
 import { NgPrimeModule } from './app.ngprime.module'
 // app related
 import { AppComponent } from './app.component';
-import { AuthGuard } from './gaurds/auth.gaurd';
+import { AuthGuard } from './core/gaurds/auth.gaurd';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -23,10 +23,10 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
-import { LoaderService } from './services/loader.service';
-import { NotificationService } from './services/notification.service';
-import { RouteStateService } from './services/routeState.service';
-import { SessionService } from './services/session.service';
+import { LoaderService } from './core/services/loader.service';
+import { NotificationService } from './core/services/notification.service';
+import { RouteStateService } from './core/services/routeState.service';
+import { SessionService } from './core/services/session.service';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
 import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { UserIdleModule } from 'angular-user-idle';

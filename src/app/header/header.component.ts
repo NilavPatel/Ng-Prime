@@ -1,9 +1,9 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { RouteStateService } from '../services/routeState.service';
-import { SessionService } from '../services/session.service';
-import { User } from '../models/user.model';
-import { notification } from '../models/notification.model';
+import { RouteStateService } from '../core/services/routeState.service';
+import { SessionService } from '../core/services/session.service';
+import { User } from '../core/models/user.model';
+import { notification } from '../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 
 @Component({
