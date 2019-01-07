@@ -2,7 +2,7 @@
     <div class="p-col-2">
         <div class="p-grid p-nogutter">
             <div class="p-col-2 toggle-menu-button">
-                <a class="icon" (click)="toggleMenu()"><i class="fas fa-bars"></i></a>
+                <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
             </div>
             <div class="p-col-10">
                 <div class="logo">
@@ -15,16 +15,16 @@
     <div class="p-col-10">
         <div class="header-right">
             <div class="header-right-item" (click)="userdetails.toggle($event)">
-                <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fas fa-user"></i></a>
+                <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
             </div>
             <div class="header-right-item" (click)="showNotificationSidebar()">
-                <a class="icon"><i class="fas fa-bell"></i><span class="badge">5</span></a>
+                <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
             </div>
             <div class="header-right-item" (click)="themeChooser.toggle($event)">
                 <a class="icon"><i class="fa fa-cog"></i></a>
             </div>
             <div class="header-right-item">
-                <a class="icon" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
             </div>
         </div>
     </div>

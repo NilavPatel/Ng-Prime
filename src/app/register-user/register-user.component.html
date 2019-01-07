@@ -9,7 +9,7 @@
             </div>
             <div class="p-col-12">
               <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
                 <input id="float-input-username" type="text" size="30" pInputText formControlName="name" placeholder="user name"
                   required>
               </div>
@@ -19,7 +19,7 @@
             </div>
             <div class="p-col-12">
               <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+                <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
                 <input id="float-input-password" type="password" size="30" pInputText formControlName="password"
                   placeholder="password" required>
               </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="p-col-12">
               <div class="ui-inputgroup">
-                <span class="ui-inputgroup-addon"><i class="fas fa-at"></i></span>
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
                 <input id="float-input-emailid" type="email" size="30" pInputText formControlName="emailId" placeholder="Email Id"
                   required>
               </div>
@@ -40,7 +40,7 @@
               <p-message severity="error" text="Email is invalid" *ngIf="userform.controls['emailId'].errors['email']"></p-message>
             </div>
             <div class="p-col-12">
-              <p-calendar formControlName="birthDate" placeholder="Birth date" styleClass="form-component" [showIcon]=true></p-calendar>
+              <p-calendar formControlName="birthDate" placeholder="Birth date" [showIcon]=true></p-calendar>
             </div>
             <div class="p-col-12" *ngIf="userform.controls['birthDate'].errors && userform.controls['birthDate'].dirty">
               <p-message severity="error" text="Birthdate is required" *ngIf="userform.controls['birthDate'].errors['required']"></p-message>

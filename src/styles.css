@@ -58,7 +58,7 @@ body {
 	color:var(--font-awesome-color);
 }
 
-.fa, .fas{
+.fa{
 	color: var(--font-awesome-color) !important;
 }
 
@@ -96,10 +96,6 @@ body {
 
 .header-breadcrumb {
 	margin-bottom: 10px;
-}
-
-.form-component {
-	width: 100%
 }
 
 .login-panel, .user-regisration {
@@ -315,16 +311,4 @@ nav .ui-menuitem-icon{
     .header-right-item .user-name{
         display: none;
     }
-}
-
-.theme-chooser{
-	position: fixed;
-	height:50px;
-	width:50px;
-	right:0px;
-	bottom:20px;
-}
-
-header .ui-overlaypanel:after, .ui-overlaypanel:before{
-	right: 1.25em;
 }
