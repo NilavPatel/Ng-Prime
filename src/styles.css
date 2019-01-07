@@ -18,10 +18,10 @@
 	--font-awesome-color: black;	
 
 	--header-footer-color: black;	
-	--header-footer-background: White;
+	--header-footer-background: lightgray;
 	--header-footer-background-image:black;
 
-	--menubar-background: DarkGray;
+	--menubar-background: gray;
 	--menubar-text : black;	
 	--menubar-active-bg:lightgray;	
 	--menubar-active-text:black;
@@ -321,6 +321,6 @@ nav .ui-menuitem-icon{
 	position: fixed;
 	height:50px;
 	width:50px;
-	left:0px;
+	right:0px;
 	bottom:20px;
 }
