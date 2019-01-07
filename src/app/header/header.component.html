@@ -20,6 +20,9 @@
             <div class="header-right-item" (click)="showNotificationSidebar()">
                 <a class="icon"><i class="fas fa-bell"></i><span class="badge">5</span></a>
             </div>
+            <div class="header-right-item" (click)="themeChooser.toggle($event)">
+                <a class="icon"><i class="fa fa-cog"></i></a>
+            </div>
             <div class="header-right-item">
                 <a class="icon" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
             </div>
@@ -39,3 +42,15 @@
         <div><i>Created On: </i><i [innerHtml]="notification.createdOn | date:'dd/MM/yyyy'"></i></div>
     </div>
 </p-sidebar>
+
+<p-overlayPanel #themeChooser>
+    Select Theme:
+    <div class="p-grid">
+        <div class="p-col-6">
+            <button pButton type="button" (click)="selectTheme('dark-theme')" style="background-color:#517fa4"></button>
+        </div>
+        <div class="p-col-6">
+            <button pButton type="button" (click)="selectTheme('light-theme')" style="background-color:DarkGray"></button>
+        </div>
+    </div>
+</p-overlayPanel>

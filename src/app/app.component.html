@@ -1,22 +1,8 @@
-<div class="ui-fluid main-container" [class.dark-theme]="isDarkTheme" [class.light-theme]="!isDarkTheme">
+<div class="ui-fluid main-container" [ngClass]="theme">
     <p-toast position="bottom-right"></p-toast>
     <div [class.np-loader-hidden]="!showLoader" class="np-loader">
         <p-progressSpinner strokeWidth="5"></p-progressSpinner>
     </div>
     <router-outlet></router-outlet>
-    <div class="theme-chooser">
-        <button pButton type="button" (click)="themeChooser.toggle($event)" icon="fa fa-cog"></button>
-    </div>
 </div>
 
-<p-overlayPanel #themeChooser>
-    Theme chooser:
-    <div class="p-grid">
-        <div class="p-col-6">
-            <button pButton type="button" (click)="selectTheme('dark')" style="background-color:#517fa4"></button>
-        </div>
-        <div class="p-col-6">
-            <button pButton type="button" (click)="selectTheme('light')" style="background-color:DarkGray"></button>
-        </div>
-    </div>
-</p-overlayPanel>

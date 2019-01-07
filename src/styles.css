@@ -19,7 +19,7 @@
 
 	--header-footer-color: black;	
 	--header-footer-background: lightgray;
-	--header-footer-background-image:black;
+	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(lightgray), to(darkgray));;
 
 	--menubar-background: gray;
 	--menubar-text : black;	
@@ -323,4 +323,8 @@ nav .ui-menuitem-icon{
 	width:50px;
 	right:0px;
 	bottom:20px;
+}
+
+header .ui-overlaypanel:after, .ui-overlaypanel:before{
+	right: 1.25em;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './core/services/loader.service';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,24 +10,19 @@ import { LoaderService } from './core/services/loader.service';
 export class AppComponent implements OnInit {
   title = 'Ng-Prime';
   showLoader: boolean;
-  isDarkTheme: boolean;
+  theme: string;
 
-  constructor(private loaderService: LoaderService) {
-    this.isDarkTheme = true;
+  constructor(private loaderService: LoaderService, private themeService: ThemeService) {
+    this.theme = "dark-theme";
   }
 
   ngOnInit() {
     this.loaderService.status.subscribe((val: boolean) => {
       this.showLoader = val;
     });
-  }
 
-  selectTheme(theme) {
-    if (theme === 'dark') {
-      this.isDarkTheme = true;
-    }
-    else {
-      this.isDarkTheme = false;
-    }
+    this.themeService.theme.subscribe((val: string) => {
+      this.theme = val;
+    });
   }
 }

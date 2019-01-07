@@ -1,10 +1,11 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouteStateService } from '../core/services/routeState.service';
 import { SessionService } from '../core/services/session.service';
 import { User } from '../core/models/user.model';
 import { notification } from '../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
+import { ThemeService } from '../core/services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +27,8 @@ export class HeaderComponent implements OnInit {
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
     private userIdle: UserIdleService,
-    private renderer: Renderer2) {
+    private renderer: Renderer2,
+    private themeService: ThemeService) {
     this.displayNotifications = false;
     this.isMenuVisible = true;
   }
@@ -70,6 +72,10 @@ export class HeaderComponent implements OnInit {
     } else {
       this.renderer.setStyle(menuElement, 'flex', '0');
     }
+  }
+
+  selectTheme(theme: string) {
+    this.themeService.selectTheme(theme);
   }
 
 }
