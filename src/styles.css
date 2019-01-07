@@ -27,6 +27,20 @@
 	--menubar-active-text:black;
 }
 
+.nature-theme {
+	--main-bg-color: #F7FCE8;
+	--font-awesome-color: #1d3242;	
+
+	--header-footer-color: #1d3242;	
+	--header-footer-background: #9DB68C;
+	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(#9DB68C	), to(#9dc183));;
+
+	--menubar-background: #567E3A;
+	--menubar-text : #1d3242;	
+	--menubar-active-bg:#9dc183;	
+	--menubar-active-text:#1d3242;
+}
+
 html,
 body {
 	height: 100%;	
