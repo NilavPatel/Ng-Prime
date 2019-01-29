@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NotificationService } from '../core/services/notification.service';
 import { LoaderService } from '../core/services/loader.service';
+import { ApplicationStateService } from '../core/services/application-state.service';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,14 @@ import { LoaderService } from '../core/services/loader.service';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
 
-  constructor(private notificationService: NotificationService, private loaderService: LoaderService) { }
+  isMobileResolution: boolean = false;
+
+  constructor(private notificationService: NotificationService, private loaderService: LoaderService, private applicationStateService: ApplicationStateService) { }
 
   ngOnInit() {
     this.loaderService.display(true);
     this.notificationService.addSingle("success", "", "Login successfully.");
+    this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
   }
 
   ngAfterViewInit(): void {

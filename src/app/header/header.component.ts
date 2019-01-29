@@ -6,6 +6,7 @@ import { User } from '../core/models/user.model';
 import { notification } from '../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../core/services/theme.service';
+import { ApplicationStateService } from '../core/services/application-state.service';
 
 @Component({
   selector: 'app-header',
@@ -22,13 +23,18 @@ export class HeaderComponent implements OnInit {
 
   isMenuVisible: boolean;
 
+  isMobileResolution: boolean = false;
+
+  displaySidebarMenu: boolean = false;
+
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
     private userIdle: UserIdleService,
     private renderer: Renderer2,
-    private themeService: ThemeService) {
+    private themeService: ThemeService,
+    private applicationStateService: ApplicationStateService) {
     this.displayNotifications = false;
     this.isMenuVisible = true;
   }
@@ -51,6 +57,8 @@ export class HeaderComponent implements OnInit {
     this.userIdle.onTimeout().subscribe(() => {
       this.logout();
     });
+
+    this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
   }
 
   logout() {
@@ -65,6 +73,11 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenu() {
+    if (this.isMobileResolution) {
+      this.displaySidebarMenu = !this.displaySidebarMenu;
+      return;
+    }
+
     this.isMenuVisible = !this.isMenuVisible;
     const menuElement: HTMLElement = document.getElementById('navigation-menu');
     if (this.isMenuVisible) {

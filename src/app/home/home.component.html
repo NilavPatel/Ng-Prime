@@ -3,7 +3,7 @@
     <app-header></app-header>
   </header>
   <section class="main hbox space-between">
-    <nav id="navigation-menu">
+    <nav id="navigation-menu" *ngIf="!isMobileResolution">
       <app-menu></app-menu>
     </nav>
     <article>

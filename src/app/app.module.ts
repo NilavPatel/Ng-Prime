@@ -31,6 +31,7 @@ import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb
 import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { UserIdleModule } from 'angular-user-idle';
 import { ThemeService } from './core/services/theme.service';
+import { ApplicationStateService } from './core/services/application-state.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ThemeService } from './core/services/theme.service';
     NotificationService,
     RouteStateService,
     SessionService,
-    ThemeService
+    ThemeService,
+    ApplicationStateService
   ],
   bootstrap: [
     AppComponent

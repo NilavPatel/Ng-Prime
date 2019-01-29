@@ -1,10 +1,10 @@
 <div class="p-grid p-nogutter">
-    <div class="p-col-2">
+    <div class="p-col-4 p-md-3 p-lg-2">
         <div class="p-grid p-nogutter">
-            <div class="p-col-2 toggle-menu-button">
+            <div class="p-col-4 p-md-3 p-lg-2 toggle-menu-button">
                 <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
             </div>
-            <div class="p-col-10">
+            <div class="p-col-8 p-md-9 p-lg-10">
                 <div class="logo">
                     <img src="../assets/images/company-name.png" class="header-name-img">
                     <img src="../assets/images/company-logo.png" class="header-logo-img">
@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="p-col-10">
+    <div class="p-col-8 p-md-9 p-lg-10">
         <div class="header-right">
             <div class="header-right-item" (click)="userdetails.toggle($event)">
                 <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
@@ -57,3 +57,7 @@
         </div>
     </div>
 </p-overlayPanel>
+
+<p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar" [showCloseIcon]="false">
+    <app-menu></app-menu>
+</p-sidebar>
