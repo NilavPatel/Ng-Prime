@@ -10,28 +10,16 @@
 	--menubar-active-text:lightblue;
 }
 .light-theme {
-	--main-bg-color: WhiteSmoke;
+	--main-bg-color: white;
 	--font-awesome-color: black;
 	--header-footer-color: black;
-	--header-footer-background: lightgray;
-	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(lightgray), to(darkgray));
+	--header-footer-background: #DCDCDC;
+	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(white), to(#DCDCDC));
    ;
-	--menubar-background: gray;
+	--menubar-background: #DCDCDC;
 	--menubar-text : black;
-	--menubar-active-bg:lightgray;
+	--menubar-active-bg:#C0C0C0;
 	--menubar-active-text:black;
-}
-.nature-theme {
-	--main-bg-color: #F7FCE8;
-	--font-awesome-color: #1d3242;
-	--header-footer-color: #1d3242;
-	--header-footer-background: #9DB68C;
-	--header-footer-background-image:-webkit-gradient(linear, left top, right top, from(#9DB68C ), to(#9dc183));
-   ;
-	--menubar-background: #567E3A;
-	--menubar-text : #1d3242;
-	--menubar-active-bg:#9dc183;
-	--menubar-active-text:#1d3242;
 }
 html, body {
 	height: 100%;
@@ -141,7 +129,13 @@ header, footer {
 	height: 50px;
 	background-color: var(--header-footer-background);
 	background-image: var(--header-footer-background-image);
-	color: var(--header-footer-color) 
+	color: var(--header-footer-color);	
+}
+header{
+	box-shadow: 0 3px 4px 0 rgba(0,0,0,.2);
+}
+footer{
+	box-shadow: 0px -4px 3px rgba(0,0,0,.2);
 }
 header a{
 	color: var(--header-footer-color) !important;
