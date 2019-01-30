@@ -234,6 +234,9 @@ nav .ui-menuitem-icon{
 	text-align: center;
 	background-color: var(--menubar-background);
 }
+.toggle-menu-button .icon{
+	padding: 0;
+}
 .header-name-img{
 	display: block;
 	height:50px;
@@ -274,8 +277,7 @@ nav .ui-menuitem-icon{
 		flex-direction: column;
    }
 	nav {
-		margin: 10px;
-		flex: 4;
+		display:none;
    }
 	article {
 		padding-top: 0px;
@@ -298,8 +300,7 @@ nav .ui-menuitem-icon{
 		flex-direction: column;
    }
 	nav {
-		margin: 10px;
-		flex: 4;
+		display:none;
    }
 	article {
 		padding-top: 0px;
