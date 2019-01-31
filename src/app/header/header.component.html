@@ -46,12 +46,15 @@
 <p-overlayPanel #themeChooser>
     Select Theme:
     <div class="p-grid">
-        <div class="p-col-6">
+        <div class="p-col-4">
             <button pButton type="button" (click)="selectTheme('dark-theme')" style="background-color:#517fa4"></button>
         </div>
-        <div class="p-col-6">
+        <div class="p-col-4">
             <button pButton type="button" (click)="selectTheme('light-theme')" style="background-color:#C0C0C0"></button>
         </div>        
+        <div class="p-col-4">
+            <button pButton type="button" (click)="selectTheme('green-theme')" style="background-color:#668014"></button>
+        </div> 
     </div>
 </p-overlayPanel>
 
