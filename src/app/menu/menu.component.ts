@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { RouteStateService } from '../core/services/routeState.service';
+import { ApplicationStateService } from '../core/services/application-state.service';
 
 @Component({
     selector: 'app-menu',
@@ -11,7 +12,11 @@ export class MenuComponent implements OnInit {
 
     items: MenuItem[];
 
-    constructor(private routeStateService: RouteStateService) { }
+    @Output() closeClicked = new EventEmitter<boolean>();
+
+    isMobileResolution: boolean = false;
+
+    constructor(private routeStateService: RouteStateService, private applicationStateService: ApplicationStateService) { }
 
     ngOnInit() {
         this.items = [
@@ -31,10 +36,18 @@ export class MenuComponent implements OnInit {
                 label: 'Contact Us', icon: 'fa fa-envelope', routerLink: ['/home/contactus'], command: (event) => { this.onMenuClick('Contact us', '/home/contactus'); }
             }
         ];
+
+        this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
     }
 
     onMenuClick(title: string, path: string) {
         this.routeStateService.loadNewRouteState(title, path, null, true);
+        // hide menu bar after menu click for mobile layout
+        if (this.isMobileResolution) {
+            setTimeout(()=>{ 
+                this.closeClicked.emit(false);
+           }, 300);            
+        }
     }
 
 }

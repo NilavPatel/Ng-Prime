@@ -56,5 +56,5 @@
 </p-overlayPanel>
 
 <p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar" [showCloseIcon]="false">
-    <app-menu></app-menu>
+    <app-menu (closeClicked)="displaySidebarMenu=$event"></app-menu>
 </p-sidebar>
