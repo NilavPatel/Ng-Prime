@@ -2,7 +2,8 @@
 	--main-background: #eaeff2;
 	--font-awesome-color: #ffffff;
 	--header-footer-color: #ffffff;	
-	--header-footer-background:-webkit-gradient(linear, left top, right top, from(#517fa4), to(#243949));
+	--header-footer-bg-color1:#517fa4;
+	--header-footer-bg-color2:#243949;	
 	--menubar-background: #1d3242;
 	--menubar-color : #ffffff;
 	--menubar-active-bg:#1e5375;
@@ -12,7 +13,8 @@
 	--main-background: #ffffff;
 	--font-awesome-color: #000000;
 	--header-footer-color: #000000;	
-	--header-footer-background:-webkit-gradient(linear, left top, right top, from(#DCDCDC), to(#ffffff));
+	--header-footer-bg-color1:#DCDCDC;
+	--header-footer-bg-color2:#ffffff;	
 	--menubar-background: #DCDCDC;
 	--menubar-color : #000000;
 	--menubar-active-bg:#C0C0C0;
@@ -21,8 +23,9 @@
 .green-theme {
 	--main-background: #ffffff;
 	--font-awesome-color: #414F12;
-	--header-footer-color: #414F12;	
-	--header-footer-background:-webkit-gradient(linear, left top, right top, from(#C6D49F), to(#F6FBE9));
+	--header-footer-color: #414F12;
+	--header-footer-bg-color1:#C6D49F;
+	--header-footer-bg-color2:#F6FBE9;	
 	--menubar-background: #C6D49F;
 	--menubar-color : #414F12;
 	--menubar-active-bg:#97B150;
@@ -84,7 +87,7 @@ html, body {
 }
 .login-panel, .user-regisration {
 	height: 100%;	
-	background-image: var(--header-footer-background);
+	background-image: radial-gradient(var(--header-footer-bg-color1) 40%, var(--header-footer-bg-color2));
 }
 .badge {
 	display: inline-block;
@@ -133,7 +136,7 @@ html, body, .viewport {
 }
 header, footer {
 	height: 50px;	
-	background-image: var(--header-footer-background);
+	background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color1)), to(var(--header-footer-bg-color2)));
 	color: var(--header-footer-color);	
 }
 header{
