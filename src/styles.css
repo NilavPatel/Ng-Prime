@@ -61,12 +61,6 @@ html, body {
 .prime-button {
 	width: 150px !important;
 }
-.sidebar .ui-megamenu {
-	width: 100% !important;
-}
-.sidebar .ui-megamenu {
-	border: none;
-}
 .overview-box-1 .ui-card-body {
 	background-color: #37A2F4;
 }
@@ -185,6 +179,7 @@ nav .ui-megamenu {
 	border-radius: 0px;
 	background-color: var(--menubar-background);
 	border: none;
+	padding:5px;
 }
 .mobile-menubar{
 	background-color: var(--menubar-background) !important;
@@ -222,8 +217,7 @@ nav .ui-menuitem-icon{
 }
 .ui-state-active {
 	background-color: var(--menubar-active-bg);
-	border-right:5px solid var(--menubar-active-color);
-	;
+	border-right:5px solid var(--menubar-active-color);	
 }
 .ui-state-active span{
 	color:var(--menubar-active-color) !important 
