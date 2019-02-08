@@ -259,14 +259,14 @@ nav .ui-menuitem-icon{
 .pad10{
 	padding:10px;
 }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1200px or more) */
+@media only screen and (min-width: 1200px) {
+}
+/* Large devices (laptops/desktops, 1200px or less) */
 @media only screen and (max-width: 1200px) {
 }
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-}
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+/* Medium devices (landscape tablets, 992px or less) */
+@media only screen and (max-width: 992px){
    .hbox {
 		flex-direction: column;
    }
@@ -288,8 +288,8 @@ nav .ui-menuitem-icon{
 		display: none;
    }
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+/* Small devices (portrait tablets and large phones, 768px or less) */
+@media only screen and (max-width: 768px){
    .hbox {
 		flex-direction: column;
    }
@@ -311,8 +311,8 @@ nav .ui-menuitem-icon{
 		display: none;
    }
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 600px or less) */
+@media only screen and (max-width: 600px)  {
    .hbox {
 		flex-direction: column;
    }

@@ -59,6 +59,11 @@ export class HeaderComponent implements OnInit {
     });
 
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
+
+    var selectedTheme = this.sessionService.getSessionValue("selected-theme");
+    if(selectedTheme){
+      this.selectTheme(selectedTheme);
+    }
   }
 
   logout() {
@@ -88,6 +93,7 @@ export class HeaderComponent implements OnInit {
   }
 
   selectTheme(theme: string) {
+    this.sessionService.setSessionValue("selected-theme", theme);
     this.themeService.selectTheme(theme);
   }
 
