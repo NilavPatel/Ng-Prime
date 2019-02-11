@@ -191,6 +191,9 @@ nav .ui-megamenu {
 	background-color: var(--menubar-background);
 	border: none;
 }
+nav div{
+	height: 100%;
+}
 nav .ui-menuitem-text {
 	color: var(--menubar-color) !important;
 }
@@ -331,39 +334,4 @@ nav .ui-menuitem-icon{
 	.header-right-item .user-name{
 		display: none;
    }
-}
-.np-menu{
-	height:100%;
-	width:100%;
-	background-color: var(--menubar-background);
-	padding:10px;
-	color:var(--menubar-color);
-}
-.np-menu div{
-	line-height: 30px;
-}
-.np-menu .fa{
-	padding:10px;	
-}
-.np-submenu{
-	display: none;	
-}
-.np-menuitem{
-	cursor: pointer !important;
-}
-.np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{
-	background-color: var(--menubar-active-bg);	
-	color:var(--menubar-active-color);
-	border-right: 5px solid var(--menubar-active-color);
-}
-.np-submenu{
-	padding-left:40px;
-}
-.np-menuwithsub:hover{
-	background-color: var(--menubar-active-bg);	
-	color:var(--menubar-active-color);
-	cursor: pointer !important;
-}
-.right-icon{
-	float: right;
 }

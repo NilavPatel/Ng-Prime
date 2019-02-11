@@ -70,7 +70,6 @@ export class HeaderComponent implements OnInit {
     this.userIdle.stopWatching();
     this.routeStateService.removeAllRouteStates();
     this.sessionService.removeSessionValue('currentUser');
-    this.sessionService.removeSessionValue('active-menu');
     this.router.navigate(['/login']);
   }
 
