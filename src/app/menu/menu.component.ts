@@ -1,7 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { RouteStateService } from '../core/services/routeState.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
+import { SessionService } from '../core/services/session.service';
+import { NotificationService } from '../core/services/notification.service';
+import { CustomMenuItem } from '../core/models/menuItem.model';
 
 @Component({
     selector: 'app-menu',
@@ -10,44 +12,73 @@ import { ApplicationStateService } from '../core/services/application-state.serv
 })
 export class MenuComponent implements OnInit {
 
-    items: MenuItem[];
+    items: CustomMenuItem[];
+
+    selectedItem: string;
 
     @Output() closeClicked = new EventEmitter<boolean>();
 
     isMobileResolution: boolean = false;
 
-    constructor(private routeStateService: RouteStateService, private applicationStateService: ApplicationStateService) { }
+    constructor(private routeStateService: RouteStateService,
+        private applicationStateService: ApplicationStateService,
+        private sessionService: SessionService,
+        private notificationService: NotificationService) { }
 
     ngOnInit() {
         this.items = [
             {
-                label: 'Home', icon: 'fa fa-home', routerLink: ['/home/dashboard'], command: (event) => { this.onMenuClick('Home', '/home/dashboard'); }
+                Label: 'Home', Icon: 'fa fa-home', RouterLink: '/home/dashboard', Childs: null, IsChildVisible: false
             },
             {
-                label: 'Employees', icon: 'fa fa-users', routerLink: ['/home/employees'], command: (event) => { this.onMenuClick('Employees', '/home/employees'); }
+                Label: 'Employees', Icon: 'fa fa-users', RouterLink: '/home/employees', Childs: null, IsChildVisible: false
             },
             {
-                label: 'Departments', icon: 'fa fa-sitemap', routerLink: ['/home/departments'], command: (event) => { this.onMenuClick('Departments', '/home/departments'); }
+                Label: 'Departments', Icon: 'fa fa-sitemap', RouterLink: '/home/departments', Childs: null, IsChildVisible: false
             },
             {
-                label: 'About Us', icon: 'fa fa-info-circle', routerLink: ['/home/aboutus'], command: (event) => { this.onMenuClick('About us', '/home/aboutus'); }
+                Label: 'About Us', Icon: 'fa fa-info-circle', RouterLink: '/home/aboutus', Childs: null, IsChildVisible: false
             },
             {
-                label: 'Contact Us', icon: 'fa fa-envelope', routerLink: ['/home/contactus'], command: (event) => { this.onMenuClick('Contact us', '/home/contactus'); }
+                Label: 'Contact Us', Icon: 'fa fa-envelope', RouterLink: '/home/contactus', Childs: null, IsChildVisible: false
+            },
+            {
+                Label: 'Menu Level 1', Icon: 'fa fa-cart-plus', RouterLink: null, Childs: [
+                    { Label: 'Menu Level 1.1', Icon: 'fa fa-address-book', RouterLink: null, Childs: null, IsChildVisible: false },
+                    { Label: 'Menu Level 1.2', Icon: 'fa fa-id-card', RouterLink: null, Childs: null, IsChildVisible: false }
+                ], IsChildVisible: false
             }
         ];
 
         this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
+        var activeMenu = this.sessionService.getSessionValue("active-menu");
+        if (activeMenu) {
+            this.selectedItem = activeMenu;
+        } else {
+            this.selectedItem = "Home";
+        }
     }
 
+    // on menu click event
     onMenuClick(title: string, path: string) {
+        if (path == undefined || path == null || path == "") {
+            this.notificationService.addSingle("success", "", title + " clicked !!!");
+            return;
+        }
+        this.selectedItem = title;
+        this.sessionService.setSessionValue("active-menu", title);
         this.routeStateService.loadNewRouteState(title, path, null, true);
         // hide menu bar after menu click for mobile layout
         if (this.isMobileResolution) {
-            setTimeout(()=>{ 
+            setTimeout(() => {
                 this.closeClicked.emit(false);
-           }, 300);            
+            }, 300);
         }
+    }
+
+    // toggle sub menu on click
+    toggleSubMenu(menu) {
+        menu.IsChildVisible = !menu.IsChildVisible;
     }
 
 }
