@@ -1,16 +1,20 @@
 <div class="np-menu">
     <div *ngFor="let menu of items">
-        <div class="np-menuitem" [ngClass]="{'np-active-menu': selectedItem == menu.label}" *ngIf="!menu.items"
-            (click)="onMenuClick(menu.label, menu.routerLink, $event)">
-            <div><i [className]="menu.icon"></i>{{menu.label}}</div>
+        <div class="np-menuitem" *ngIf="menu.Childs == null" [ngClass]="{'np-active-menu': selectedItem == menu.Label}"
+            (click)="onMenuClick(menu.Label, menu.RouterLink, $event)">
+            <div><i [className]="menu.Icon"></i>{{menu.Label}}</div>
         </div>
-        <div *ngIf="menu.items">
-            <div class="np-menuwithsub" (click)="toggleSubMenu($event)"><i [className]="menu.icon"></i>{{menu.label}}<i class="right-icon fa fa-plus"></i></div>
-            <div class="np-submenu">
-                <div *ngFor="let submenu of menu.items">
-                    <div class="np-submenuitem" [ngClass]="{'np-active-menu': selectedItem == submenu.label}"
-                        *ngIf="!submenu.items" (click)="onMenuClick(submenu.label, submenu.routerLink, $event)">
-                        <span><i [className]="submenu.icon"></i>{{menu.label}}</span>
+        <div *ngIf="menu.Childs != null">
+            <div class="np-menuitem" (click)="toggleSubMenu(menu)">
+                <i [className]="menu.Icon"></i>{{menu.Label}}
+                <i class="right-icon fa"
+                    [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
+            </div>
+            <div class="np-submenu" *ngIf="menu.IsChildVisible">
+                <div *ngFor="let submenu of menu.Childs">
+                    <div class="np-submenuitem" [ngClass]="{'np-active-menu': selectedItem == submenu.Label}"
+                        *ngIf="!submenu.Childs" (click)="onMenuClick(submenu.Label, submenu.RouterLink)">
+                        <div><i [className]="submenu.Icon"></i>{{menu.Label}}</div>
                     </div>
                 </div>
             </div>

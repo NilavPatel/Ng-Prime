@@ -345,10 +345,7 @@ nav .ui-menuitem-icon{
 .np-menu .fa{
 	padding:10px;	
 }
-.np-submenu{
-	display: none;	
-}
-.np-menuitem{
+.np-menuitem, .np-submenuitem{
 	cursor: pointer !important;
 }
 .np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{
