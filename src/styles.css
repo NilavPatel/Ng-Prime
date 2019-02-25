@@ -354,7 +354,17 @@ nav .ui-menuitem-icon{
 	border-right: 5px solid var(--menubar-active-color);
 }
 .np-submenu{
-	padding-left:40px;
+	padding-left:40px;	
+}
+.np-submenu-block{
+	visibility: visible;
+	opacity: 1;	
+	transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+}
+.np-submenu-none{
+	visibility: hidden;
+	opacity: 0;  
+	transition: visibility 0s linear 0.33s, opacity 0.33s linear;
 }
 .np-menuwithsub:hover{
 	background-color: var(--menubar-active-bg);	

@@ -1,8 +1,10 @@
 <div class="np-menu">
     <div *ngFor="let menu of items">
-        <div class="np-menuitem" *ngIf="menu.Childs == null" [ngClass]="{'np-active-menu': selectedItem == menu.Label}"
-            (click)="onMenuClick(menu.Label, menu.RouterLink, $event)">
-            <div><i [className]="menu.Icon"></i>{{menu.Label}}</div>
+        <div *ngIf="menu.Childs == null">
+            <div class="np-menuitem" [ngClass]="{'np-active-menu': selectedItem == menu.Label}"
+                (click)="onMenuClick(menu.Label, menu.RouterLink, $event)">
+                <div><i [className]="menu.Icon"></i>{{menu.Label}}</div>
+            </div>
         </div>
         <div *ngIf="menu.Childs != null">
             <div class="np-menuitem" (click)="toggleSubMenu(menu)">
@@ -10,7 +12,7 @@
                 <i class="right-icon fa"
                     [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
             </div>
-            <div class="np-submenu" *ngIf="menu.IsChildVisible">
+            <div class="np-submenu" [ngClass]="{'np-submenu-block': menu.IsChildVisible, 'np-submenu-none': !menu.IsChildVisible}">
                 <div *ngFor="let submenu of menu.Childs">
                     <div class="np-submenuitem" [ngClass]="{'np-active-menu': selectedItem == submenu.Label}"
                         *ngIf="!submenu.Childs" (click)="onMenuClick(submenu.Label, submenu.RouterLink)">
