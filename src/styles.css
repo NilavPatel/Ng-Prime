@@ -166,58 +166,16 @@ article .ui-card {
 	min-height: 100%;
 	background: #f7f9fa;
 }
-aside, nav {
+nav {
 	-webkit-flex: 2;
 	-moz-flex: 2;
 	-ms-flex: 2;
 	flex: 2;
 	overflow: auto;
-}
-nav .ui-megamenu {
-	width: 100%;
-	min-height: 100%;
-	border-radius: 0px;
 	background-color: var(--menubar-background);
-	border: none;
-	padding:5px;
 }
 .mobile-menubar{
 	background-color: var(--menubar-background) !important;
-}
-.mobile-menubar .ui-megamenu{
-	width: 100%;
-	min-height: 100%;
-	border-radius: 0px;
-	background-color: var(--menubar-background);
-	border: none;
-}
-nav .ui-menuitem-text {
-	color: var(--menubar-color) !important;
-}
-body .ui-megamenu .ui-menuitem.ui-menuitem-active>.ui-menuitem-link {
-	background-color: var(--menubar-active-bg) !important;
-}
-nav .ui-menuitem-link:hover {
-	background-color: var(--menubar-active-bg) !important;
-}
-nav .ui-menuitem-icon{
-	font-size: 17px;
-}
-.mobile-menubar .ui-menuitem-text {
-	color: var(--menubar-color) !important;
-}
-.mobile-menubar .ui-menuitem-link:hover {
-	background-color: var(--menubar-active-bg) !important;
-}
-.mobile-menubar .ui-menuitem-icon{
-	font-size: 17px;
-}
-.ui-state-active {
-	background-color: var(--menubar-active-bg);
-	border-right:5px solid var(--menubar-active-color);	
-}
-.ui-state-active span{
-	color:var(--menubar-active-color) !important 
 }
 .logo-img {
 	height: 100%;
@@ -245,7 +203,7 @@ nav .ui-menuitem-icon{
 	height: 50px;	
 }
 .header-right-item .user-name{
-	font-size: 50%;
+	font-size: 15px;
 	padding:5px;
 }
 .notification-message{
@@ -334,8 +292,7 @@ nav .ui-menuitem-icon{
 }
 .np-menu{
 	height:100%;
-	width:100%;
-	background-color: var(--menubar-background);
+	width:100%;	
 	padding:10px;
 	color:var(--menubar-color);
 }
@@ -343,28 +300,26 @@ nav .ui-menuitem-icon{
 	line-height: 30px;
 }
 .np-menu .fa{
-	padding:10px;	
+	padding:8px;	
 }
 .np-menuitem, .np-submenuitem{
 	cursor: pointer !important;
+	padding-left: 5px;
+	margin-bottom:1px;
+	border-radius: 30px;
 }
 .np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{
 	background-color: var(--menubar-active-bg);	
 	color:var(--menubar-active-color);
-	border-right: 5px solid var(--menubar-active-color);
 }
 .np-submenu{
 	padding-left:40px;	
 }
 .np-submenu-block{
-	visibility: visible;
-	opacity: 1;	
-	transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+	display: block;
 }
 .np-submenu-none{
-	visibility: hidden;
-	opacity: 0;  
-	transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+	display: none;
 }
 .np-menuwithsub:hover{
 	background-color: var(--menubar-active-bg);	

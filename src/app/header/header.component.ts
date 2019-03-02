@@ -37,6 +37,11 @@ export class HeaderComponent implements OnInit {
     private applicationStateService: ApplicationStateService) {
     this.displayNotifications = false;
     this.isMenuVisible = true;
+
+    var selectedTheme = this.sessionService.getSessionValue("selected-theme");
+    if(selectedTheme){
+      this.selectTheme(selectedTheme);
+    }
   }
 
   ngOnInit() {
@@ -59,11 +64,6 @@ export class HeaderComponent implements OnInit {
     });
 
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
-
-    var selectedTheme = this.sessionService.getSessionValue("selected-theme");
-    if(selectedTheme){
-      this.selectTheme(selectedTheme);
-    }
   }
 
   logout() {
