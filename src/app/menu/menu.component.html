@@ -16,7 +16,7 @@
                 <div *ngFor="let submenu of menu.Childs">
                     <div class="np-submenuitem" [ngClass]="{'np-active-menu': selectedItem == submenu.Label}"
                         *ngIf="!submenu.Childs" (click)="onMenuClick(submenu.Label, submenu.RouterLink)">
-                        <div><i [className]="submenu.Icon"></i>{{menu.Label}}</div>
+                        <div><i [className]="submenu.Icon"></i>{{submenu.Label}}</div>
                     </div>
                 </div>
             </div>

@@ -219,6 +219,9 @@ nav {
 }
 /* Large devices (laptops/desktops, 1200px or less) */
 @media only screen and (max-width: 1200px) {
+	nav{
+		flex:3;
+	}
 }
 /* Medium devices (landscape tablets, 992px or less) */
 @media only screen and (max-width: 992px){
@@ -245,50 +248,9 @@ nav {
 }
 /* Small devices (portrait tablets and large phones, 768px or less) */
 @media only screen and (max-width: 768px){
-   .hbox {
-		flex-direction: column;
-   }
-	nav {
-		display:none;
-   }
-	article {
-		padding-top: 0px;
-   }
-	.header-name-img{
-		display: none;
-   }
-	.header-logo-img{
-		display: block;
-		height:50px;
-		width:70px;
-   }
-	.header-right-item .user-name{
-		display: none;
-   }
 }
 /* Extra small devices (phones, 600px or less) */
 @media only screen and (max-width: 600px)  {
-   .hbox {
-		flex-direction: column;
-   }
-	nav {
-		margin: 10px;
-		flex: 4;
-   }
-	article {
-		padding-top: 0px;
-   }
-	.header-name-img{
-		display: none;
-   }
-	.header-logo-img{
-		display: block;
-		height:50px;
-		width:70px;
-   }
-	.header-right-item .user-name{
-		display: none;
-   }
 }
 .np-menu{
 	height:100%;
@@ -313,7 +275,8 @@ nav {
 	color:var(--menubar-active-color);
 }
 .np-submenu{
-	padding-left:40px;	
+	margin-left:20px;
+	border-left: 1px solid var(--menubar-active-bg);
 }
 .np-submenu-block{
 	display: block;

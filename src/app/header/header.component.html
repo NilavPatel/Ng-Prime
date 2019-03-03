@@ -30,12 +30,14 @@
     </div>
 </div>
 
+<!-- user detials overlay panel -->
 <p-overlayPanel #userdetails>
     <div><b>User Name: </b><i [innerHtml]="user.userName"></i></div>
     <div><b>Email Id: </b><i [innerHtml]="user.emailId"></i></div>
     <div><b>Birthdate: </b><i [innerHtml]="user.birthDate | date:'dd/MM/yyyy'"></i></div>
 </p-overlayPanel>
 
+<!-- notifications sidebar -->
 <p-sidebar [(visible)]="displayNotifications" position="right">
     <div *ngFor="let notification of notifications; let i=index" class="notification-message">
         <div><b>Message: </b><i [innerHtml]="notification.message"></i></div>
@@ -43,6 +45,7 @@
     </div>
 </p-sidebar>
 
+<!-- theme chooser overlay panel -->
 <p-overlayPanel #themeChooser>
     Select Theme:
     <div class="p-grid">
@@ -58,6 +61,7 @@
     </div>
 </p-overlayPanel>
 
+<!-- menubar for mobile layout -->
 <p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar" [showCloseIcon]="false">
     <app-menu (closeClicked)="displaySidebarMenu=$event"></app-menu>
 </p-sidebar>
