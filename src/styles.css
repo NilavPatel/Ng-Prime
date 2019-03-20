@@ -1,35 +1,35 @@
 .dark-theme {
 	--main-background: #eaeff2;
-	--font-awesome-color: #ffffff;
 	--header-footer-color: #ffffff;	
 	--header-footer-bg-color1:#517fa4;
 	--header-footer-bg-color2:#243949;	
 	--menubar-background: #1d3242;
 	--menubar-color : #ffffff;
-	--menubar-active-bg:#1e5375;
-	--menubar-active-color:#ADD8E6;
+	--submenu-background:#1e5375;
+	--submenu-color : #ffffff;
+	--active-menu-color : #8ea9ba;
 }
 .light-theme {
 	--main-background: #ffffff;
-	--font-awesome-color: #000000;
-	--header-footer-color: #000000;	
+	--header-footer-color: #2c2c2c;	
 	--header-footer-bg-color1:#DCDCDC;
 	--header-footer-bg-color2:#ffffff;	
-	--menubar-background: #DCDCDC;
-	--menubar-color : #000000;
-	--menubar-active-bg:#C0C0C0;
-	--menubar-active-color:#000000;
+	--menubar-background: #9a9a9a;
+	--menubar-color : #2c2c2c;
+	--submenu-background: #c6c6c6;
+	--submenu-color : #2c2c2c;
+	--active-menu-color : #ffffff;
 }
 .green-theme {
 	--main-background: #ffffff;
-	--font-awesome-color: #414F12;
 	--header-footer-color: #414F12;
 	--header-footer-bg-color1:#C6D49F;
 	--header-footer-bg-color2:#F6FBE9;	
-	--menubar-background: #C6D49F;
+	--menubar-background: #9ea97f;
 	--menubar-color : #414F12;
-	--menubar-active-bg:#97B150;
-	--menubar-active-color:#414F12;
+	--submenu-background: #C6D49F;
+	--submenu-color : #414F12;
+	--active-menu-color : #f3f6eb;
 }
 html, body {
 	height: 100%;
@@ -43,20 +43,11 @@ html, body {
 	float: left;
 	padding: 2px 10px 2px 10px;
 }
-.header-right {
-	float: right;
-}
 .icon {
 	line-height: 50px;
 	font-size: 25px;
 	cursor: pointer;
 	padding: 10px;
-}
-.icon:hover{
-	color:var(--font-awesome-color);
-}
-.fa{
-	color: var(--font-awesome-color) !important;
 }
 .prime-button {
 	width: 150px !important;
@@ -192,17 +183,12 @@ nav {
 	display: block;
 	height:50px;
 	width:100%;
+	padding:5px;
 }
 .header-logo-img{
 	display: none;
 }
-.header-right{
-	display: flex;
-}
-.header-right .header-right-item{
-	height: 50px;	
-}
-.header-right-item .user-name{
+.user-name{
 	font-size: 15px;
 	padding:5px;
 }
@@ -214,6 +200,55 @@ nav {
 .pad10{
 	padding:10px;
 }
+.header{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	-moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+.header-left{
+	flex:2;
+}
+.header-right{
+	flex:10;
+}
+.header-right-item{
+	float:right;
+}
+.np-menu{
+	height:100%;
+	width:100%;
+}
+.np-menuitem{
+	background-color: var(--menubar-background);
+	color:var(--menubar-color);	
+	padding:10px;
+}
+.np-submenuitem{
+	background-color: var(--submenu-background);
+	color:var(--submenu-color);
+	padding:10px 10px 10px 30px;
+}
+.np-menuitem, .np-submenuitem{
+	cursor: pointer !important;
+}
+.np-menuitem .fa, .np-submenuitem .fa{	
+	padding-right:10px;
+}
+.np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{	
+	color:var(--active-menu-color);
+}
+.np-submenu-block{
+	display: block;
+}
+.np-submenu-none{
+	display: none;
+}
+.right-icon{
+	float: right;
+}
 /* Extra large devices (large laptops and desktops, 1200px or more) */
 @media only screen and (min-width: 1200px) {
 }
@@ -222,9 +257,24 @@ nav {
 	nav{
 		flex:3;
 	}
+	article{
+		flex:9;
+	}
+	.header-left{
+		flex:3;
+	}
+	.header-right{
+		flex:9;
+	}
 }
 /* Medium devices (landscape tablets, 992px or less) */
 @media only screen and (max-width: 992px){
+	.header-left{
+		flex:4;
+	}
+	.header-right{
+		flex:8;
+	}
    .hbox {
 		flex-direction: column;
    }
@@ -242,7 +292,7 @@ nav {
 		height:50px;
 		width:70px;
    }
-	.header-right-item .user-name{
+	.user-name{
 		display: none;
    }
 }
@@ -252,43 +302,4 @@ nav {
 /* Extra small devices (phones, 600px or less) */
 @media only screen and (max-width: 600px)  {
 }
-.np-menu{
-	height:100%;
-	width:100%;	
-	padding:10px;
-	color:var(--menubar-color);
-}
-.np-menu div{
-	line-height: 30px;
-}
-.np-menu .fa{
-	padding:8px;	
-}
-.np-menuitem, .np-submenuitem{
-	cursor: pointer !important;
-	padding-left: 5px;
-	margin-bottom:1px;
-	border-radius: 30px;
-}
-.np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{
-	background-color: var(--menubar-active-bg);	
-	color:var(--menubar-active-color);
-}
-.np-submenu{
-	margin-left:20px;
-	border-left: 1px solid var(--menubar-active-bg);
-}
-.np-submenu-block{
-	display: block;
-}
-.np-submenu-none{
-	display: none;
-}
-.np-menuwithsub:hover{
-	background-color: var(--menubar-active-bg);	
-	color:var(--menubar-active-color);
-	cursor: pointer !important;
-}
-.right-icon{
-	float: right;
-}
+

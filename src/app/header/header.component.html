@@ -1,5 +1,5 @@
-<div class="p-grid p-nogutter">
-    <div class="p-col-4 p-md-3 p-lg-2">
+<div class="header">
+    <div class="header-left">
         <div class="p-grid p-nogutter">
             <div class="p-col-4 p-md-3 p-lg-2 toggle-menu-button">
                 <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
@@ -12,20 +12,18 @@
             </div>
         </div>
     </div>
-    <div class="p-col-8 p-md-9 p-lg-10">
-        <div class="header-right">
-            <div class="header-right-item" (click)="userdetails.toggle($event)">
-                <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
-            </div>
-            <div class="header-right-item" (click)="showNotificationSidebar()">
-                <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
-            </div>
-            <div class="header-right-item" (click)="themeChooser.toggle($event)">
-                <a class="icon"><i class="fa fa-cog"></i></a>
-            </div>
-            <div class="header-right-item">
-                <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
-            </div>
+    <div class="header-right">
+        <div class="header-right-item">
+            <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
+        </div>        
+        <div class="header-right-item" (click)="themeChooser.toggle($event)">
+            <a class="icon"><i class="fa fa-cog"></i></a>
+        </div>
+        <div class="header-right-item" (click)="showNotificationSidebar()">
+            <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
+        </div>
+        <div class="header-right-item" (click)="userdetails.toggle($event)">
+            <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
         </div>
     </div>
 </div>
@@ -53,15 +51,18 @@
             <button pButton type="button" (click)="selectTheme('dark-theme')" style="background-color:#517fa4"></button>
         </div>
         <div class="p-col-4">
-            <button pButton type="button" (click)="selectTheme('light-theme')" style="background-color:#C0C0C0"></button>
-        </div>        
+            <button pButton type="button" (click)="selectTheme('light-theme')"
+                style="background-color:#C0C0C0"></button>
+        </div>
         <div class="p-col-4">
-            <button pButton type="button" (click)="selectTheme('green-theme')" style="background-color:#668014"></button>
-        </div> 
+            <button pButton type="button" (click)="selectTheme('green-theme')"
+                style="background-color:#668014"></button>
+        </div>
     </div>
 </p-overlayPanel>
 
 <!-- menubar for mobile layout -->
-<p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar" [showCloseIcon]="false">
+<p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar"
+    [showCloseIcon]="false">
     <app-menu (closeClicked)="displaySidebarMenu=$event"></app-menu>
 </p-sidebar>
