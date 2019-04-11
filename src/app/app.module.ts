@@ -24,7 +24,7 @@ import { DepartmentListComponent } from './department/department-list/department
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { LoaderService } from './core/services/loader.service';
-import { NotificationService } from './core/services/notification.service';
+import { AlertService } from './core/services/alert.service';
 import { RouteStateService } from './core/services/routeState.service';
 import { SessionService } from './core/services/session.service';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
@@ -65,7 +65,7 @@ import { ApplicationStateService } from './core/services/application-state.servi
     MessageService,
     AuthGuard,
     LoaderService,
-    NotificationService,
+    AlertService,
     RouteStateService,
     SessionService,
     ThemeService,

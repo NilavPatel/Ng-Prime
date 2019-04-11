@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { RouteStateService } from '../core/services/routeState.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
 import { SessionService } from '../core/services/session.service';
-import { NotificationService } from '../core/services/notification.service';
+import { AlertService } from '../core/services/alert.service';
 import { CustomMenuItem } from '../core/models/menuItem.model';
 
 @Component({
@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
     constructor(private routeStateService: RouteStateService,
         private applicationStateService: ApplicationStateService,
         private sessionService: SessionService,
-        private notificationService: NotificationService) { }
+        private alertService: AlertService) { }
 
     ngOnInit() {
         this.items = [
@@ -62,7 +62,7 @@ export class MenuComponent implements OnInit {
     // on menu click event
     onMenuClick(title: string, path: string) {
         if (path == undefined || path == null || path == "") {
-            this.notificationService.addSingle("success", "", title + " clicked !!!");
+            this.alertService.addSingle("success", "", title + " clicked !!!");
             return;
         }
         this.selectedItem = title;

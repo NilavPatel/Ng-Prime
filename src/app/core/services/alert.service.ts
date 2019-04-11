@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Injectable()
-export class NotificationService {
+export class AlertService {
     constructor(private messageService: MessageService) { }
 
     addSingle(severity: string, summary: string, detail: string) {

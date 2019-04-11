@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../core/services/user.service';
 import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { NotificationService } from '../core/services/notification.service';
+import { AlertService } from '../core/services/alert.service';
 import { birthDateValidator } from '../core/validators/date.validators';
 
 @Component({
@@ -20,7 +20,7 @@ export class RegisterUserComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder, private notificationService: NotificationService) { }
+  constructor(private userService: UserService, private router: Router, private fb: FormBuilder, private alertService: AlertService) { }
 
   ngOnInit() {
     this.userform = this.fb.group({
@@ -38,7 +38,7 @@ export class RegisterUserComponent implements OnInit {
       this.userform.controls["birthDate"].value);
     if (isRegistered) {
       this.router.navigate(['/login']);
-      this.notificationService.addSingle("success", "", "User registered.")
+      this.alertService.addSingle("success", "", "User registered.")
     }
   }
 

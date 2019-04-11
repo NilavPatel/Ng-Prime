@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../core/services/user.service';
 import { User } from '../core/models/user.model';
-import { NotificationService } from '../core/services/notification.service';
+import { AlertService } from '../core/services/alert.service';
 import { RouteStateService } from '../core/services/routeState.service';
 import { SessionService } from '../core/services/session.service';
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private notificationService: NotificationService,
+    private alertService: AlertService,
     private routeStateService: RouteStateService,
     private sessionService: SessionService
   ) { }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this.routeStateService.loadNewRouteState("Home",'/home', null, true);
       return;
     }
-    this.notificationService.addSingle('error', '', 'Invalid user.');
+    this.alertService.addSingle('error', '', 'Invalid user.');
     return;
   }
 

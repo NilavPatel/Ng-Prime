@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactUsMailDialogComponent } from '../contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { DialogService } from 'primeng/api';
-import { NotificationService } from '../core/services/notification.service';
+import { AlertService } from '../core/services/alert.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ContactusComponent implements OnInit {
   isMobileResolution: boolean = false;
 
   constructor(private dialogService: DialogService,
-    private notificationService: NotificationService,
+    private alertService: AlertService,
     private applicationStateService: ApplicationStateService) { }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class ContactusComponent implements OnInit {
 
     ref.onClose.subscribe((success: boolean) => {
       if (success) {
-        this.notificationService.addSingle("success", "Mail send successfully", "");
+        this.alertService.addSingle("success", "Mail send successfully", "");
       }
     });
   }
