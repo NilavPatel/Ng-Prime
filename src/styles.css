@@ -152,6 +152,7 @@ article {
 	-ms-flex: 10;
 	flex: 10;
 	overflow: auto;
+	height:100%;
 }
 article .ui-card {
 	min-height: 100%;
@@ -164,6 +165,7 @@ nav {
 	flex: 2;
 	overflow: auto;
 	background-color: var(--menubar-background);
+	height:100%;
 }
 .mobile-menubar{
 	background-color: var(--menubar-background) !important;
