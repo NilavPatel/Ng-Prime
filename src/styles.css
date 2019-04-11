@@ -168,6 +168,9 @@ nav {
 .mobile-menubar{
 	background-color: var(--menubar-background) !important;
 }
+.logo img{
+	background-color: var(--main-background);
+}
 .logo-img {
 	height: 100%;
 	width: 100%;
