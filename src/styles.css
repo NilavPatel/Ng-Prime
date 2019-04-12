@@ -1,79 +1,174 @@
 .dark-theme {
 	--main-background: #eaeff2;
-	--header-footer-color: #ffffff;	
-	--header-footer-bg-color1:#517fa4;
-	--header-footer-bg-color2:#243949;	
+	--header-footer-color: #ffffff;
+	--header-footer-bg-color1: #517fa4;
+	--header-footer-bg-color2: #243949;
 	--menubar-background: #1d3242;
-	--menubar-color : #ffffff;
-	--submenu-background:#1e5375;
-	--submenu-color : #ffffff;
-	--active-menu-color : #8ea9ba;
+	--menubar-color: #ffffff;
+	--submenu-background: #1e5375;
+	--submenu-color: #ffffff;
+	--active-menu-color: #8ea9ba;
 }
+
 .light-theme {
 	--main-background: #ffffff;
-	--header-footer-color: #2c2c2c;	
-	--header-footer-bg-color1:#DCDCDC;
-	--header-footer-bg-color2:#ffffff;	
+	--header-footer-color: #2c2c2c;
+	--header-footer-bg-color1: #DCDCDC;
+	--header-footer-bg-color2: #ffffff;
 	--menubar-background: #9a9a9a;
-	--menubar-color : #2c2c2c;
+	--menubar-color: #2c2c2c;
 	--submenu-background: #c6c6c6;
-	--submenu-color : #2c2c2c;
-	--active-menu-color : #ffffff;
+	--submenu-color: #2c2c2c;
+	--active-menu-color: #ffffff;
 }
+
 .green-theme {
 	--main-background: #ffffff;
 	--header-footer-color: #414F12;
-	--header-footer-bg-color1:#C6D49F;
-	--header-footer-bg-color2:#F6FBE9;	
+	--header-footer-bg-color1: #C6D49F;
+	--header-footer-bg-color2: #F6FBE9;
 	--menubar-background: #9ea97f;
-	--menubar-color : #414F12;
+	--menubar-color: #414F12;
 	--submenu-background: #C6D49F;
-	--submenu-color : #414F12;
-	--active-menu-color : #f3f6eb;
+	--submenu-color: #414F12;
+	--active-menu-color: #f3f6eb;
 }
+
 html, body {
+	width: 100%;
 	height: 100%;
-	margin: 0px;
+	margin: 0;
 }
-.main-container{
+
+.ng-main {
 	background-color: var(--main-background);
-	height:100%;
+	height: 100%;
 }
-.header img {
+
+.ng-header img {
 	float: left;
 	padding: 2px 10px 2px 10px;
 }
+
+.ng-vbox {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.ng-hbox {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.ng-header, .ng-footer {
+	height: 50px;
+	background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color1)), to(var(--header-footer-bg-color2)));
+	color: var(--header-footer-color);
+}
+
+.ng-content {
+	flex: 10;
+	overflow: auto;
+	height: 100%;
+}
+
+.ng-nav {
+	flex: 2;
+	overflow: auto;
+	background-color: var(--menubar-background);
+	height: 100%;
+}
+
+.ng-header {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	-moz-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.ng-header-left {
+	flex: 2;
+}
+
+.ng-header-right {
+	flex: 10;
+}
+
+.ng-header-right-item {
+	float: right;
+}
+
+.ng-header {
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.ng-footer {
+	box-shadow: 0px -4px 3px rgba(0, 0, 0, .2);
+}
+
+.ng-header a {
+	color: var(--header-footer-color) !important;
+}
+
+.ng-header .pi {
+	color: #000000;
+}
+
+.ng-footer div {
+	text-align: center;
+	padding: 10px;
+}
+
+.ng-content .ui-card {
+	min-height: 100%;
+	background: #f7f9fa;
+}
+
 .icon {
 	line-height: 50px;
 	font-size: 25px;
 	cursor: pointer;
 	padding: 10px;
 }
+
 .prime-button {
 	width: 150px !important;
 }
+
 .overview-box-1 .ui-card-body {
 	background-color: #37A2F4;
 }
+
 .overview-box-2 .ui-card-body {
 	background-color: #71BD3E;
 }
+
 .overview-box-3 .ui-card-body {
 	background-color: #D79733;
 }
+
 .overview-box-4 .ui-card-body {
 	background-color: #DE8072;
 }
+
 .color-red {
 	color: red;
 }
+
 .header-breadcrumb {
 	margin-bottom: 10px;
 }
+
 .login-panel, .user-regisration {
-	height: 100%;	
+	height: 100%;
 	background-image: radial-gradient(var(--header-footer-bg-color1) 40%, var(--header-footer-bg-color2));
 }
+
 .badge {
 	display: inline-block;
 	min-width: 10px;
@@ -88,223 +183,179 @@ html, body {
 	background-color: red;
 	border-radius: 10px;
 }
-html, body, .viewport {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-}
-.vbox {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: flex;
-	-webkit-flex-direction: column;
-	-moz-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-}
-.hbox {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	-moz-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-}
-.space-between {
-	-webkit-justify-content: space-between;
-	-moz-justify-content: space-between;
-	-ms-justify-content: space-between;
-	justify-content: space-between;
-}
-header, footer {
-	height: 50px;	
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color1)), to(var(--header-footer-bg-color2)));
-	color: var(--header-footer-color);	
-}
-header{
-	box-shadow: 0 3px 4px 0 rgba(0,0,0,.2);
-}
-footer{
-	box-shadow: 0px -4px 3px rgba(0,0,0,.2);
-}
-header a{
-	color: var(--header-footer-color) !important;
-}
-header .pi{
-	color:#000000;
-}
-footer div {
-	text-align: center;
-	padding: 10px;
-}
-.main {
-	-webkit-flex: 1;
-	-moz-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-}
-article {
-	-webkit-flex: 10;
-	-moz-flex: 10;
-	-ms-flex: 10;
-	flex: 10;
-	overflow: auto;
-	height:100%;
-}
-article .ui-card {
-	min-height: 100%;
-	background: #f7f9fa;
-}
-nav {
-	-webkit-flex: 2;
-	-moz-flex: 2;
-	-ms-flex: 2;
-	flex: 2;
-	overflow: auto;
-	background-color: var(--menubar-background);
-	height:100%;
-}
-.mobile-menubar{
+
+.mobile-menubar {
 	background-color: var(--menubar-background) !important;
 }
-.logo img{
+
+.logo img {
 	background-color: var(--main-background);
 }
+
 .logo-img {
 	height: 100%;
 	width: 100%;
 }
-.toggle-menu-button{
+
+.toggle-menu-button {
 	text-align: center;
 	background-color: var(--menubar-background);
 }
-.toggle-menu-button .icon{
+
+.toggle-menu-button .icon {
 	padding: 0;
 }
-.header-name-img{
+
+.logo-large {
 	display: block;
-	height:50px;
-	width:100%;
-	padding:5px;
-}
-.header-logo-img{
-	display: none;
-}
-.user-name{
-	font-size: 15px;
-	padding:5px;
-}
-.notification-message{
-	min-height:25px;
-	width: 200px;	
-	padding:5px;
-}
-.pad10{
-	padding:10px;
-}
-.header{
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-	-moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    justify-content: space-between;
-}
-.header-left{
-	flex:2;
-}
-.header-right{
-	flex:10;
-}
-.header-right-item{
-	float:right;
-}
-.np-menu{
-	height:100%;
-	width:100%;
-}
-.np-menuitem{
-	background-color: var(--menubar-background);
-	color:var(--menubar-color);	
-	padding:10px;
-}
-.np-submenuitem{
-	background-color: var(--submenu-background);
-	color:var(--submenu-color);
-	padding:10px 10px 10px 30px;
-}
-.np-menuitem, .np-submenuitem{
-	cursor: pointer !important;
-}
-.np-menuitem .fa, .np-submenuitem .fa{	
-	padding-right:10px;
-}
-.np-menuitem:hover, .np-submenuitem:hover, .np-active-menu{	
-	color:var(--active-menu-color);
-}
-.np-submenu-block{
-	display: block;
-}
-.np-submenu-none{
-	display: none;
-}
-.right-icon{
-	float: right;
-}
-/* Extra large devices (large laptops and desktops, 1200px or more) */
-@media only screen and (min-width: 1200px) {
-}
-/* Large devices (laptops/desktops, 1200px or less) */
-@media only screen and (max-width: 1200px) {
-	nav{
-		flex:3;
-	}
-	article{
-		flex:9;
-	}
-	.header-left{
-		flex:3;
-	}
-	.header-right{
-		flex:9;
-	}
-}
-/* Medium devices (landscape tablets, 992px or less) */
-@media only screen and (max-width: 992px){
-	.header-left{
-		flex:4;
-	}
-	.header-right{
-		flex:8;
-	}
-   .hbox {
-		flex-direction: column;
-   }
-	nav {
-		display:none;
-   }
-	article {
-		padding-top: 0px;
-   }
-	.header-name-img{
-		display: none;
-   }
-	.header-logo-img{
-		display: block;
-		height:50px;
-		width:70px;
-   }
-	.user-name{
-		display: none;
-   }
-}
-/* Small devices (portrait tablets and large phones, 768px or less) */
-@media only screen and (max-width: 768px){
-}
-/* Extra small devices (phones, 600px or less) */
-@media only screen and (max-width: 600px)  {
+	height: 50px;
+	width: 100%;
+	padding: 5px;
 }
 
+.logo-small {
+	display: none;
+}
+
+.user-name {
+	font-size: 15px;
+	padding: 5px;
+}
+
+.notification-message {
+	min-height: 25px;
+	width: 200px;
+	padding: 5px;
+}
+
+.pad10 {
+	padding: 10px;
+}
+
+.np-menu {
+	height: 100%;
+	width: 100%;
+}
+
+.np-menuitem {
+	background-color: var(--menubar-background);
+	color: var(--menubar-color);
+	padding: 10px;
+}
+
+.np-submenuitem {
+	background-color: var(--submenu-background);
+	color: var(--submenu-color);
+	padding: 10px 10px 10px 30px;
+}
+
+.np-menuitem, .np-submenuitem {
+	cursor: pointer !important;
+}
+
+.np-menuitem .fa, .np-submenuitem .fa {
+	padding-right: 10px;
+}
+
+.np-menuitem:hover, .np-submenuitem:hover, .np-active-menu {
+	color: var(--active-menu-color);
+}
+
+.np-submenu-block {
+	display: block;
+}
+
+.np-submenu-none {
+	display: none;
+}
+
+.right-icon {
+	float: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.np-loader {
+	position: fixed;
+	z-index: 999;
+	height: 2em;
+	width: 2em;
+	overflow: show;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/* Transparent Overlay */
+
+.np-loader:before {
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Extra large devices (large laptops and desktops, 1200px or more) */
+
+@media only screen and (min-width: 1200px) {}
+
+/* Large devices (laptops/desktops, 1200px or less) */
+
+@media only screen and (max-width: 1200px) {
+	.ng-nav {
+		flex: 3;
+	}
+	.ng-content {
+		flex: 9;
+	}
+	.ng-header-left {
+		flex: 3;
+	}
+	.ng-header-right {
+		flex: 9;
+	}
+}
+
+/* Medium devices (landscape tablets, 992px or less) */
+
+@media only screen and (max-width: 992px) {
+	.ng-header-left {
+		flex: 4;
+	}
+	.ng-header-right {
+		flex: 8;
+	}
+	.ng-hbox {
+		flex-direction: column;
+	}
+	.ng-nav {
+		display: none;
+	}
+	.logo-large {
+		display: none;
+	}
+	.logo-small {
+		display: block;
+		height: 50px;
+		width: 70px;
+	}
+	.user-name {
+		display: none;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 768px or less) */
+
+@media only screen and (max-width: 768px) {}
+
+/* Extra small devices (phones, 600px or less) */
+
+@media only screen and (max-width: 600px) {}

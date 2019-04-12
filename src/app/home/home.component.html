@@ -1,18 +1,14 @@
-<div class="vbox viewport">
-  <header>
-    <app-header></app-header>
-  </header>
-  <section class="main hbox space-between">
-    <nav id="navigation-menu" *ngIf="!isMobileResolution">
+<div class="ng-vbox">
+  <app-header></app-header>
+  <div class="ng-hbox">
+    <div class="ng-nav" id="navigation-menu" *ngIf="!isMobileResolution">
       <app-menu></app-menu>
-    </nav>
-    <article>
+    </div>
+    <div class="ng-content">
       <div class="pad10">
         <router-outlet></router-outlet>
       </div>
-    </article>
-  </section>
-  <footer>
-    <app-footer></app-footer>
-  </footer>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>

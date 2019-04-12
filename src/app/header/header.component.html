@@ -1,28 +1,28 @@
-<div class="header">
-    <div class="header-left">
+<div class="ng-header">
+    <div class="ng-header-left">
         <div class="p-grid p-nogutter">
             <div class="p-col-4 p-md-3 p-lg-2 toggle-menu-button">
                 <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
             </div>
             <div class="p-col-8 p-md-9 p-lg-10">
                 <div class="logo">
-                    <img src="../assets/images/company-name.png" class="header-name-img">
-                    <img src="../assets/images/company-logo.png" class="header-logo-img">
+                    <img src="../assets/images/logo-large.png" class="logo-large">
+                    <img src="../assets/images/logo-small.png" class="logo-small">
                 </div>
             </div>
         </div>
     </div>
-    <div class="header-right">
-        <div class="header-right-item">
+    <div class="ng-header-right">
+        <div class="ng-header-right-item">
             <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
         </div>        
-        <div class="header-right-item" (click)="themeChooser.toggle($event)">
+        <div class="ng-header-right-item" (click)="themeChooser.toggle($event)">
             <a class="icon"><i class="fa fa-cog"></i></a>
         </div>
-        <div class="header-right-item" (click)="showNotificationSidebar()">
+        <div class="ng-header-right-item" (click)="showNotificationSidebar()">
             <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
         </div>
-        <div class="header-right-item" (click)="userdetails.toggle($event)">
+        <div class="ng-header-right-item" (click)="userdetails.toggle($event)">
             <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
         </div>
     </div>

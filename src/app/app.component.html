@@ -1,6 +1,6 @@
-<div class="ui-fluid main-container" [ngClass]="theme">
+<div class="ui-fluid ng-main" [ngClass]="theme">
     <p-toast position="bottom-right"></p-toast>
-    <div [class.np-loader-hidden]="!showLoader" class="np-loader">
+    <div [class.hidden]="!showLoader" class="np-loader">
         <p-progressSpinner strokeWidth="5"></p-progressSpinner>
     </div>
     <router-outlet></router-outlet>

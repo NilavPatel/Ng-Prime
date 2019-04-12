@@ -1,4 +1,4 @@
-<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/company-name.png" width="300" height="80">
+<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/logo-large.png" width="300" height="80">
 
 # Angular + PrimeNg
 
