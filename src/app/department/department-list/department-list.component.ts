@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentService } from '../department.service';
 import { Router } from '@angular/router';
-import { RouteStateService } from '../../core/services/routeState.service';
+import { RouteStateService } from '../../core/services/route-state.service';
 
 @Component({
   selector: 'app-department-list',
@@ -25,7 +25,7 @@ export class DepartmentListComponent implements OnInit {
   }
 
   goToDepartmentDetails(department: number) {
-    this.routeStateService.loadNewRouteState("Department details","/home/departments/department-detail", department, false);
+    this.routeStateService.add("Department details","/home/departments/department-detail", department, false);
   }
 
 }

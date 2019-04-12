@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { RouteStateService } from '../core/services/routeState.service';
+import { RouteStateService } from '../core/services/route-state.service';
 
 @Component({
   selector: 'app-header-breadcrumb',
@@ -19,7 +19,7 @@ export class HeaderBreadcrumbComponent implements OnInit {
   }
 
   ngOnInit() {
-    var routes = this.routeStateService.getAllRouteStates();
+    var routes = this.routeStateService.getAll();
     routes.forEach(route => {
       this.items.push({ label: route.title, command: () => { this.onClickBreadcrumb(route.id); } });
     });
@@ -28,6 +28,6 @@ export class HeaderBreadcrumbComponent implements OnInit {
   }
 
   onClickBreadcrumb(id: number) {
-    this.routeStateService.loadRouteUptoId(id);
+    this.routeStateService.loadById(id);
   }
 }

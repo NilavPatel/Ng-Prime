@@ -1,16 +1,43 @@
 import { Injectable } from '@angular/core';
-import { RouteState } from '../../core/models/RouteState.model';
+import { RouteState } from '../models/route-state.model';
 import { Router } from '@angular/router';
 
 @Injectable()
+/**
+ * Route state service
+ * Save all route data, helps to navigate routes
+ */
 export class RouteStateService {
 
     constructor(private router: Router) {
     }
 
-    loadNewRouteState(title: string, path: string, data: any, isParent: boolean) {
+    /**
+     * get current route data
+     */
+    getCurrent(): RouteState {
+        var routeStates = this.getFromStorage();
+        return routeStates[routeStates.length - 1];
+    }
+
+    /**
+     * get all route data
+     */
+    getAll(): RouteState[] {
+        var routeStates = this.getFromStorage();
+        return routeStates;
+    }
+
+    /**
+     * add route data
+     * @param title route name
+     * @param path route path
+     * @param data route data
+     * @param isParent is parent route
+     */
+    add(title: string, path: string, data: any, isParent: boolean) {
         if (isParent) {
-            this.removeAllRouteStates();
+            this.removeAll();
         }
         
         var routeStates = this.getFromStorage();
@@ -25,33 +52,22 @@ export class RouteStateService {
         this.navigate(routeState.path);
     }
 
-    getCurrentRouteState(): RouteState {
-        var routeStates = this.getFromStorage();
-        return routeStates[routeStates.length - 1];
-    }
-
-    getAllRouteStates(): RouteState[] {
-        var routeStates = this.getFromStorage();
-        return routeStates;
-    }
-
-    loadPrevRouteState() {
+    /**
+     * load previous route
+     */
+    loadPrevious() {
         var routeStates = this.getFromStorage();
         routeStates.pop();
         this.saveToStorage(routeStates);
-        var currentViewState = this.getCurrentRouteState();
+        var currentViewState = this.getCurrent();
         this.navigate(currentViewState.path);
     }
 
-    removeAllRouteStates() {
-        this.removeFromStorage();
-    }
-
-    private navigate(path: string) {
-        this.router.navigate([path]);
-    }
-
-    loadRouteUptoId(id: number) {
+    /**
+     * 
+     * @param id load route route id
+     */
+    loadById(id: number) {
         var result = [];
         var isFound = false;
         var routeStates = this.getFromStorage();
@@ -66,21 +82,32 @@ export class RouteStateService {
         });
         routeStates = result;
         this.saveToStorage(routeStates);
-        var currentViewState = this.getCurrentRouteState();
+        var currentViewState = this.getCurrent();
         this.navigate(currentViewState.path);
     }
 
-    saveToStorage(routeStates: any) {
+    /**
+     * remove all route data
+     */
+    removeAll() {
+        this.removeFromStorage();
+    }
+
+    private saveToStorage(routeStates: any) {
         localStorage.setItem("routeState", JSON.stringify(routeStates));
     }
 
-    getFromStorage() {
+    private getFromStorage() {
         var routeStates = JSON.parse(localStorage.getItem("routeState"));
         return (routeStates === undefined || routeStates === null) ? [] : routeStates;
     }
 
-    removeFromStorage() {
+    private removeFromStorage() {
         localStorage.removeItem("routeState");
+    }
+
+    private navigate(path: string) {
+        this.router.navigate([path]);
     }
 
 }

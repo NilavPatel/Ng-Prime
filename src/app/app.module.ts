@@ -24,14 +24,15 @@ import { DepartmentListComponent } from './department/department-list/department
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { LoaderService } from './core/services/loader.service';
-import { AlertService } from './core/services/alert.service';
-import { RouteStateService } from './core/services/routeState.service';
+import { ToastService } from './core/services/toast.service';
+import { RouteStateService } from './core/services/route-state.service';
 import { SessionService } from './core/services/session.service';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
 import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { UserIdleModule } from 'angular-user-idle';
 import { ThemeService } from './core/services/theme.service';
 import { ApplicationStateService } from './core/services/application-state.service';
+import { UserService } from './core/services/user.service'
 
 @NgModule({
   declarations: [
@@ -59,17 +60,18 @@ import { ApplicationStateService } from './core/services/application-state.servi
     ReactiveFormsModule,
     AppRoutingModule,
     NgPrimeModule,
-    UserIdleModule.forRoot({idle: 300, timeout: 1, ping: null})
+    UserIdleModule.forRoot({ idle: 300, timeout: 1, ping: null })
   ],
   providers: [
     MessageService,
     AuthGuard,
     LoaderService,
-    AlertService,
+    ToastService,
     RouteStateService,
     SessionService,
     ThemeService,
-    ApplicationStateService
+    ApplicationStateService,
+    UserService
   ],
   bootstrap: [
     AppComponent

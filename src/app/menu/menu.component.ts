@@ -1,9 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { RouteStateService } from '../core/services/routeState.service';
+import { RouteStateService } from '../core/services/route-state.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
 import { SessionService } from '../core/services/session.service';
-import { AlertService } from '../core/services/alert.service';
-import { CustomMenuItem } from '../core/models/menuItem.model';
+import { ToastService } from '../core/services/toast.service';
+import { CustomMenuItem } from '../core/models/menu-item.model';
 
 @Component({
     selector: 'app-menu',
@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
     constructor(private routeStateService: RouteStateService,
         private applicationStateService: ApplicationStateService,
         private sessionService: SessionService,
-        private alertService: AlertService) { }
+        private toastService: ToastService) { }
 
     ngOnInit() {
         this.items = [
@@ -51,7 +51,7 @@ export class MenuComponent implements OnInit {
         ];
 
         this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
-        var activeMenu = this.sessionService.getSessionValue("active-menu");
+        var activeMenu = this.sessionService.getItem("active-menu");
         if (activeMenu) {
             this.selectedItem = activeMenu;
         } else {
@@ -62,12 +62,12 @@ export class MenuComponent implements OnInit {
     // on menu click event
     onMenuClick(title: string, path: string) {
         if (path == undefined || path == null || path == "") {
-            this.alertService.addSingle("success", "", title + " clicked !!!");
+            this.toastService.addSingle("success", "", title + " clicked !!!");
             return;
         }
         this.selectedItem = title;
-        this.sessionService.setSessionValue("active-menu", title);
-        this.routeStateService.loadNewRouteState(title, path, null, true);
+        this.sessionService.setItem("active-menu", title);
+        this.routeStateService.add(title, path, null, true);
         // hide menu bar after menu click for mobile layout
         if (this.isMobileResolution) {
             setTimeout(() => {

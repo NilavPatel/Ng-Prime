@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../core/models/user.model';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
+/**
+ * user service class
+ */
 export class UserService {
 
     users: User[] = [];
 
     constructor() {
         let user = {
-            userId: 1, userName: "admin", password: "admin123", emailId: "admin@nilavpatel.com", birthDate: new Date('10/28/1992')
+            userId: 1, userName: "admin", password: "password", emailId: "admin@admin.com", birthDate: new Date('10/28/1992')
         };
         this.users.push(user);
     }
 
+    /**
+     * get user by user name and password
+     * @param userName 
+     * @param password 
+     */
     getUserByUserNameAndPassword(userName: string, password: string): User {
         let user: User = null;
         this.users.forEach(element => {
@@ -25,6 +31,13 @@ export class UserService {
         return user;
     }
 
+    /**
+     * add new user
+     * @param userName 
+     * @param password 
+     * @param emailId 
+     * @param birthDate 
+     */
     addUser(userName: string, password: string, emailId: string, birthDate: Date): boolean {
         let userId = this.users.length + 1;
         let user = new User();

@@ -1,18 +1,42 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
+/**
+ * Session storage service
+ * Provides methods to get, set, remove, clear session storage items.
+ */
 export class SessionService {
-    setSessionValue(name: string, value: any) {
-        sessionStorage.setItem(name, JSON.stringify(value));
+    /**
+     * set session storage item
+     * @param key 
+     * @param value 
+     */
+    setItem(key: string, value: any) {
+        sessionStorage.setItem(key, JSON.stringify(value));
     }
 
-    getSessionValue(name: string): any {
-        var value = sessionStorage.getItem(name);
+    /**
+     * get session storage item
+     * @param key 
+     */
+    getItem(key: string): any {
+        var value = sessionStorage.getItem(key);
         return JSON.parse(value);
     }
 
-    removeSessionValue(name: string) {
-        sessionStorage.removeItem(name);
+    /**
+     * remove session storage item
+     * @param key
+     */
+    removeItem(key: string) {
+        sessionStorage.removeItem(key);
+    }
+
+    /**
+     * remove all session storage items
+     */
+    clear() {
+        sessionStorage.clear();
     }
 
 }

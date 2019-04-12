@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
+/**
+ * application state service
+ */
 export class ApplicationStateService {
 
   private isMobileResolution: boolean;
@@ -13,6 +16,10 @@ export class ApplicationStateService {
     }
   }
 
+  /**
+   * get is mobile resolution or desktop.
+   * need to refresh after changing website resolution
+   */
   public getIsMobileResolution(): boolean {
     return this.isMobileResolution;
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LoaderService } from '../core/services/loader.service';
-import { RouteStateService } from '../core/services/routeState.service';
+import { RouteStateService } from '../core/services/route-state.service';
 
 @Component({
   selector: 'app-employees',
@@ -88,7 +88,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   }
 
   goToDepartmentDetails(department: number) {
-    this.routeStateService.loadNewRouteState("Department details","/home/departments/department-detail", department, false);
+    this.routeStateService.add("Department details","/home/departments/department-detail", department, false);
   }
 
   ngAfterViewInit(): void {

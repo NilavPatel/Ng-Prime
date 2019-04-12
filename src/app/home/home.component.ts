@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { AlertService } from '../core/services/alert.service';
+import { ToastService } from '../core/services/toast.service';
 import { LoaderService } from '../core/services/loader.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
 
@@ -12,11 +12,11 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   isMobileResolution: boolean = false;
 
-  constructor(private alertService: AlertService, private loaderService: LoaderService, private applicationStateService: ApplicationStateService) { }
+  constructor(private toastService: ToastService, private loaderService: LoaderService, private applicationStateService: ApplicationStateService) { }
 
   ngOnInit() {
     this.loaderService.display(true);
-    this.alertService.addSingle("success", "", "Login successfully.");
+    this.toastService.addSingle("success", "", "Login successfully.");
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
   }
 

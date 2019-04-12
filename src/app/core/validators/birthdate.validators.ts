@@ -1,6 +1,10 @@
 import { AbstractControl } from '@angular/forms';
 
-// birth date should be less than 10 years
+/**
+ * validation function
+ * birth date should be less than 10 years
+ * @param control 
+ */
 export function birthDateValidator(control: AbstractControl) {
     var value = control.value;
     var today = new Date();

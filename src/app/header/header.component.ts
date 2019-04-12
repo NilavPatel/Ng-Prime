@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouteStateService } from '../core/services/routeState.service';
+import { RouteStateService } from '../core/services/route-state.service';
 import { SessionService } from '../core/services/session.service';
 import { User } from '../core/models/user.model';
 import { notification } from '../core/models/notification.model';
@@ -38,14 +38,14 @@ export class HeaderComponent implements OnInit {
     this.displayNotifications = false;
     this.isMenuVisible = true;
 
-    var selectedTheme = this.sessionService.getSessionValue("selected-theme");
+    var selectedTheme = this.sessionService.getItem("selected-theme");
     if(selectedTheme){
       this.selectTheme(selectedTheme);
     }
   }
 
   ngOnInit() {
-    this.user = this.sessionService.getSessionValue("currentUser");
+    this.user = this.sessionService.getItem("currentUser");
     this.notifications = [];
     for (var i = 1; i <= 5; i++) {
       var notificationObj = new notification("Message " + i, new Date(), null)
@@ -68,9 +68,9 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.userIdle.stopWatching();
-    this.routeStateService.removeAllRouteStates();
-    this.sessionService.removeSessionValue('currentUser');
-    this.sessionService.removeSessionValue('active-menu');
+    this.routeStateService.removeAll();
+    this.sessionService.removeItem('currentUser');
+    this.sessionService.removeItem('active-menu');
     this.router.navigate(['/login']);
   }
 
@@ -94,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   selectTheme(theme: string) {
-    this.sessionService.setSessionValue("selected-theme", theme);
+    this.sessionService.setItem("selected-theme", theme);
     this.themeService.selectTheme(theme);
   }
 
