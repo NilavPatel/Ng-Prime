@@ -1,10 +1,10 @@
 <div class="ng-header">
     <div class="ng-header-left">
-        <div class="p-grid p-nogutter">
-            <div class="p-col-4 p-md-3 p-lg-2 toggle-menu-button">
+        <div class="ui-g">
+            <div class="ui-g-2 ui-md-2 ui-sm-4 ui-g-nopad toggle-menu-button">
                 <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
             </div>
-            <div class="p-col-8 p-md-9 p-lg-10">
+            <div class="ui-g-10 ui-md-10 ui-sm-8 ui-g-nopad">
                 <div class="logo">
                     <img src="../assets/images/logo-large.png" class="logo-large">
                     <img src="../assets/images/logo-small.png" class="logo-small">
@@ -46,15 +46,15 @@
 <!-- theme chooser overlay panel -->
 <p-overlayPanel #themeChooser>
     Select Theme:
-    <div class="p-grid">
-        <div class="p-col-4">
+    <div class="ui-g">
+        <div class="ui-g-4">
             <button pButton type="button" (click)="selectTheme('dark-theme')" style="background-color:#517fa4"></button>
         </div>
-        <div class="p-col-4">
+        <div class="ui-g-4">
             <button pButton type="button" (click)="selectTheme('light-theme')"
                 style="background-color:#C0C0C0"></button>
         </div>
-        <div class="p-col-4">
+        <div class="ui-g-4">
             <button pButton type="button" (click)="selectTheme('green-theme')"
                 style="background-color:#668014"></button>
         </div>
