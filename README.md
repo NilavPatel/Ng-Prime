@@ -72,5 +72,5 @@ Chrome, Firefox, Edge, IE 11/10 (except theme chooser as css variables not suppo
 ### Responsive  layout for desktop, tablet and mobile
 
 ![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/laptop.png)
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/tablet.png){:height="70%" width="70%"}
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/mobile.png){:height="50%" width="50%"}
+![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/tablet.png)
+![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/mobile.png)
