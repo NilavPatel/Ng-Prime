@@ -33,6 +33,8 @@ import { UserIdleModule } from 'angular-user-idle';
 import { ThemeService } from './core/services/theme.service';
 import { ApplicationStateService } from './core/services/application-state.service';
 import { UserService } from './core/services/user.service'
+import { MenuService } from './core/services/menu.service';
+import { EmployeeService } from './employees/employee.service';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { UserService } from './core/services/user.service'
     SessionService,
     ThemeService,
     ApplicationStateService,
-    UserService
+    UserService,
+    MenuService,
+    EmployeeService
   ],
   bootstrap: [
     AppComponent

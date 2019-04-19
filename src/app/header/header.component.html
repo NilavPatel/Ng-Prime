@@ -15,7 +15,7 @@
     <div class="ng-header-right">
         <div class="ng-header-right-item">
             <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
-        </div>        
+        </div>
         <div class="ng-header-right-item" (click)="themeChooser.toggle($event)">
             <a class="icon"><i class="fa fa-cog"></i></a>
         </div>
@@ -64,5 +64,5 @@
 <!-- menubar for mobile layout -->
 <p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar"
     [showCloseIcon]="false">
-    <app-menu (closeClicked)="displaySidebarMenu=$event"></app-menu>
+    <app-menu (closeClicked)="displaySidebarMenu=$event" [items]="menuItems"></app-menu>
 </p-sidebar>

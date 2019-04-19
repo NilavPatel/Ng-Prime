@@ -7,6 +7,8 @@ import { notification } from '../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../core/services/theme.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
+import { MenuService } from '../core/services/menu.service';
+import { CustomMenuItem } from '../core/models/menu-item.model';
 
 @Component({
   selector: 'app-header',
@@ -27,6 +29,8 @@ export class HeaderComponent implements OnInit {
 
   displaySidebarMenu: boolean = false;
 
+  menuItems: CustomMenuItem[];
+
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
@@ -34,12 +38,14 @@ export class HeaderComponent implements OnInit {
     private userIdle: UserIdleService,
     private renderer: Renderer2,
     private themeService: ThemeService,
-    private applicationStateService: ApplicationStateService) {
+    private applicationStateService: ApplicationStateService,
+    private menuService: MenuService) {
     this.displayNotifications = false;
     this.isMenuVisible = true;
+    this.menuItems = menuService.getMenuList();
 
     var selectedTheme = this.sessionService.getItem("selected-theme");
-    if(selectedTheme){
+    if (selectedTheme) {
       this.selectTheme(selectedTheme);
     }
   }

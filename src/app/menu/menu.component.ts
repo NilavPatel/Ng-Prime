@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { RouteStateService } from '../core/services/route-state.service';
 import { ApplicationStateService } from '../core/services/application-state.service';
 import { SessionService } from '../core/services/session.service';
@@ -12,7 +12,7 @@ import { CustomMenuItem } from '../core/models/menu-item.model';
 })
 export class MenuComponent implements OnInit {
 
-    items: CustomMenuItem[];
+    @Input() items: CustomMenuItem[];
 
     selectedItem: string;
 
@@ -26,30 +26,6 @@ export class MenuComponent implements OnInit {
         private toastService: ToastService) { }
 
     ngOnInit() {
-        this.items = [
-            {
-                Label: 'Home', Icon: 'fa fa-home', RouterLink: '/home/dashboard', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'Employees', Icon: 'fa fa-users', RouterLink: '/home/employees', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'Departments', Icon: 'fa fa-sitemap', RouterLink: '/home/departments', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'About Us', Icon: 'fa fa-info-circle', RouterLink: '/home/aboutus', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'Contact Us', Icon: 'fa fa-envelope', RouterLink: '/home/contactus', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'Menu Level 1', Icon: 'fa fa-cart-plus', RouterLink: null, Childs: [
-                    { Label: 'Menu Level 1.1', Icon: 'fa fa-address-book', RouterLink: null, Childs: null, IsChildVisible: false },
-                    { Label: 'Menu Level 1.2', Icon: 'fa fa-id-card', RouterLink: null, Childs: null, IsChildVisible: false }
-                ], IsChildVisible: false
-            }
-        ];
-
         this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
         var activeMenu = this.sessionService.getItem("active-menu");
         if (activeMenu) {
@@ -60,14 +36,19 @@ export class MenuComponent implements OnInit {
     }
 
     // on menu click event
-    onMenuClick(title: string, path: string) {
-        if (path == undefined || path == null || path == "") {
-            this.toastService.addSingle("success", "", title + " clicked !!!");
+    onMenuClick(menu: CustomMenuItem) {
+        // if child are available then open child
+        if (menu.Childs != undefined || menu.Childs != null) {
+            this.toggleSubMenu(menu);
             return;
         }
-        this.selectedItem = title;
-        this.sessionService.setItem("active-menu", title);
-        this.routeStateService.add(title, path, null, true);
+        if (menu.RouterLink == undefined || menu.RouterLink == null || menu.RouterLink == "") {
+            this.toastService.addSingle("error", "", "404 Page not found.");
+            return;
+        }
+        this.selectedItem = menu.Label;
+        this.sessionService.setItem("active-menu", menu.Label);
+        this.routeStateService.add(menu.Label, menu.RouterLink, null, true);
         // hide menu bar after menu click for mobile layout
         if (this.isMobileResolution) {
             setTimeout(() => {
@@ -77,7 +58,7 @@ export class MenuComponent implements OnInit {
     }
 
     // toggle sub menu on click
-    toggleSubMenu(menu) {
+    toggleSubMenu(menu: CustomMenuItem) {
         menu.IsChildVisible = !menu.IsChildVisible;
     }
 

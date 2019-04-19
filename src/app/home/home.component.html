@@ -2,7 +2,7 @@
   <app-header></app-header>
   <div class="ng-hbox">
     <div class="ng-nav" id="navigation-menu" *ngIf="!isMobileResolution">
-      <app-menu></app-menu>
+      <app-menu [items]="menuItems"></app-menu>
     </div>
     <div class="ng-content">
       <div class="pad10">
