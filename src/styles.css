@@ -186,6 +186,8 @@ html, body {
 
 .mobile-menubar {
 	background-color: var(--menubar-background) !important;
+	height:100%;
+	overflow: auto;
 }
 
 .logo img {
