@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DepartmentService } from '../department.service';
+import { DepartmentDataService } from '../department-data.service';
 import { Router } from '@angular/router';
 import { RouteStateService } from '../../core/services/route-state.service';
 
@@ -14,7 +14,7 @@ export class DepartmentListComponent implements OnInit {
 
   departments: any[];
 
-  constructor(private departmentService: DepartmentService, private routeStateService: RouteStateService, private router: Router) {
+  constructor(private departmentService: DepartmentDataService, private routeStateService: RouteStateService, private router: Router) {
     this.columns = [
       { field: 'Name', header: 'Name' },
       { field: 'Description', header: 'Description' }];

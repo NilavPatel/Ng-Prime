@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/gaurds/auth.gaurd';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './layout/home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AboutusComponent } from './aboutus/aboutus.component';

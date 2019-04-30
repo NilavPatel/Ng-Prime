@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../core/services/user.service';
+import { UserDataService } from '../core/services/user-data.service';
 import { User } from '../core/models/user.model';
 import { ToastService } from '../core/services/toast.service';
 import { RouteStateService } from '../core/services/route-state.service';
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   password: string;
 
   constructor(
-    private userService: UserService,
+    private userService: UserDataService,
     private toastService: ToastService,
     private routeStateService: RouteStateService,
     private sessionService: SessionService

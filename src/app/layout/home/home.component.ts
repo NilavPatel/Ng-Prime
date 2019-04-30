@@ -1,9 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ToastService } from '../core/services/toast.service';
-import { LoaderService } from '../core/services/loader.service';
-import { ApplicationStateService } from '../core/services/application-state.service';
-import { CustomMenuItem } from '../core/models/menu-item.model';
-import { MenuService } from '../core/services/menu.service';
+import { ToastService } from '../../core/services/toast.service';
+import { LoaderService } from '../../core/services/loader.service';
+import { ApplicationStateService } from '../../core/services/application-state.service';
+import { CustomMenuItem } from '../../core/models/menu-item.model';
+import { MenuDataService } from '../../core/services/menu-data.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   constructor(private toastService: ToastService, private loaderService: LoaderService,
     private applicationStateService: ApplicationStateService,
-    private menuService: MenuService) {
+    private menuService: MenuDataService) {
     this.menuItems = menuService.getMenuList();
   }
 

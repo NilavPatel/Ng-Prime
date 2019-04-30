@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../core/models/user.model';
+import { User } from '../models/user.model';
 
 @Injectable()
 /**
  * user service class
  */
-export class UserService {
+export class UserDataService {
 
     users: User[] = [];
 

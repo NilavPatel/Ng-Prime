@@ -1,9 +1,9 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { RouteStateService } from '../core/services/route-state.service';
-import { ApplicationStateService } from '../core/services/application-state.service';
-import { SessionService } from '../core/services/session.service';
-import { ToastService } from '../core/services/toast.service';
-import { CustomMenuItem } from '../core/models/menu-item.model';
+import { RouteStateService } from '../../core/services/route-state.service';
+import { ApplicationStateService } from '../../core/services/application-state.service';
+import { SessionService } from '../../core/services/session.service';
+import { ToastService } from '../../core/services/toast.service';
+import { CustomMenuItem } from '../../core/models/menu-item.model';
 
 @Component({
     selector: 'app-menu',

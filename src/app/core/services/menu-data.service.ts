@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 /**
- * menu service
+ * menu data service
  */
-export class MenuService {
+export class MenuDataService {
     getMenuList() {
         return [
             {

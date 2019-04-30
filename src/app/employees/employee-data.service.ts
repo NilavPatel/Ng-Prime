@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 /**
  * employee service
  */
-export class EmployeeService {
+export class EmployeeDataService {
     getEmployeeList() {
         return [
             { Name: 'Nilav', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: '26' },

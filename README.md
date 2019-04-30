@@ -1,37 +1,10 @@
 <img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/logo-large.png" width="300" height="80">
 
 # Angular + PrimeNg
-
-## Add primefaces UI library to application
-`````
-npm install primeng --save
-npm install primeicons --save
-npm install @angular/animations --save
-`````
-
-## Add css dependencies to index.html
-`````javascript
-add css and js files to angular.json file
-
-    "styles": [              
-        "./node_modules/primeicons/primeicons.css",
-        "./node_modules/primeng/resources/themes/nova-light/theme.css",
-        "./node_modules/primeng/resources/primeng.min.css",
-        "./node_modules/@fortawesome/fontawesome-free/css/all.css",
-        "src/styles.css"
-    ],
-    "scripts": [
-        "./node_modules/chart.js/dist/Chart.js"
-    ]
-`````
-	
-## Add prime components dependencies in app.ngprime.module.ts
-````javascript
-import { NgModule } from '@angular/core';
-import { InputTextModule } from 'primeng/inputtext';
 ````
-
-## Add routing into separate module app.routing.module.ts
+https://angular.io/
+https://www.primefaces.org/primeng/
+````
 
 ## Build and Run project
 `````

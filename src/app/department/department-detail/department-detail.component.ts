@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DepartmentService } from '../department.service';
+import { DepartmentDataService } from '../department-data.service';
 import { Department } from '../../core/models/department.model';
 import { RouteStateService } from '../../core/services/route-state.service';
 
@@ -13,7 +13,7 @@ export class DepartmentDetailComponent implements OnInit {
   department: Department;
 
   constructor(
-    private departmentService: DepartmentService,
+    private departmentService: DepartmentDataService,
     private routeStateService: RouteStateService) { }
 
   ngOnInit() {

@@ -11,10 +11,10 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './core/gaurds/auth.gaurd';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './layout/home/home.component';
+import { MenuComponent } from './layout/menu/menu.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -27,14 +27,14 @@ import { LoaderService } from './core/services/loader.service';
 import { ToastService } from './core/services/toast.service';
 import { RouteStateService } from './core/services/route-state.service';
 import { SessionService } from './core/services/session.service';
-import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
-import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
+import { HeaderBreadcrumbComponent } from './layout/header-breadcrumb/header-breadcrumb.component';
+import { ContactUsMailDialogComponent } from './contactus/contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { UserIdleModule } from 'angular-user-idle';
 import { ThemeService } from './core/services/theme.service';
 import { ApplicationStateService } from './core/services/application-state.service';
-import { UserService } from './core/services/user.service'
-import { MenuService } from './core/services/menu.service';
-import { EmployeeService } from './employees/employee.service';
+import { UserDataService } from './core/services/user-data.service'
+import { MenuDataService } from './core/services/menu-data.service';
+import { EmployeeDataService } from './employees/employee-data.service';
 
 @NgModule({
   declarations: [
@@ -73,9 +73,9 @@ import { EmployeeService } from './employees/employee.service';
     SessionService,
     ThemeService,
     ApplicationStateService,
-    UserService,
-    MenuService,
-    EmployeeService
+    UserDataService,
+    MenuDataService,
+    EmployeeDataService
   ],
   bootstrap: [
     AppComponent

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../core/services/user.service';
+import { UserDataService } from '../core/services/user-data.service';
 import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ToastService } from '../core/services/toast.service';
@@ -20,7 +20,7 @@ export class RegisterUserComponent implements OnInit {
 
   password: string;
 
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder, private toastService: ToastService) { }
+  constructor(private userService: UserDataService, private router: Router, private fb: FormBuilder, private toastService: ToastService) { }
 
   ngOnInit() {
     this.userform = this.fb.group({

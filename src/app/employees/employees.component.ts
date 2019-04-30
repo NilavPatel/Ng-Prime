@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LoaderService } from '../core/services/loader.service';
 import { RouteStateService } from '../core/services/route-state.service';
-import { EmployeeService } from './employee.service';
+import { EmployeeDataService } from './employee-data.service';
 
 @Component({
   selector: 'app-employees',
@@ -17,7 +17,7 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
 
   constructor(private loaderService: LoaderService,
     private routeStateService: RouteStateService,
-    private employeeService: EmployeeService) { }
+    private employeeService: EmployeeDataService) { }
 
   ngOnInit() {
     this.loaderService.display(true);

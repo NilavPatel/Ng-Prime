@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { RouteStateService } from '../core/services/route-state.service';
+import { RouteStateService } from '../../core/services/route-state.service';
 
 @Component({
   selector: 'app-header-breadcrumb',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactUsMailDialogComponent } from '../contact-us-mail-dialog/contact-us-mail-dialog.component';
+import { ContactUsMailDialogComponent } from './contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { DialogService } from 'primeng/api';
 import { ToastService } from '../core/services/toast.service';
 import { ApplicationStateService } from '../core/services/application-state.service';

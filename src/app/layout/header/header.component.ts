@@ -1,14 +1,14 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouteStateService } from '../core/services/route-state.service';
-import { SessionService } from '../core/services/session.service';
-import { User } from '../core/models/user.model';
-import { notification } from '../core/models/notification.model';
+import { RouteStateService } from '../../core/services/route-state.service';
+import { SessionService } from '../../core/services/session.service';
+import { User } from '../../core/models/user.model';
+import { notification } from '../../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
-import { ThemeService } from '../core/services/theme.service';
-import { ApplicationStateService } from '../core/services/application-state.service';
-import { MenuService } from '../core/services/menu.service';
-import { CustomMenuItem } from '../core/models/menu-item.model';
+import { ThemeService } from '../../core/services/theme.service';
+import { ApplicationStateService } from '../../core/services/application-state.service';
+import { MenuDataService } from '../../core/services/menu-data.service';
+import { CustomMenuItem } from '../../core/models/menu-item.model';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     private renderer: Renderer2,
     private themeService: ThemeService,
     private applicationStateService: ApplicationStateService,
-    private menuService: MenuService) {
+    private menuService: MenuDataService) {
     this.displayNotifications = false;
     this.isMenuVisible = true;
     this.menuItems = menuService.getMenuList();
