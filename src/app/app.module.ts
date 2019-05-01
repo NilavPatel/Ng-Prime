@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './core/gaurds/auth.gaurd';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './layout/home/home.component';
+import { LayoutComponent } from './layout/layout.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -40,7 +40,7 @@ import { EmployeeDataService } from './employees/employee-data.service';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    LayoutComponent,
     MenuComponent,
     HeaderComponent,
     FooterComponent,

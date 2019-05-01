@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/gaurds/auth.gaurd';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
-import { HomeComponent } from './layout/home/home.component';
+import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, },
     { path: 'register', component: RegisterUserComponent, },
     {
-        path: 'home', component: HomeComponent, canActivate: [AuthGuard],
+        path: 'home', component: LayoutComponent, canActivate: [AuthGuard],
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },

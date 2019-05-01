@@ -9,7 +9,7 @@ import { RouteStateService } from '../../core/services/route-state.service';
 })
 export class HeaderBreadcrumbComponent implements OnInit {
 
-  private items: MenuItem[];
+  items: MenuItem[];
 
   home: MenuItem;
   
