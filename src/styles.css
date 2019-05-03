@@ -286,6 +286,7 @@ html, body {
 
 .np-submenu .np-menu {
 	padding: 0px;
+	border-left: 1px solid var(--menubar-background);
 }
 
 .right-icon {

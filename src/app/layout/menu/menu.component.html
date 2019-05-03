@@ -1,7 +1,7 @@
 <div class="np-menu">
     <div *ngFor="let menu of items">
         <a (click)="onMenuClick(menu)" class="np-menuitem" [ngClass]="{'np-active-menu': selectedItem == menu.Label}">
-            <i [className]="menu.Icon"></i>
+            <i *ngIf="menu.Icon" [className]="menu.Icon"></i>
             {{menu.Label}}
             <i class="fa" *ngIf="menu.Childs != null"
                 [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>

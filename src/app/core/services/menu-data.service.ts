@@ -24,11 +24,11 @@ export class MenuDataService {
             },
             {
                 Label: 'Menu Level 1', Icon: 'fa fa-cart-plus', RouterLink: null, Childs: [
-                    { Label: 'Menu Level 1.1', Icon: 'fa fa-address-book', RouterLink: null, Childs: null, IsChildVisible: false },
+                    { Label: 'Menu Level 1.1', RouterLink: null, Childs: null, IsChildVisible: false },
                     {
-                        Label: 'Menu Level 1.2', Icon: 'fa fa-id-card', RouterLink: null, IsChildVisible: false, Childs: [
-                            { Label: 'Menu Level 1.2.1', Icon: 'fa fa-address-book', RouterLink: null, Childs: null, IsChildVisible: false },
-                            { Label: 'Menu Level 1.2.2', Icon: 'fa fa-id-card', RouterLink: null, Childs: null, IsChildVisible: false }
+                        Label: 'Menu Level 1.2', RouterLink: null, IsChildVisible: false, Childs: [
+                            { Label: 'Menu Level 1.2.1', RouterLink: null, Childs: null, IsChildVisible: false },
+                            { Label: 'Menu Level 1.2.2', RouterLink: null, Childs: null, IsChildVisible: false }
                         ]
                     }
                 ], IsChildVisible: false

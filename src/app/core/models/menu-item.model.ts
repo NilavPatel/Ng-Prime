@@ -7,7 +7,7 @@ export class CustomMenuItem {
         this.IsChildVisible = false;
     }
     Label: string;
-    Icon: string;
+    Icon?: string;
     RouterLink: string;
     Childs: CustomMenuItem[];
     IsChildVisible: boolean;
