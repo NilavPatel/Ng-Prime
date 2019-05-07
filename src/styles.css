@@ -45,30 +45,23 @@ html, body {
 	height: 100%;
 }
 
-.ng-header img {
-	float: left;
-	padding: 2px 10px 2px 10px;
-}
-
 .ng-header, .ng-footer {
 	height: 50px;
 	background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color1)), to(var(--header-footer-bg-color2)));
 	color: var(--header-footer-color);
 }
 
-.ng-content {
-	overflow: auto;
-	height: calc(100% - 100px);
-	padding: 10px;
-}
-
 .ng-header {
 	display: flex;
 	flex-direction: row;
 	flex: 1;
-	-moz-justify-content: space-between;
-	-ms-justify-content: space-between;
 	justify-content: space-between;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.ng-header img {
+	float: left;
+	padding: 2px 10px 2px 10px;
 }
 
 .ng-header-left {
@@ -83,14 +76,6 @@ html, body {
 	float: right;
 }
 
-.ng-header {
-	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
-}
-
-.ng-footer {
-	box-shadow: 0px -4px 3px rgba(0, 0, 0, .2);
-}
-
 .ng-header a {
 	color: var(--header-footer-color) !important;
 }
@@ -99,8 +84,18 @@ html, body {
 	color: #000000;
 }
 
+.ng-footer {
+	box-shadow: 0px -4px 3px rgba(0, 0, 0, .2);
+}
+
 .ng-footer div {
 	text-align: center;
+	padding: 10px;
+}
+
+.ng-content {
+	overflow: auto;
+	height: calc(100% - 100px);
 	padding: 10px;
 }
 
@@ -164,11 +159,13 @@ html, body {
 	border-radius: 10px;
 }
 
-.mobile-menubar {
+.ng-menubar {
 	background-color: var(--menubar-background) !important;
 	height: 100%;
 	overflow: auto;
 	padding: 0px !important;
+	border: none !important;
+	padding: 10px !important;
 }
 
 .logo img {
@@ -253,22 +250,11 @@ html, body {
 	line-height: 35px;
 	cursor: pointer;
 	color: var(--menubar-color);
-	padding: 10px;
 }
 
 .np-menuitem .fa {
 	padding: 10px;
 	font-size: larger;
-}
-
-.np-submenu {
-	padding-left: 30px;
-	background-color: var(--submenu-background);
-}
-
-.np-submenu .np-menu {
-	padding: 0px;
-	border-left: 1px solid var(--menubar-background);
 }
 
 .right-icon {
@@ -286,6 +272,14 @@ html, body {
 
 .np-submenu-none {
 	display: none;
+}
+
+.align-right {
+	float: right;
+}
+
+.fa-fw {
+	width: 50px;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px or more) */

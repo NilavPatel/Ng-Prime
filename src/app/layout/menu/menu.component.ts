@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
         // hide menu bar after menu click for mobile layout        
         setTimeout(() => {
             this.closeClicked.emit(false);
-        }, 300);
+        }, 100);
     }
 
     // toggle sub menu on click
