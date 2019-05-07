@@ -61,8 +61,6 @@
     </div>
 </p-overlayPanel>
 
-<!-- menubar for mobile layout -->
-<p-sidebar [(visible)]="displaySidebarMenu" position="left" *ngIf="isMobileResolution" styleClass="mobile-menubar"
-    [showCloseIcon]="false">
+<p-sidebar [(visible)]="displaySidebarMenu" position="left" [showCloseIcon]="false" styleClass="mobile-menubar">
     <app-menu (closeClicked)="displaySidebarMenu=$event" [items]="menuItems"></app-menu>
 </p-sidebar>

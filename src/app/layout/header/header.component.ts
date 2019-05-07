@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteStateService } from '../../core/services/route-state.service';
 import { SessionService } from '../../core/services/session.service';
@@ -36,13 +36,13 @@ export class HeaderComponent implements OnInit {
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
     private userIdle: UserIdleService,
-    private renderer: Renderer2,
     private themeService: ThemeService,
     private applicationStateService: ApplicationStateService,
-    private menuService: MenuDataService) {
+    private menuDataService: MenuDataService) {
+
     this.displayNotifications = false;
     this.isMenuVisible = true;
-    this.menuItems = menuService.getMenuList();
+    this.menuItems = menuDataService.getMenuList();
 
     var selectedTheme = this.sessionService.getItem("selected-theme");
     if (selectedTheme) {
@@ -85,18 +85,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenu() {
-    if (this.isMobileResolution) {
-      this.displaySidebarMenu = !this.displaySidebarMenu;
-      return;
-    }
-
-    this.isMenuVisible = !this.isMenuVisible;
-    const menuElement: HTMLElement = document.getElementById('navigation-menu');
-    if (this.isMenuVisible) {
-      this.renderer.removeStyle(menuElement, 'display');
-    } else {
-      this.renderer.setStyle(menuElement, 'display', 'none');
-    }
+    this.displaySidebarMenu = !this.displaySidebarMenu;
   }
 
   selectTheme(theme: string) {

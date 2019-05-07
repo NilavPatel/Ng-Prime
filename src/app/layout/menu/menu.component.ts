@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { RouteStateService } from '../../core/services/route-state.service';
-import { ApplicationStateService } from '../../core/services/application-state.service';
 import { SessionService } from '../../core/services/session.service';
 import { ToastService } from '../../core/services/toast.service';
 import { CustomMenuItem } from '../../core/models/menu-item.model';
@@ -18,15 +17,11 @@ export class MenuComponent implements OnInit {
 
     @Output() closeClicked = new EventEmitter<boolean>();
 
-    isMobileResolution: boolean = false;
-
     constructor(private routeStateService: RouteStateService,
-        private applicationStateService: ApplicationStateService,
         private sessionService: SessionService,
         private toastService: ToastService) { }
 
     ngOnInit() {
-        this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
         var activeMenu = this.sessionService.getItem("active-menu");
         if (activeMenu) {
             this.selectedItem = activeMenu;
@@ -49,12 +44,10 @@ export class MenuComponent implements OnInit {
         this.selectedItem = menu.Label;
         this.sessionService.setItem("active-menu", menu.Label);
         this.routeStateService.add(menu.Label, menu.RouterLink, null, true);
-        // hide menu bar after menu click for mobile layout
-        if (this.isMobileResolution) {
-            setTimeout(() => {
-                this.closeClicked.emit(false);
-            }, 300);
-        }
+        // hide menu bar after menu click for mobile layout        
+        setTimeout(() => {
+            this.closeClicked.emit(false);
+        }, 300);
     }
 
     // toggle sub menu on click
