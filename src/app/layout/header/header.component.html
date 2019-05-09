@@ -1,28 +1,24 @@
 <div class="ng-header">
-    <div class="ng-header-left">
-        <div class="ui-g">
-            <div class="ui-g-2 ui-md-2 ui-sm-4 ui-g-nopad toggle-menu-button">
-                <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
-            </div>
-            <div class="ui-g-10 ui-md-10 ui-sm-8 ui-g-nopad">
-                <div class="logo">
-                    <img src="../assets/images/logo-large.png" class="logo-large">
-                    <img src="../assets/images/logo-small.png" class="logo-small">
-                </div>
-            </div>
+    <div class="ng-header-left left">
+        <div class="toggle-menu-button left">
+            <a class="icon" (click)="toggleMenu()"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="logo right">
+            <img src="../assets/images/logo-large.png" class="logo-large">
+            <img src="../assets/images/logo-small.png" class="logo-small">
         </div>
     </div>
-    <div class="ng-header-right">
-        <div class="ng-header-right-item">
+    <div class="ng-header-right right">
+        <div class="ng-header-right-item right">
             <a class="icon" (click)="logout()"><i class="fa fa-sign-out-alt"></i></a>
         </div>
-        <div class="ng-header-right-item" (click)="themeChooser.toggle($event)">
+        <div class="ng-header-right-item right" (click)="themeChooser.toggle($event)">
             <a class="icon"><i class="fa fa-cog"></i></a>
         </div>
-        <div class="ng-header-right-item" (click)="showNotificationSidebar()">
+        <div class="ng-header-right-item right" (click)="showNotificationSidebar()">
             <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
         </div>
-        <div class="ng-header-right-item" (click)="userdetails.toggle($event)">
+        <div class="ng-header-right-item right" (click)="userdetails.toggle($event)">
             <a class="icon"><span [innerHtml]="user.emailId" class="user-name"></span><i class="fa fa-user"></i></a>
         </div>
     </div>
@@ -60,7 +56,3 @@
         </div>
     </div>
 </p-overlayPanel>
-
-<p-sidebar [(visible)]="displaySidebarMenu" position="left" [showCloseIcon]="false" styleClass="ng-menubar">
-    <app-menu (closeClicked)="displaySidebarMenu=$event" [items]="menuItems"></app-menu>
-</p-sidebar>

@@ -3,7 +3,7 @@
         <a (click)="onMenuClick(menu)" class="np-menuitem" [ngClass]="{'np-active-menu': selectedItem == menu.Label}">
             <i class="fa fa-fw {{menu.Icon}}"></i>
             {{menu.Label}}
-            <i class="fa align-right" *ngIf="menu.Childs != null"
+            <i class="fa right" *ngIf="menu.Childs != null"
                 [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
         </a>
         <div *ngIf="menu.Childs != null" class="np-submenu"

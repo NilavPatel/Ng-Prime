@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteStateService } from '../../core/services/route-state.service';
 import { SessionService } from '../../core/services/session.service';
@@ -7,8 +7,6 @@ import { notification } from '../../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../../core/services/theme.service';
 import { ApplicationStateService } from '../../core/services/application-state.service';
-import { MenuDataService } from '../../core/services/menu-data.service';
-import { CustomMenuItem } from '../../core/models/menu-item.model';
 
 @Component({
   selector: 'app-header',
@@ -23,26 +21,16 @@ export class HeaderComponent implements OnInit {
 
   notifications: notification[];
 
-  isMenuVisible: boolean;
-
-  isMobileResolution: boolean = false;
-
-  displaySidebarMenu: boolean = false;
-
-  menuItems: CustomMenuItem[];
+  @Output() toggleMenubar: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
     private userIdle: UserIdleService,
-    private themeService: ThemeService,
-    private applicationStateService: ApplicationStateService,
-    private menuDataService: MenuDataService) {
+    private themeService: ThemeService) {
 
     this.displayNotifications = false;
-    this.isMenuVisible = true;
-    this.menuItems = menuDataService.getMenuList();
 
     var selectedTheme = this.sessionService.getItem("selected-theme");
     if (selectedTheme) {
@@ -67,9 +55,7 @@ export class HeaderComponent implements OnInit {
     // Start watch when time is up.
     this.userIdle.onTimeout().subscribe(() => {
       this.logout();
-    });
-
-    this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
+    });    
   }
 
   logout() {
@@ -84,8 +70,8 @@ export class HeaderComponent implements OnInit {
     this.displayNotifications = true;
   }
 
-  toggleMenu() {
-    this.displaySidebarMenu = !this.displaySidebarMenu;
+  toggleMenu() {    
+    this.toggleMenubar.emit();
   }
 
   selectTheme(theme: string) {

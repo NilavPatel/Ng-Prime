@@ -52,28 +52,16 @@ html, body {
 }
 
 .ng-header {
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-	justify-content: space-between;
 	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
 }
 
-.ng-header img {
-	float: left;
-	padding: 2px 10px 2px 10px;
-}
-
 .ng-header-left {
-	flex: 2;
-}
-
-.ng-header-right {
-	flex: 10;
+	height: 50px;
+	width: 300px;
 }
 
 .ng-header-right-item {
-	float: right;
+	height: 50px;
 }
 
 .ng-header a {
@@ -97,6 +85,12 @@ html, body {
 	overflow: auto;
 	height: calc(100% - 100px);
 	padding: 10px;
+	padding-left: 310px;
+	width: 100%;
+}
+
+.hidden-menu-content {
+	padding-left: 10px;
 }
 
 .ng-content .ui-card {
@@ -161,18 +155,21 @@ html, body {
 
 .ng-menubar {
 	background-color: var(--menubar-background) !important;
-	height: 100%;
+	height: calc(100% - 100px);
 	overflow: auto;
 	padding: 0px !important;
 	border: none !important;
 	padding: 10px !important;
+	margin-top: 50px;
+	width: 300px;
 }
 
 .logo img {
 	background-color: var(--main-background);
+	padding: 2px 10px 2px 10px;
 }
 
-.logo-img {
+.login-logo {
 	height: 100%;
 	width: 100%;
 }
@@ -180,6 +177,8 @@ html, body {
 .toggle-menu-button {
 	text-align: center;
 	background-color: var(--menubar-background);
+	height: 50px;
+	width: 50px;
 }
 
 .toggle-menu-button .icon {
@@ -189,7 +188,7 @@ html, body {
 .logo-large {
 	display: block;
 	height: 50px;
-	width: 100%;
+	width: 250px;
 	padding: 5px;
 }
 
@@ -257,11 +256,6 @@ html, body {
 	font-size: larger;
 }
 
-.right-icon {
-	float: right;
-	padding: 10px !important;
-}
-
 .np-active-menu, .np-menuitem:hover {
 	color: var(--active-menu-color);
 }
@@ -274,12 +268,16 @@ html, body {
 	display: none;
 }
 
-.align-right {
+.fa-fw {
+	width: 50px;
+}
+
+.right {
 	float: right;
 }
 
-.fa-fw {
-	width: 50px;
+.left {
+	float: left;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px or more) */
@@ -289,33 +287,36 @@ html, body {
 /* Large devices (laptops/desktops, 1200px or less) */
 
 @media only screen and (max-width: 1200px) {
-	.ng-header-left {
-		flex: 3;
+	.ng-header-left, .ng-menubar {
+		width: 250px;
 	}
-	.ng-header-right {
-		flex: 9;
+	.logo-large {
+		width: 200px;
+	}
+	.ng-content {
+		padding-left: 260px;
 	}
 }
 
 /* Medium devices (landscape tablets, 992px or less) */
 
 @media only screen and (max-width: 992px) {
-	.ng-header-left {
-		flex: 4;
-	}
-	.ng-header-right {
-		flex: 8;
-	}
 	.logo-large {
 		display: none;
 	}
 	.logo-small {
 		display: block;
 		height: 50px;
-		width: 70px;
+		width: 50px;
 	}
 	.user-name {
 		display: none;
+	}
+	.ng-content {
+		padding-left: 10px;
+	}
+	.ng-header-left {
+		width: 100px;
 	}
 }
 
