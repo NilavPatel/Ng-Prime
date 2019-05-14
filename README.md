@@ -4,6 +4,10 @@
 ````
 https://angular.io/
 https://www.primefaces.org/primeng/
+http://www.ngx-translate.com/
+https://fontawesome.com/
+https://www.npmjs.com/package/angular-user-idle
+https://www.chartjs.org/
 ````
 
 ## Build and Run project
@@ -27,6 +31,7 @@ Run below commands in console
 9. user inactivity tracing, auto logout on 5 minute inactivity
 10. Show/Hide menu bar on click for both desktop and mobile layout
 11. Theme chooser for dark and light theme at runtime.
+12. Multi language support (English and Hindi)
 ````
 
 ## Browser support

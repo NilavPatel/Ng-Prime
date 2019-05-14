@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './core/services/loader.service';
 import { ThemeService } from './core/services/theme.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,14 @@ export class AppComponent implements OnInit {
   showLoader: boolean;
   theme: string;
 
-  constructor(private loaderService: LoaderService, private themeService: ThemeService) {
+  constructor(private loaderService: LoaderService, private themeService: ThemeService, translate: TranslateService) {
     this.theme = "dark-theme";
+
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('en');
+
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    translate.use('en');
   }
 
   ngOnInit() {

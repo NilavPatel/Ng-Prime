@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@fortawesome/fontawesome-free": "^5.8.1",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "angular-user-idle": "^2.1.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",

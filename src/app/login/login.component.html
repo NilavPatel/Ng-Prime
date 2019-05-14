@@ -1,7 +1,13 @@
 <div class="login-panel">
+  <div class="language-menu">
+    <select (change)="onLanguageChange($event)">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
   <div class="p-grid p-nogutter p-justify-center	p-align-center" style="height:100%">
     <div class="p-xl-3 p-lg-6 p-md-8 p-sm-10">
-      <p-panel header="Ng-Prime Login">
+      <p-panel header="{{ 'Ng-PrimeLogin' | translate}}">
         <div class="p-grid p-justify-center	p-align-center">
           <div class="p-xl-6 p-lg-6 p-md-8 p-sm-10">
             <img src="../assets/images/logo-large.png" class="login-logo">
@@ -9,23 +15,26 @@
           <div class="p-col-12">
             <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-              <input id="input-username" type="text" size="30" pInputText [(ngModel)]="userName" placeholder="user name">
+              <input id="input-username" type="text" size="30" pInputText [(ngModel)]="userName"
+                placeholder="user name">
             </div>
           </div>
           <div class="p-col-12">
             <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
-              <input id="input-password" type="password" size="30" pInputText [(ngModel)]="password" placeholder="password">
+              <input id="input-password" type="password" size="30" pInputText [(ngModel)]="password"
+                placeholder="password">
             </div>
           </div>
         </div>
         <p-footer>
           <div class="p-grid">
             <div class="p-col-6">
-              <button pButton type="button" label="Login" class="ui-button-raised" (click)="onClickLogin()"></button>
+              <button pButton type="button" label="{{ 'Login' | translate}}" class="ui-button-raised" (click)="onClickLogin()"></button>
             </div>
             <div class="p-col-6">
-              <button pButton type="button" label="Register" class="ui-button-raised" [routerLink]="['/register']"></button>
+              <button pButton type="button" label="{{ 'Register' | translate}}" class="ui-button-raised"
+                [routerLink]="['/register']"></button>
             </div>
           </div>
         </p-footer>

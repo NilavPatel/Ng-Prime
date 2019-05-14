@@ -35,6 +35,13 @@ import { ApplicationStateService } from './core/services/application-state.servi
 import { UserDataService } from './core/services/user-data.service'
 import { MenuDataService } from './core/services/menu-data.service';
 import { EmployeeDataService } from './employees/employee-data.service';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -62,7 +69,15 @@ import { EmployeeDataService } from './employees/employee-data.service';
     ReactiveFormsModule,
     AppRoutingModule,
     NgPrimeModule,
-    UserIdleModule.forRoot({ idle: 300, timeout: 1, ping: null })
+    UserIdleModule.forRoot({ idle: 300, timeout: 1, ping: null }),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     MessageService,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   msgs: any[];
 
-  constructor() {
+  constructor(translate: TranslateService) {
     this.barChartData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -51,7 +52,11 @@ export class DashboardComponent implements OnInit {
     };
 
     this.msgs = [];
-    this.msgs.push({ severity: 'success', summary: '', detail: 'welcome to NG-prime sample.' });
+    
+    translate.get("WelcomeMessage").subscribe((text: string) => {
+      this.msgs.push({ severity: 'success', summary: '', detail: text });
+    });;
+
   }
 
   ngOnInit() {
