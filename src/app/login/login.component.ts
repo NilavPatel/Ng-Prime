@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   password: string;
 
+  locale: string;
+
   constructor(
     private userService: UserDataService,
     private toastService: ToastService,
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.userName = "";
-    this.password = "";
+    this.password = "";    
+    this.locale = this.sessionService.getItem("ng-prime-language");
   }
 
   onClickLogin() {
@@ -42,16 +45,13 @@ export class LoginComponent implements OnInit {
   }
 
   onLanguageChange($event) {
-    var locale = $event.target.value;
-    if (locale == undefined || locale == null || locale.length == 0) {
-      locale = "en";
+    this.locale = $event.target.value;
+    if (this.locale == undefined || this.locale == null || this.locale.length == 0) {
+      this.locale = "en";
     }
-
-    // this language will be used as a fallback when a translation isn't found in the current language
-    this.translate.setDefaultLang(locale);
-
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    this.translate.use(locale);
+    this.translate.use(this.locale);
+    this.sessionService.setItem("ng-prime-language", this.locale);
   }
 
 }

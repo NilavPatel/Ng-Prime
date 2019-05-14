@@ -1,8 +1,8 @@
 <div class="login-panel">
   <div class="language-menu">
     <select (change)="onLanguageChange($event)">
-      <option value="en">English</option>
-      <option value="hi">Hindi</option>
+      <option value="en" [selected]="locale == 'en'">English</option>
+      <option value="hi" [selected]="locale == 'hi'">Hindi</option>
     </select>
   </div>
   <div class="p-grid p-nogutter p-justify-center	p-align-center" style="height:100%">
