@@ -17,14 +17,14 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, },
     { path: 'register', component: RegisterUserComponent, },
     {
-        path: 'home', component: LayoutComponent, canActivate: [AuthGuard],
+        path: 'home', component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
             { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
             { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard] },
             {
-                path: 'departments', component: DepartmentComponent, canActivate: [AuthGuard],
-                children: [{ path: '', redirectTo: 'department-list', pathMatch: 'full' },
+                path: 'departments', component: DepartmentComponent,
+                children: [{ path: '', redirectTo: 'department-list', pathMatch: 'full', canActivate: [AuthGuard] },
                 { path: 'department-list', component: DepartmentListComponent, canActivate: [AuthGuard] },
                 { path: 'department-detail', component: DepartmentDetailComponent, canActivate: [AuthGuard] }]
             },

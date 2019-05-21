@@ -6,7 +6,7 @@ import { User } from '../../core/models/user.model';
 import { notification } from '../../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../../core/services/theme.service';
-import { ApplicationStateService } from '../../core/services/application-state.service';
+import { UserContextService } from 'src/app/core/services/user-context.service';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +28,8 @@ export class HeaderComponent implements OnInit {
     private routeStateService: RouteStateService,
     private sessionService: SessionService,
     private userIdle: UserIdleService,
-    private themeService: ThemeService) {
+    private themeService: ThemeService,
+    private userContextService: UserContextService) {
 
     this.displayNotifications = false;
 
@@ -60,8 +61,8 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.userIdle.stopWatching();
-    this.routeStateService.removeAll();
-    this.sessionService.removeItem('currentUser');
+    this.routeStateService.removeAll(); 
+    this.userContextService.logout();   
     this.sessionService.removeItem('active-menu');
     this.router.navigate(['/login']);
   }
