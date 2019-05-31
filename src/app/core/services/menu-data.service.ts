@@ -17,10 +17,10 @@ export class MenuDataService {
                 Label: 'Departments', Icon: 'fa-sitemap', RouterLink: '/home/departments', Childs: null, IsChildVisible: false
             },
             {
-                Label: 'AboutUs', Icon: 'fa-info-circle', RouterLink: '/home/aboutus', Childs: null, IsChildVisible: false
+                Label: 'AboutUs', Icon: 'fa-info-circle', RouterLink: '/aboutus', Childs: null, IsChildVisible: false
             },
             {
-                Label: 'ContactUs', Icon: 'fa-envelope', RouterLink: '/home/contactus', Childs: null, IsChildVisible: false
+                Label: 'ContactUs', Icon: 'fa-envelope', RouterLink: '/contactus', Childs: null, IsChildVisible: false
             },
             {
                 Label: 'Menu Level 1', Icon: 'fa-cart-plus', RouterLink: null, Childs: [

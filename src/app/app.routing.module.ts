@@ -7,7 +7,6 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { ContactusComponent } from './contactus/contactus.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
@@ -28,18 +27,20 @@ const appRoutes: Routes = [
                     { path: 'department-list', component: DepartmentListComponent, canActivate: [AuthGuard] },
                     { path: 'department-detail', component: DepartmentDetailComponent, canActivate: [AuthGuard] }
                 ]
-            },
-            {
-                path: 'aboutus',
-                loadChildren: './aboutus/aboutus.module#AboutUsModule',
-                canActivate: [AuthGuard]
-            },
-            {
-                path: 'contactus',
-                loadChildren: './contactus/contactus.module#ContactUsModule',
-                canActivate: [AuthGuard]
             }
         ]
+    },
+    {
+        path: 'aboutus',
+        component: LayoutComponent,
+        loadChildren: './aboutus/aboutus.module#AboutUsModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'contactus',
+        component: LayoutComponent,
+        loadChildren: './contactus/contactus.module#ContactUsModule',
+        canActivate: [AuthGuard]
     },
     { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
