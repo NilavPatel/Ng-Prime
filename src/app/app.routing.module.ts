@@ -7,7 +7,6 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
@@ -19,17 +18,27 @@ const appRoutes: Routes = [
     {
         path: 'home', component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
             { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard] },
             {
                 path: 'departments', component: DepartmentComponent,
-                children: [{ path: '', redirectTo: 'department-list', pathMatch: 'full', canActivate: [AuthGuard] },
-                { path: 'department-list', component: DepartmentListComponent, canActivate: [AuthGuard] },
-                { path: 'department-detail', component: DepartmentDetailComponent, canActivate: [AuthGuard] }]
+                children: [
+                    { path: '', redirectTo: 'department-list', pathMatch: 'full', canActivate: [AuthGuard] },
+                    { path: 'department-list', component: DepartmentListComponent, canActivate: [AuthGuard] },
+                    { path: 'department-detail', component: DepartmentDetailComponent, canActivate: [AuthGuard] }
+                ]
             },
-            { path: 'aboutus', component: AboutusComponent, canActivate: [AuthGuard] },
-            { path: 'contactus', component: ContactusComponent, canActivate: [AuthGuard] }
+            {
+                path: 'aboutus',
+                loadChildren: './aboutus/aboutus.module#AboutUsModule',
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'contactus',
+                loadChildren: './contactus/contactus.module#ContactUsModule',
+                canActivate: [AuthGuard]
+            }
         ]
     },
     { path: '', redirectTo: 'login', pathMatch: 'full' }

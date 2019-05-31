@@ -17,8 +17,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { ContactusComponent } from './contactus/contactus.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentDetailComponent } from './department/department-detail/department-detail.component';
@@ -28,7 +26,6 @@ import { ToastService } from './core/services/toast.service';
 import { RouteStateService } from './core/services/route-state.service';
 import { SessionService } from './core/services/session.service';
 import { HeaderBreadcrumbComponent } from './layout/header-breadcrumb/header-breadcrumb.component';
-import { ContactUsMailDialogComponent } from './contactus/contact-us-mail-dialog/contact-us-mail-dialog.component';
 import { UserIdleModule } from 'angular-user-idle';
 import { ThemeService } from './core/services/theme.service';
 import { ApplicationStateService } from './core/services/application-state.service';
@@ -54,14 +51,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     DashboardComponent,
     EmployeesComponent,
-    AboutusComponent,
-    ContactusComponent,
     DepartmentComponent,
     DepartmentListComponent,
     DepartmentDetailComponent,
     RegisterUserComponent,
-    HeaderBreadcrumbComponent,
-    ContactUsMailDialogComponent
+    HeaderBreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -69,9 +63,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgPrimeModule,
     UserIdleModule.forRoot({ idle: 300, timeout: 1, ping: null }),
     HttpClientModule,
+    NgPrimeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -96,9 +90,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [
     AppComponent
-  ],
-  entryComponents: [
-    ContactUsMailDialogComponent
   ]
 })
 export class AppModule { }
