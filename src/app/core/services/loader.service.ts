@@ -9,7 +9,11 @@ import { BehaviorSubject } from 'rxjs';
 export class LoaderService {
     public status: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-    display(value: boolean) {
-        this.status.next(value);
+    show() {
+        this.status.next(true);
+    }
+
+    hide() {
+        this.status.next(false);
     }
 }

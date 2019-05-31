@@ -28,7 +28,7 @@ export class LayoutComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.loaderService.display(true);
+    this.loaderService.show();
     this.toastService.addSingle("success", "", "Login successfully.");
     this.menuItems = this.menuDataService.getMenuList();
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
@@ -42,7 +42,7 @@ export class LayoutComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      this.loaderService.display(false);
+      this.loaderService.hide();
     }, 1000);
   }
 

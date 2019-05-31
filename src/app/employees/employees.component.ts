@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { LoaderService } from '../core/services/loader.service';
 import { RouteStateService } from '../core/services/route-state.service';
 import { EmployeeDataService } from './employee-data.service';
 
@@ -8,19 +7,18 @@ import { EmployeeDataService } from './employee-data.service';
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css']
 })
-export class EmployeesComponent implements OnInit, AfterViewInit {
+export class EmployeesComponent implements OnInit {
   columns: any[];
 
   employees: any[];
 
   pageSize: number;
 
-  constructor(private loaderService: LoaderService,
+  constructor(
     private routeStateService: RouteStateService,
     private employeeService: EmployeeDataService) { }
 
   ngOnInit() {
-    this.loaderService.display(true);
 
     this.pageSize = 10;
 
@@ -35,13 +33,6 @@ export class EmployeesComponent implements OnInit, AfterViewInit {
   }
 
   goToDepartmentDetails(department: number) {
-    this.routeStateService.add("Department details", "/home/departments/department-detail", department, false);
+    this.routeStateService.add("Department details", "/departments/department-detail", department, false);
   }
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.loaderService.display(false);
-    }, 1000);
-  }
-
 }

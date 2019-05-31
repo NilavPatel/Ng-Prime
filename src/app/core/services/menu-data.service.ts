@@ -8,13 +8,13 @@ export class MenuDataService {
     getMenuList() {
         return [
             {
-                Label: 'Home', Icon: 'fa-home', RouterLink: '/home/dashboard', Childs: null, IsChildVisible: false
+                Label: 'Home', Icon: 'fa-home', RouterLink: '/dashboard', Childs: null, IsChildVisible: false
             },
             {
-                Label: 'Employees', Icon: 'fa-users', RouterLink: '/home/employees', Childs: null, IsChildVisible: false
+                Label: 'Employees', Icon: 'fa-users', RouterLink: '/employees', Childs: null, IsChildVisible: false
             },
             {
-                Label: 'Departments', Icon: 'fa-sitemap', RouterLink: '/home/departments', Childs: null, IsChildVisible: false
+                Label: 'Departments', Icon: 'fa-sitemap', RouterLink: '/departments', Childs: null, IsChildVisible: false
             },
             {
                 Label: 'AboutUs', Icon: 'fa-info-circle', RouterLink: '/aboutus', Childs: null, IsChildVisible: false
