@@ -57,7 +57,7 @@ html, body {
 
 .ng-header-left {
 	height: 50px;
-	width: 300px;
+	width: 230px;
 }
 
 .ng-header-right-item {
@@ -85,7 +85,7 @@ html, body {
 	overflow: auto;
 	height: calc(100% - 100px);
 	padding: 10px;
-	padding-left: 310px;
+	padding-left: 240px;
 	width: 100%;
 }
 
@@ -161,7 +161,7 @@ html, body {
 	border: none !important;
 	padding: 10px !important;
 	margin-top: 50px;
-	width: 300px;
+	width: 230px;
 }
 
 .logo img {
@@ -188,7 +188,7 @@ html, body {
 .logo-large {
 	display: block;
 	height: 50px;
-	width: 250px;
+	width: 180px;
 	padding: 5px;
 }
 
@@ -287,15 +287,6 @@ html, body {
 /* Large devices (laptops/desktops, 1200px or less) */
 
 @media only screen and (max-width: 1200px) {
-	.ng-header-left, .ng-menubar {
-		width: 250px;
-	}
-	.logo-large {
-		width: 200px;
-	}
-	.ng-content {
-		padding-left: 260px;
-	}
 }
 
 /* Medium devices (landscape tablets, 992px or less) */
