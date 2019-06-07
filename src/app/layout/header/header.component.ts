@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.user = this.sessionService.getItem("currentUser");
     this.notifications = [];
     for (var i = 1; i <= 5; i++) {

@@ -8,15 +8,15 @@ const defaultUser = null;
 export class UserContextService {
     public user$ = new BehaviorSubject(defaultUser);
 
-    constructor(private sessionService: SessionService) {        
+    constructor(private sessionService: SessionService) {            
         var data = this.sessionService.getItem("currentUser");
-        if (data != null && data.length > 0) {
-            this.user$.next(JSON.parse(data));
+        if (data != null) {
+            this.user$.next(data);
         }
     }
 
-    public setUser(user: any) {
-        this.sessionService.setItem("currentUser", JSON.stringify(user));
+    public setUser(user: any) {        
+        this.sessionService.setItem("currentUser", user);
         this.user$.next(user);
     }
 

@@ -28,8 +28,7 @@ export class LayoutComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.loaderService.show();
-    this.toastService.addSingle("success", "", "Login successfully.");
+    this.loaderService.show();    
     this.menuItems = this.menuDataService.getMenuList();
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
     if (this.isMobileResolution) {
