@@ -19,7 +19,7 @@ export class LayoutComponent implements AfterViewInit, OnInit {
 
   isMobileResolution: boolean = false;
 
-  @ViewChild("menubar") menubar: Sidebar;
+  @ViewChild("menubar", { static: true }) menubar: Sidebar;
 
   constructor(private toastService: ToastService,
     private loaderService: LoaderService,

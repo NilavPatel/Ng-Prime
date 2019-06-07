@@ -7,40 +7,40 @@ import { LayoutComponent } from './layout/layout.component';
 const appRoutes: Routes = [
     {
         path: 'login',
-        loadChildren: './login/login.module#LoginModule'
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
     },
     {
         path: 'register',
-        loadChildren: './register-user/register-user.module#RegisterUserModule'
+        loadChildren: () => import('./register-user/register-user.module').then(m => m.RegisterUserModule)
     },
     {
         path: 'dashboard',
         component: LayoutComponent,
-        loadChildren: './dashboard/dashboard.module#DashboardModule',
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [AuthGuard]
     },
     {
         path: 'departments',
         component: LayoutComponent,
-        loadChildren: './department/department.module#DepartmentModule',
+        loadChildren: () => import('./department/department.module').then(m => m.DepartmentModule),
         canActivate: [AuthGuard]
     },
     {
         path: 'employees',
         component: LayoutComponent,
-        loadChildren: './employees/employees.module#EmployeesModule',
+        loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule),
         canActivate: [AuthGuard]
     },
     {
         path: 'aboutus',
         component: LayoutComponent,
-        loadChildren: './aboutus/aboutus.module#AboutUsModule',
+        loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutUsModule),
         canActivate: [AuthGuard]
     },
     {
         path: 'contactus',
         component: LayoutComponent,
-        loadChildren: './contactus/contactus.module#ContactUsModule',
+        loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactUsModule),
         canActivate: [AuthGuard]
     },
     {

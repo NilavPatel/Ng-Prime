@@ -12,12 +12,12 @@ const routes: Routes = [
     {
         path: 'department-list',
         component: DepartmentComponent,
-        loadChildren: './department-list/department-list.module#DepartmentListModule'
+        loadChildren: () => import('./department-list/department-list.module').then(m => m.DepartmentListModule)
     },
     {
         path: 'department-detail',
         component: DepartmentComponent,
-        loadChildren: './department-detail/department-detail.module#DepartmentDetailModule'
+        loadChildren: () => import('./department-detail/department-detail.module').then(m => m.DepartmentDetailModule)
     }
 ];
 
