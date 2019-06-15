@@ -26,6 +26,12 @@ import { EmployeeDataService } from './employees/employee-data.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UserContextService } from './core/services/user-context.service';
 import { AppCommonModule } from './app.common.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -41,8 +47,16 @@ import { AppCommonModule } from './app.common.module';
     AppRoutingModule,
     UserIdleModule.forRoot({ idle: 300, timeout: 1, ping: null }),
     HttpClientModule,
-    AppCommonModule
+    AppCommonModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
+  exports: [TranslateModule],
   providers: [
     MessageService,
     AuthGuard,
