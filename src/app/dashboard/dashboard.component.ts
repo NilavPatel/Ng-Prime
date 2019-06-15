@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
     
     translate.get("WelcomeMessage").subscribe((text: string) => {
       this.msgs.push({ severity: 'success', summary: '', detail: text });
-    });;
+    });
 
   }
 
