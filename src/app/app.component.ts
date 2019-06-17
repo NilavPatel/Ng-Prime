@@ -18,7 +18,14 @@ export class AppComponent implements OnInit {
     private themeService: ThemeService,
     private sessionService: SessionService,
     translate: TranslateService) {
-    this.theme = "dark-theme";
+
+    var theme = this.sessionService.getItem("selected-theme");
+    if (theme != null && theme.length > 0) {
+      this.theme = theme;
+      this.themeService.selectTheme(theme);
+    } else {
+      this.theme = "dark-theme";
+    }
 
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
