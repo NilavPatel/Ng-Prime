@@ -34,8 +34,7 @@
 	--active-menu-color: #f3f6eb;
 }
 
-html, body {
-	width: 100%;
+html, body {	
 	height: 100%;
 	margin: 0;
 }
@@ -85,8 +84,7 @@ html, body {
 	overflow: auto;
 	height: calc(100% - 100px);
 	padding: 10px;
-	padding-left: 240px;
-	width: 100%;
+	padding-left: 240px;	
 }
 
 .hidden-menu-content {
@@ -156,10 +154,9 @@ html, body {
 .ng-menubar {
 	background-color: var(--menubar-background) !important;
 	height: calc(100% - 100px);
-	overflow: auto;
-	padding: 0px !important;
+	overflow: auto;	
 	border: none !important;
-	padding: 10px !important;
+	padding: 0px !important;
 	margin-top: 50px;
 	width: 230px;
 }
@@ -205,10 +202,6 @@ html, body {
 	min-height: 25px;
 	width: 200px;
 	padding: 5px;
-}
-
-.pad10 {
-	padding: 10px;
 }
 
 .hidden {
