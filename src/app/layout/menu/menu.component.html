@@ -1,14 +1,11 @@
-<div class="np-menu">
-    <div *ngFor="let menu of items">
-        <a (click)="onMenuClick(menu)" class="np-menuitem" [ngClass]="{'np-active-menu': selectedItem == menu.Label}">
-            <i class="fa fa-fw {{menu.Icon}}"></i>
+<ul [ngClass]="className">
+    <li *ngFor="let menu of items">
+        <a (click)="onMenuClick(menu)" [ngClass]="{'active': selectedItem == menu.Label}">
+            <i class="fa fa-fw" [ngClass]="menu.Icon"></i>
             {{menu.Label | translate}}
             <i class="fa right" *ngIf="menu.Childs != null"
                 [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
         </a>
-        <div *ngIf="menu.Childs != null" class="np-submenu"
-            [ngClass]="{'np-submenu-block': menu.IsChildVisible, 'np-submenu-none': !menu.IsChildVisible}">
-            <app-menu [items]="menu.Childs"></app-menu>
-        </div>
-    </div>
-</div>
+        <app-menu *ngIf="menu.Childs != null && menu.IsChildVisible" [items]="menu.Childs"></app-menu>
+    </li>
+</ul>

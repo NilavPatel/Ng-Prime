@@ -234,33 +234,6 @@ html, body {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.np-menu {
-	height: 100%;
-}
-
-.np-menuitem {
-	line-height: 35px;
-	cursor: pointer;
-	color: var(--menubar-color);
-}
-
-.np-menuitem .fa {
-	padding: 10px;
-	font-size: larger;
-}
-
-.np-active-menu, .np-menuitem:hover {
-	color: var(--active-menu-color);
-}
-
-.np-submenu-block {
-	display: block;
-}
-
-.np-submenu-none {
-	display: none;
-}
-
 .fa-fw {
 	width: 50px;
 }
@@ -271,6 +244,52 @@ html, body {
 
 .left {
 	float: left;
+}
+
+.np-menu{
+	padding:5px;
+	margin:0px;
+}
+
+.np-menu ul {
+    width: 100%;
+	padding: 0px;
+	margin:0px;
+    list-style: none;
+    position: relative;
+}
+
+.np-menu li a {
+    padding: 7px;
+    color: var(--menubar-color);
+    display: block;
+    text-decoration: none !important;
+    position: relative;
+}
+
+.np-menu li a:hover, .np-menu .active {
+	color: var(--active-menu-color);
+	cursor: pointer;
+}
+
+.np-menu .fa{
+	width:25px;
+	text-align: center;
+}
+
+.np-menu li ul{
+	display: block;
+}
+
+.np-menu li ul::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--menubar-color);
 }
 
 /* Extra large devices (large laptops and desktops, 1200px or more) */

@@ -33,6 +33,6 @@ export class EmployeesComponent implements OnInit {
   }
 
   goToDepartmentDetails(department: number) {
-    this.routeStateService.add("Department details", "/departments/department-detail", department, false);
+    this.routeStateService.add("Department details", "/main/departments/department-detail", department, false);
   }
 }

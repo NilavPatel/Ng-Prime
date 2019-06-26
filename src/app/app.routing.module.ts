@@ -14,34 +14,33 @@ const appRoutes: Routes = [
         loadChildren: () => import('./register-user/register-user.module').then(m => m.RegisterUserModule)
     },
     {
-        path: 'dashboard',
+        path: 'main',
         component: LayoutComponent,
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'departments',
-        component: LayoutComponent,
-        loadChildren: () => import('./department/department.module').then(m => m.DepartmentModule),
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'employees',
-        component: LayoutComponent,
-        loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule),
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'aboutus',
-        component: LayoutComponent,
-        loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutUsModule),
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'contactus',
-        component: LayoutComponent,
-        loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactUsModule),
-        canActivate: [AuthGuard]
+        children: [{
+            path: 'dashboard',
+            loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+            canActivate: [AuthGuard]
+        },
+        {
+            path: 'departments',
+            loadChildren: () => import('./department/department.module').then(m => m.DepartmentModule),
+            canActivate: [AuthGuard]
+        },
+        {
+            path: 'employees',
+            loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule),
+            canActivate: [AuthGuard]
+        },
+        {
+            path: 'aboutus',
+            loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutUsModule),
+            canActivate: [AuthGuard]
+        },
+        {
+            path: 'contactus',
+            loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactUsModule),
+            canActivate: [AuthGuard]
+        }]
     },
     {
         path: '',

@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
 
     @Input() items: CustomMenuItem[];
 
+    @Input() className: string;
+
     selectedItem: string;
 
     @Output() closeClicked = new EventEmitter<boolean>();
