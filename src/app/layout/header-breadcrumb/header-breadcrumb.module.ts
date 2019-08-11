@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb.component';
-import { AppCommonModule } from 'src/app/app.common.module';
+import { AppCommonModule } from '../../app.common.module';
 
 @NgModule({
   imports: [

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppCommonModule } from 'src/app/app.common.module';
 import { DepartmentListRoutingModule } from './department-list.routing';
 import { DepartmentListComponent } from './department-list.component';
-import { HeaderBreadCrumbModule } from 'src/app/layout/header-breadcrumb/header-breadcrumb.module';
+import { AppCommonModule } from '../../app.common.module';
+import { HeaderBreadCrumbModule } from '../../layout/header-breadcrumb/header-breadcrumb.module';
 
 @NgModule({
   imports: [

@@ -6,7 +6,7 @@ import { User } from '../../core/models/user.model';
 import { notification } from '../../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../../core/services/theme.service';
-import { UserContextService } from 'src/app/core/services/user-context.service';
+import { UserContextService } from '../../core/services/user-context.service';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.user = this.sessionService.getItem("currentUser");
     this.notifications = [];
     for (var i = 1; i <= 5; i++) {
@@ -56,13 +56,13 @@ export class HeaderComponent implements OnInit {
     // Start watch when time is up.
     this.userIdle.onTimeout().subscribe(() => {
       this.logout();
-    });    
+    });
   }
 
   logout() {
     this.userIdle.stopWatching();
-    this.routeStateService.removeAll(); 
-    this.userContextService.logout();   
+    this.routeStateService.removeAll();
+    this.userContextService.logout();
     this.sessionService.removeItem('active-menu');
     this.router.navigate(['/login']);
   }
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
     this.displayNotifications = true;
   }
 
-  toggleMenu() {    
+  toggleMenu() {
     this.toggleMenubar.emit();
   }
 
