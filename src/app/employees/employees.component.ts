@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouteStateService } from '../core/services/route-state.service';
 import { EmployeeDataService } from './employee-data.service';
+import { Employee } from '../core/models/employee.model';
 
 @Component({
   selector: 'app-employees',
@@ -10,7 +11,7 @@ import { EmployeeDataService } from './employee-data.service';
 export class EmployeesComponent implements OnInit {
   columns: any[];
 
-  employees: any[];
+  employees: Employee[];
 
   pageSize: number;
 
