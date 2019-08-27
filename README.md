@@ -21,15 +21,15 @@ Run below commands in console
 
 ## features
 ````
-1. custom loader service
-2. custom notification service
-3. font awesome icons
-4. state management service to maintain state on page refresh
-5. back button functionality for views
-6. Add custom validations and form validations into form group
-7. sidebar in notification icon click
-8. custom dialog box on contact us page
-9. user inactivity tracing, auto logout on 5 minute inactivity
+1.  Custom loader service
+2.  Custom notification service
+3.  Font awesome icons
+4.  State management service to maintain state on page refresh
+5.  Back button functionality for views
+6.  Add custom validations and form validations into form group
+7.  Sidebar in notification icon click
+8.  Custom dialog box on contact us page
+9.  User inactivity tracing, auto logout on 5 minute inactivity
 10. Show/Hide menu bar on click for both desktop and mobile layout
 11. Theme chooser for dark and light theme at runtime.
 12. Multi language support (English and Hindi)
