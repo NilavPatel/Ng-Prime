@@ -1,37 +1,37 @@
-.dark-theme {
+.theme-1 {
+    --main-background: #fafffe;
+    --header-footer-color: #ffffff;
+    --header-footer-bg-color1: #39e2c9;
+    --header-footer-bg-color2: #2d97cb;
+    --menubar-background: #f2fcfa;
+    --menubar-color: #0b2d28;
+    --submenu-background: #f2fcfa;
+    --submenu-color: #0b2d28;
+    --active-menu-color: #39e2c9;
+}
+
+.theme-2 {
     --main-background: #eaeff2;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color1: #517fa4;
-    --header-footer-bg-color2: #243949;
+    --header-footer-bg-color1: #ADEFD1FF;
+    --header-footer-bg-color2: #1d3242;
     --menubar-background: #1d3242;
     --menubar-color: #ffffff;
-    --submenu-background: #1e5375;
+    --submenu-background: #1d3242;
     --submenu-color: #ffffff;
-    --active-menu-color: #8ea9ba;
+    --active-menu-color: #ADEFD1FF;
 }
 
-.light-theme {
+.theme-3 {
     --main-background: #ffffff;
-    --header-footer-color: #2c2c2c;
-    --header-footer-bg-color1: #DCDCDC;
-    --header-footer-bg-color2: #ffffff;
-    --menubar-background: #9a9a9a;
-    --menubar-color: #2c2c2c;
-    --submenu-background: #c6c6c6;
-    --submenu-color: #2c2c2c;
-    --active-menu-color: #ffffff;
-}
-
-.green-theme {
-    --main-background: #ffffff;
-    --header-footer-color: #414F12;
-    --header-footer-bg-color1: #C6D49F;
-    --header-footer-bg-color2: #F6FBE9;
-    --menubar-background: #9ea97f;
-    --menubar-color: #414F12;
-    --submenu-background: #C6D49F;
-    --submenu-color: #414F12;
-    --active-menu-color: #f3f6eb;
+    --header-footer-color: #ffffff;
+    --header-footer-bg-color1: #f2c58c;
+    --header-footer-bg-color2: #f2918b;
+    --menubar-background: #fdf9f3;
+    --menubar-color: #604e38;
+    --submenu-background: #fdf9f3;
+    --submenu-color: #604e38;
+    --active-menu-color: #f2c58c;
 }
 
 html,
@@ -165,7 +165,6 @@ body {
 }
 
 .logo img {
-    background-color: var(--main-background);
     padding: 2px 10px 2px 10px;
 }
 
@@ -176,7 +175,6 @@ body {
 
 .toggle-menu-button {
     text-align: center;
-    background-color: var(--menubar-background);
     height: 50px;
     width: 50px;
 }
