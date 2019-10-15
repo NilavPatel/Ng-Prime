@@ -13,7 +13,7 @@
     --header-footer-color: #ffffff;
     --header-footer-bg-color1: #39e2c9;
     --header-footer-bg-color2: #2d97cb;
-    --menubar-background: #f4f4f4;
+    --menubar-background: #d6ecf7;
     --menubar-color: #0b2d28;
     --active-menu-color: #2d97cb;
 }
@@ -105,19 +105,19 @@ body {
 }
 
 .overview-box-1 .ui-card-body {
-    background-color: #37A2F4;
+    background-image: linear-gradient(to right, #F39611, #EE4F10);
 }
 
 .overview-box-2 .ui-card-body {
-    background-color: #71BD3E;
+    background-image: linear-gradient(to right, #326DDF, #214B9C);
 }
 
 .overview-box-3 .ui-card-body {
-    background-color: #D79733;
+    background-image: linear-gradient(to right, #E02364, #A22650);
 }
 
 .overview-box-4 .ui-card-body {
-    background-color: #DE8072;
+    background-image: linear-gradient(to right, #7DC931, #14A143);
 }
 
 .color-red {
@@ -203,7 +203,7 @@ body {
 
 .np-loader {
     position: fixed;
-    z-index: 1005;
+    z-index: 1100;
     height: 2em;
     width: 2em;
     overflow: show;
@@ -231,6 +231,10 @@ body {
 
 .right {
     float: right;
+}
+
+.center{
+    text-align: center;
 }
 
 .left {
@@ -286,6 +290,10 @@ body {
 
 .np-menubar{
     box-shadow: none !important;
+}
+
+a{
+    cursor: pointer;
 }
 
 
