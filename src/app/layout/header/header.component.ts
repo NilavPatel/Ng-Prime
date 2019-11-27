@@ -21,9 +21,7 @@ export class HeaderComponent implements OnInit {
   displayNotifications: boolean;
 
   notifications: notification[];
-
-  @Output() toggleMenubar: EventEmitter<any> = new EventEmitter();
-
+  
   constructor(
     private router: Router,
     private routeStateService: RouteStateService,
