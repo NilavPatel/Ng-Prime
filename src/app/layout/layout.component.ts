@@ -1,9 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { ToastService } from '../core/services/toast.service';
-import { LoaderService } from '../core/services/loader.service';
+import { Component, OnInit } from '@angular/core';
 import { MenuDataService } from '../core/services/menu-data.service';
-import { CustomMenuItem } from '../core/models/menu-item.model';
-import { Sidebar } from 'primeng/sidebar';
 import { ApplicationStateService } from '../core/services/application-state.service';
 
 @Component({
@@ -11,42 +7,31 @@ import { ApplicationStateService } from '../core/services/application-state.serv
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent implements AfterViewInit, OnInit {
-
-  menuItems: CustomMenuItem[];
+export class LayoutComponent implements OnInit {
 
   isMenuVisible: boolean;
 
-  isMobileResolution: boolean = false;
-
-  @ViewChild("menubar", { static: true }) menubar: Sidebar;
-
-  constructor(private toastService: ToastService,
-    private loaderService: LoaderService,
-    private menuDataService: MenuDataService,
+  constructor(private menuDataService: MenuDataService,
     private applicationStateService: ApplicationStateService) {
   }
 
   ngOnInit() {
-    this.loaderService.show();    
-    this.menuItems = this.menuDataService.getMenuList();
-    this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
-    if (this.isMobileResolution) {
+    var that = this;
+    this.menuDataService.toggleMenuBar.subscribe(function (data: any) {
+      if (data && data != null) {
+        that.isMenuVisible = !that.isMenuVisible;
+      }
+    });
+
+    if (this.applicationStateService.getIsMobileResolution()) {
       this.isMenuVisible = false;
-    }
-    else {
+    } else {
       this.isMenuVisible = true;
     }
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.loaderService.hide();
-    }, 1000);
-  }
-
-  toggleMenu() {
-    this.isMenuVisible = !this.isMenuVisible
+  ngOnDestroy() {
+    this.menuDataService.toggleMenuBar.observers.forEach(function (element) { element.complete(); });
   }
 
 }

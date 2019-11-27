@@ -1,11 +1,19 @@
-<ul [ngClass]="className">
-    <li *ngFor="let menu of items">
-        <a (click)="onMenuClick(menu)" [ngClass]="{'active': selectedItem == menu.Label}">
-            <i class="fa fa-fw" [ngClass]="menu.Icon"></i>
-            {{menu.Label | translate}}
-            <i class="fa right" *ngIf="menu.Childs != null"
-                [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
-        </a>
-        <app-menu *ngIf="menu.Childs != null && menu.IsChildVisible" [items]="menu.Childs"></app-menu>
-    </li>
-</ul>
+<p-sidebar [visible]="visible" position="left" [showCloseIcon]="false" styleClass="np-menubar" [modal]="false">
+    <ul class="np-menu">
+        <ng-template #recursiveList let-list>
+            <li *ngFor="let menu of list">
+                <a (click)="onMenuClick(menu)" [ngClass]="{'active': selectedItem == menu.Label}">
+                    <i class="fa fa-fw" [ngClass]="menu.Icon"></i>
+                    {{menu.Label | translate}}
+                    <i class="fa right" *ngIf="menu.Childs != null"
+                        [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
+                </a>
+                <ul *ngIf="menu.IsChildVisible && menu.Childs && menu.Childs.length > 0">
+                    <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: menu.Childs }">
+                    </ng-container>
+                </ul>
+            </li>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: items }"></ng-container>
+    </ul>
+</p-sidebar>

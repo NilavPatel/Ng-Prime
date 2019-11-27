@@ -3,6 +3,8 @@ import { RouteStateService } from '../../core/services/route-state.service';
 import { SessionService } from '../../core/services/session.service';
 import { ToastService } from '../../core/services/toast.service';
 import { CustomMenuItem } from '../../core/models/menu-item.model';
+import { MenuDataService } from 'src/app/core/services/menu-data.service';
+import { ApplicationStateService } from 'src/app/core/services/application-state.service';
 
 @Component({
     selector: 'app-menu',
@@ -11,25 +13,44 @@ import { CustomMenuItem } from '../../core/models/menu-item.model';
 })
 export class MenuComponent implements OnInit {
 
-    @Input() items: CustomMenuItem[];
-
-    @Input() className: string;
-
+    items: CustomMenuItem[];
     selectedItem: string;
+    visible: boolean;
 
     @Output() closeClicked = new EventEmitter<boolean>();
 
     constructor(private routeStateService: RouteStateService,
         private sessionService: SessionService,
-        private toastService: ToastService) { }
+        private toastService: ToastService,
+        private menuDataService: MenuDataService,
+        private applicationStateService: ApplicationStateService) { }
 
     ngOnInit() {
+        this.items = this.menuDataService.getMenuList();
+
+        var that = this;
+        this.menuDataService.toggleMenuBar.subscribe(function (data: any) {
+            if (data && data != null) {
+                that.visible = !that.visible;
+            }
+        });
+
+        if (this.applicationStateService.getIsMobileResolution()) {
+            this.visible = false;
+        } else {
+            this.visible = true;
+        }
+
         var activeMenu = this.sessionService.getItem("active-menu");
         if (activeMenu) {
             this.selectedItem = activeMenu;
         } else {
             this.selectedItem = "Home";
         }
+    }
+
+    ngOnDestroy() {
+        this.menuDataService.toggleMenuBar.observers.forEach(function (element) { element.complete(); });
     }
 
     // on menu click event

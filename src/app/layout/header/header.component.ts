@@ -7,6 +7,7 @@ import { notification } from '../../core/models/notification.model';
 import { UserIdleService } from 'angular-user-idle';
 import { ThemeService } from '../../core/services/theme.service';
 import { UserContextService } from '../../core/services/user-context.service';
+import { MenuDataService } from 'src/app/core/services/menu-data.service';
 
 @Component({
   selector: 'app-header',
@@ -29,7 +30,8 @@ export class HeaderComponent implements OnInit {
     private sessionService: SessionService,
     private userIdle: UserIdleService,
     private themeService: ThemeService,
-    private userContextService: UserContextService) {
+    private userContextService: UserContextService,
+    private menuDataService: MenuDataService) {
 
     this.displayNotifications = false;
 
@@ -72,7 +74,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenu() {
-    this.toggleMenubar.emit();
+    this.menuDataService.toggleMenuBar.next(true);
   }
 
   selectTheme(theme: string) {

@@ -1,8 +1,7 @@
 <app-header (toggleMenubar)="toggleMenu()"></app-header>
-<div class="ng-content" [ngClass]="{'hidden-menu-content': !isMobileResolution && !isMenuVisible}">
-  <p-sidebar #menubar [visible]="isMenuVisible" position="left" [showCloseIcon]="false" styleClass="np-menubar" [modal]="false">
-    <app-menu (closeClicked)="isMobileResolution && isMenuVisible=$event" [items]="menuItems" className="np-menu"></app-menu>
-  </p-sidebar>
+
+<div class="ng-content" [ngClass]="{'hidden-menu-content': !isMenuVisible}">
+  <app-menu></app-menu>
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
