@@ -149,16 +149,6 @@ body {
     border-radius: 10px;
 }
 
-.np-menubar {
-    background-color: var(--menubar-background) !important;
-    height: calc(100% - 100px);
-    overflow: auto;
-    border: none !important;
-    padding: 0px !important;
-    margin-top: 50px;
-    width: 230px;
-}
-
 .login-logo {
     height: 100%;
     width: 100%;
@@ -241,17 +231,26 @@ body {
     float: left;
 }
 
+.np-menubar {
+    background-color: var(--menubar-background) !important;
+    height: calc(100% - 100px);
+    overflow: auto;
+    border: none !important;
+    padding: 0px !important;
+    margin-top: 50px;
+    width: 230px;
+}
+
+.np-sub-menu{
+    padding:0px;
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
 .np-menu {
     padding: 5px;
     margin: 0px;
-}
-
-.np-menu ul {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-    position: relative;
 }
 
 .np-menu li a {
