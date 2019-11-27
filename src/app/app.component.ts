@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       this.theme = theme;
       this.themeService.selectTheme(theme);
     } else {
-      this.theme = "theme-1";
+      this.theme = "theme-dark";
     }
 
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -46,5 +46,10 @@ export class AppComponent implements OnInit {
     this.themeService.theme.subscribe((val: string) => {
       this.theme = val;
     });
+  }
+
+  ngOnDestroy() {
+    this.themeService.theme.observers.forEach(function (element) { element.complete(); });
+    this.loaderService.status.observers.forEach(function (element) { element.complete(); });
   }
 }
