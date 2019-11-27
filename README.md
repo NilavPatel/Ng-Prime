@@ -1,4 +1,4 @@
-<img src="https://github.com/NilavPatel/Ng-Prime/blob/master/src/assets/images/logo-large.png" width="300" height="100">
+<img src="https://raw.githubusercontent.com/NilavPatel/Ng-Prime/master/src/assets/images/logo-large.png" width="300" height="100">
 
 # Angular 8 + PrimeNg
 (Please check branch Ng7 for angular 7 version)
@@ -42,13 +42,13 @@ Chrome, Firefox, Edge, IE 11/10 (except theme chooser as css variables not suppo
 
 ### Login page
 
-![image login](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/login-page.png)
+![image login](https://raw.githubusercontent.com/NilavPatel/Ng-Prime/master/src/assets/images/login-page.png)
 
 ### Details page
 
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/details-page.png)
+![image dashboard](https://raw.githubusercontent.com/NilavPatel/Ng-Prime/master/src/assets/images/details-page.png)
 
 ### Responsive layout for desktop, tablet and mobile
 
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/laptop.png)
-![image dashboard](https://github.com/NilavPatel/ng-prime/blob/master/src/assets/images/tablet.png)
+![image dashboard](https://raw.githubusercontent.com/NilavPatel/Ng-Prime/master/src/assets/images/laptop.png)
+![image dashboard](https://raw.githubusercontent.com/NilavPatel/Ng-Prime/master/src/assets/images/tablet.png)
