@@ -17,8 +17,6 @@ export class MenuComponent implements OnInit {
     selectedItem: string;
     visible: boolean;
 
-    @Output() closeClicked = new EventEmitter<boolean>();
-
     constructor(private routeStateService: RouteStateService,
         private sessionService: SessionService,
         private toastService: ToastService,
@@ -69,7 +67,9 @@ export class MenuComponent implements OnInit {
         this.routeStateService.add(menu.Label, menu.RouterLink, null, true);
         // hide menu bar after menu click for mobile layout        
         setTimeout(() => {
-            this.closeClicked.emit(false);
+            if (this.applicationStateService.getIsMobileResolution()) {
+                this.visible = false;
+            }
         }, 100);
     }
 

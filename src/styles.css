@@ -1,42 +1,66 @@
-.theme-1 {
-    --main-background: #eaeff2;
-    --header-footer-color: #ffffff;
-    --header-footer-bg-color1: #517fa4;
-    --header-footer-bg-color2: #243949;
-    --menubar-background: #1d3242;
-    --menubar-color: #ffffff;
-    --active-menu-color: #8ea9ba;
+.theme-light {
+    --main-background: #f5f5f5;
+    --header-footer-color: #000000;
+    --header-footer-bg-color: #cccccc;
+    --menubar-background: #f7f7f7;
+    --menubar-color: #808080;
+    --active-menu-color: #000000;
 }
 
-.theme-2 {
-    --main-background: #fafffe;
+.theme-dark {
+    --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color1: #39e2c9;
-    --header-footer-bg-color2: #2d97cb;
-    --menubar-background: #d6ecf7;
-    --menubar-color: #0b2d28;
-    --active-menu-color: #2d97cb;
+    --header-footer-bg-color: #3b3b48;
+    --menubar-background: #525262;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
 }
 
-.theme-3 {
-    --main-background: #eaeff2;
+.theme-Turquoise {
+    --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color1: #009688;
-    --header-footer-bg-color2: #00897B;
-    --menubar-background: #144a45;
-    --menubar-color: #ffffff;
-    --active-menu-color: #FDD835;
+    --header-footer-bg-color: #04838f;
+    --menubar-background: #2ab1be;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
 }
 
-.theme-4 {
-    --main-background: #ffffff;
+.theme-green {
+    --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color1: #f2c58c;
-    --header-footer-bg-color2: #f2918b;
-    --menubar-background: #ffefd7;
-    --menubar-color: #604e38;
-    --active-menu-color: #f2c58c;
+    --header-footer-bg-color: #1e8455;
+    --menubar-background: #32b67a;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
 }
+
+.theme-blue {
+    --main-background: #f5f5f5;
+    --header-footer-color: #ffffff;
+    --header-footer-bg-color: #2d5394;
+    --menubar-background: #839de2;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
+}
+
+.theme-rose {
+    --main-background: #f5f5f5;
+    --header-footer-color: #ffffff;
+    --header-footer-bg-color: #79425a;
+    --menubar-background: #935b74;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
+}
+
+.theme-teal {
+    --main-background: #f5f5f5;
+    --header-footer-color: #ffffff;
+    --header-footer-bg-color: #427976;
+    --menubar-background: #599592;
+    --menubar-color: #f5f5f5;
+    --active-menu-color: #ffffff;
+}
+
 
 html,
 body {
@@ -52,7 +76,7 @@ body {
 .ng-header,
 .ng-footer {
     height: 50px;
-    background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color1)), to(var(--header-footer-bg-color2)));
+    background-color: var(--header-footer-bg-color);
     color: var(--header-footer-color);
 }
 
@@ -105,19 +129,19 @@ body {
 }
 
 .overview-box-1 .ui-card-body {
-    background-image: linear-gradient(to right, #F39611, #EE4F10);
+    background-color: #F39611;
 }
 
 .overview-box-2 .ui-card-body {
-    background-image: linear-gradient(to right, #326DDF, #214B9C);
+    background-color: #326DDF;
 }
 
 .overview-box-3 .ui-card-body {
-    background-image: linear-gradient(to right, #E02364, #A22650);
+    background-color: #E02364;
 }
 
 .overview-box-4 .ui-card-body {
-    background-image: linear-gradient(to right, #7DC931, #14A143);
+    background-color: #7DC931;
 }
 
 .color-red {
@@ -131,7 +155,7 @@ body {
 .login-panel,
 .user-regisration {
     height: 100%;
-    background-image: radial-gradient(var(--header-footer-bg-color1) 40%, var(--header-footer-bg-color2));
+    background-color: var(--header-footer-bg-color);
 }
 
 .badge {
