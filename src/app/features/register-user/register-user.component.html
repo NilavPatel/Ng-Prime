@@ -56,8 +56,8 @@
           </div>
           <div class="p-grid">
             <div class="p-col-6">
-              <button pButton type="button" label="Register" class="ui-button-raised"
-                [disabled]="!userform.valid"></button>
+              <button pButton type="button" label="Register" class="ui-button-raised" [disabled]="!userform.valid"
+                (click)="onClickRegisterUser()"></button>
             </div>
             <div class="p-col-6">
               <button pButton type="button" label="Login" class="ui-button-raised"
