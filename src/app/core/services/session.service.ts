@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 /**
  * Session storage service
  * Provides methods to get, set, remove, clear session storage items.

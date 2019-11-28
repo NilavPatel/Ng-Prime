@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoaderService } from './core/services/loader.service';
-import { ThemeService } from './core/services/theme.service';
-import { SessionService } from './core/services/session.service';
+import { LoaderService } from 'src/app/core/services/loader.service';
+import { ThemeService } from 'src/app/core/services/theme.service';
+import { SessionService } from 'src/app/core/services/session.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

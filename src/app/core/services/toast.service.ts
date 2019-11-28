@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 /**
  * Toast service class
  * This class provides methods to add single, multiple alerts as a toast 

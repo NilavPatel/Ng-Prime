@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { RouteState } from '../models/route-state.model';
+import { RouteState } from 'src/app/core/models/route-state.model';
 import { Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 /**
  * Route state service
  * Save all route data, helps to navigate routes
@@ -39,7 +41,7 @@ export class RouteStateService {
         if (isParent) {
             this.removeAll();
         }
-        
+
         var routeStates = this.getFromStorage();
 
         var routeState = new RouteState();

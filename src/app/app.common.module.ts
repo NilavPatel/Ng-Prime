@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { NgPrimeModule } from './app.ngprime.module';
+import { NgPrimeModule } from 'src/app/app.ngprime.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CustomMinDirective } from './core/validators/custom-min-validator.directive';
-import { CustomMaxDirective } from './core/validators/custom-max-validator.directive';
+import { CustomMinDirective } from 'src/app/core/validators/custom-min-validator.directive';
+import { CustomMaxDirective } from 'src/app/core/validators/custom-max-validator.directive';
 
 @NgModule({
     imports: [
@@ -12,7 +12,7 @@ import { CustomMaxDirective } from './core/validators/custom-max-validator.direc
         FormsModule,
         ReactiveFormsModule
     ],
-    declarations:[
+    declarations: [
         CustomMinDirective,
         CustomMaxDirective
     ]

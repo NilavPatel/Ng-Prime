@@ -1,44 +1,44 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from './core/gaurds/auth.gaurd';
-import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from 'src/app/core/gaurds/auth.gaurd';
+import { LayoutComponent } from 'src/app/shared/layout/layout.component';
 
 const appRoutes: Routes = [
     {
         path: 'login',
-        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+        loadChildren: () => import('src/app/features/login/login.module').then(m => m.LoginModule)
     },
     {
         path: 'register',
-        loadChildren: () => import('./register-user/register-user.module').then(m => m.RegisterUserModule)
+        loadChildren: () => import('src/app/features/register-user/register-user.module').then(m => m.RegisterUserModule)
     },
     {
         path: 'main',
         component: LayoutComponent,
         children: [{
             path: 'dashboard',
-            loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+            loadChildren: () => import('src/app/features/dashboard/dashboard.module').then(m => m.DashboardModule),
             canActivate: [AuthGuard]
         },
         {
             path: 'departments',
-            loadChildren: () => import('./department/department.module').then(m => m.DepartmentModule),
+            loadChildren: () => import('src/app/features/department/department.module').then(m => m.DepartmentModule),
             canActivate: [AuthGuard]
         },
         {
             path: 'employees',
-            loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule),
+            loadChildren: () => import('src/app/features/employees/employees.module').then(m => m.EmployeesModule),
             canActivate: [AuthGuard]
         },
         {
             path: 'aboutus',
-            loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutUsModule),
+            loadChildren: () => import('src/app/features/aboutus/aboutus.module').then(m => m.AboutUsModule),
             canActivate: [AuthGuard]
         },
         {
             path: 'contactus',
-            loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactUsModule),
+            loadChildren: () => import('src/app/features/contactus/contactus.module').then(m => m.ContactUsModule),
             canActivate: [AuthGuard]
         }]
     },
