@@ -1,25 +1,28 @@
 .theme-light {
     --main-background: #ffffff;
     --header-footer-color: #000000;
-    --header-footer-bg-color: #cccccc;
-    --menubar-background: #f7f7f7;
-    --menubar-color: #808080;
-    --active-menu-color: #000000;
+    --header-footer-bg-color: #d9d9d9;
+    --header-footer-bg-color2: #a6a6a6;
+    --menubar-background: #878787;
+    --menubar-color: #000000;
+    --active-menu-color: #cccccc;
 }
 
 .theme-dark {
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color: #3b3b48;
+    --header-footer-bg-color: #6f6f88;
+    --header-footer-bg-color2: #3b3b48;
     --menubar-background: #525262;
     --menubar-color: #f5f5f5;
-    --active-menu-color: #ffffff;
+    --active-menu-color: #919191;
 }
 
 .theme-Turquoise {
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color: #04838f;
+    --header-footer-bg-color: #6cc7cf;
+    --header-footer-bg-color2: #03767e;
     --menubar-background: #2ab1be;
     --menubar-color: #f5f5f5;
     --active-menu-color: #ffffff;
@@ -28,16 +31,18 @@
 .theme-green {
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
-    --header-footer-bg-color: #1e8455;
+    --header-footer-bg-color: #73dfae;
+    --header-footer-bg-color2: #1e8455;
     --menubar-background: #32b67a;
-    --menubar-color: #f5f5f5;
-    --active-menu-color: #ffffff;
+    --menubar-color: #135436;
+    --active-menu-color: #b3eed3;
 }
 
 .theme-blue {
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
     --header-footer-bg-color: #2d5394;
+    --header-footer-bg-color2: #2d5394;
     --menubar-background: #839de2;
     --menubar-color: #f5f5f5;
     --active-menu-color: #ffffff;
@@ -47,6 +52,7 @@
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
     --header-footer-bg-color: #79425a;
+    --header-footer-bg-color2: #79425a;
     --menubar-background: #935b74;
     --menubar-color: #f5f5f5;
     --active-menu-color: #ffffff;
@@ -56,6 +62,7 @@
     --main-background: #f5f5f5;
     --header-footer-color: #ffffff;
     --header-footer-bg-color: #427976;
+    --header-footer-bg-color2: #427976;
     --menubar-background: #599592;
     --menubar-color: #f5f5f5;
     --active-menu-color: #ffffff;
@@ -76,7 +83,7 @@ body {
 .ng-header,
 .ng-footer {
     height: 50px;
-    background-color: var(--header-footer-bg-color);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color)), to(var(--header-footer-bg-color2)));
     color: var(--header-footer-color);
 }
 
@@ -155,7 +162,7 @@ body {
 .login-panel,
 .user-regisration {
     height: 100%;
-    background-color: var(--header-footer-bg-color);
+    background-image: radial-gradient(var(--header-footer-bg-color) 40%, var(--header-footer-bg-color2));
 }
 
 .badge {
