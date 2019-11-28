@@ -11,8 +11,8 @@ import { MenuDataService } from 'src/app/core/services/menu-data.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: 'header.component.html',
+  styleUrls: ['header.component.css']
 })
 export class HeaderComponent implements OnInit {
 

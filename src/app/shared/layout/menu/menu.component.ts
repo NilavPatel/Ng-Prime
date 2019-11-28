@@ -8,8 +8,8 @@ import { ApplicationStateService } from 'src/app/core/services/application-state
 
 @Component({
     selector: 'app-menu',
-    templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.css']
+    templateUrl: 'menu.component.html',
+    styleUrls: ['menu.component.css']
 })
 export class MenuComponent implements OnInit {
 

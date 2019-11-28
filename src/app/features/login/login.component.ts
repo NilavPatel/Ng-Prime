@@ -9,8 +9,8 @@ import { UserContextService } from 'src/app/core/services/user-context.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
 

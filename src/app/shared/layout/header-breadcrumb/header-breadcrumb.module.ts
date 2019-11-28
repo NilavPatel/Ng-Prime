@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HeaderBreadcrumbComponent } from './header-breadcrumb.component';
+import { HeaderBreadcrumbComponent } from 'src/app/shared/layout/header-breadcrumb/header-breadcrumb.component';
 import { AppCommonModule } from 'src/app/app.common.module';
 
 @NgModule({

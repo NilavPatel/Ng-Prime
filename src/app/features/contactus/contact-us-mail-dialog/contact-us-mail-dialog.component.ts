@@ -3,8 +3,8 @@ import { DynamicDialogRef } from 'primeng/api';
 
 @Component({
   selector: 'app-contact-us-mail-dialog',
-  templateUrl: './contact-us-mail-dialog.component.html',
-  styleUrls: ['./contact-us-mail-dialog.component.css']
+  templateUrl: 'contact-us-mail-dialog.component.html',
+  styleUrls: ['contact-us-mail-dialog.component.css']
 })
 export class ContactUsMailDialogComponent implements OnInit {
 

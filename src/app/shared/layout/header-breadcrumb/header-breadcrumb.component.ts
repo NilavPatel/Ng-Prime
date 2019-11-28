@@ -4,8 +4,8 @@ import { RouteStateService } from 'src/app/core/services/route-state.service';
 
 @Component({
   selector: 'app-header-breadcrumb',
-  templateUrl: './header-breadcrumb.component.html',
-  styleUrls: ['./header-breadcrumb.component.css']
+  templateUrl: 'header-breadcrumb.component.html',
+  styleUrls: ['header-breadcrumb.component.css']
 })
 export class HeaderBreadcrumbComponent implements OnInit {
 

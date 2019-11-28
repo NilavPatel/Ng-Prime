@@ -6,8 +6,8 @@ import { ApplicationStateService } from 'src/app/core/services/application-state
 
 @Component({
   selector: 'app-contactus',
-  templateUrl: './contactus.component.html',
-  styleUrls: ['./contactus.component.css'],
+  templateUrl: 'contactus.component.html',
+  styleUrls: ['contactus.component.css'],
   providers: [DialogService]
 })
 export class ContactusComponent implements OnInit {
