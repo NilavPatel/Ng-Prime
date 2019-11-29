@@ -119,6 +119,17 @@ body {
     padding-left: 10px;
 }
 
+.error-content{
+    overflow: auto;
+    height: 100%;
+    padding:30px;
+}
+
+.error-content img{
+    height:50px; 
+    width:200px;
+}
+
 .ng-content .ui-card {
     min-height: 100%;
     background: #f7f9fa;
@@ -324,6 +335,16 @@ body {
 
 a{
     cursor: pointer;
+}
+
+.extra-page-footer{
+    position: relative;
+    bottom: 0px;
+    padding: 10px;
+    height:50px;
+    text-align: center;
+    width:100%;
+    color:white;
 }
 
 

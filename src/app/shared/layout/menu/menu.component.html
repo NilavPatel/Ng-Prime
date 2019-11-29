@@ -8,7 +8,7 @@
                     <i class="fa right" *ngIf="menu.Childs != null"
                         [ngClass]="{'fa-angle-down': !menu.IsChildVisible,'fa-angle-up': menu.IsChildVisible }"></i>
                 </a>
-                <ul *ngIf="menu.IsChildVisible && menu.Childs && menu.Childs.length > 0" class="np-sub-menu">
+                <ul *ngIf="menu.Childs && menu.Childs.length > 0 && menu.IsChildVisible" class="np-sub-menu">
                     <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: menu.Childs }">
                     </ng-container>
                 </ul>

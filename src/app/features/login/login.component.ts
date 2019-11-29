@@ -6,6 +6,7 @@ import { RouteStateService } from 'src/app/core/services/route-state.service';
 import { SessionService } from 'src/app/core/services/session.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UserContextService } from 'src/app/core/services/user-context.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ export class LoginComponent implements OnInit {
 
   locale: string;
 
+  version : string;
+
   constructor(
     private userService: UserDataService,
     private toastService: ToastService,
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.userName = "";
     this.password = "";
     this.locale = this.sessionService.getItem("ng-prime-language");
+    this.version = environment.version;
   }
 
   onClickLogin() {

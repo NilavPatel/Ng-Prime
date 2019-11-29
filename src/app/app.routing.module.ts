@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from 'src/app/core/gaurds/auth.gaurd';
 import { LayoutComponent } from 'src/app/shared/layout/layout.component';
+import { ErrorComponent } from './shared/error/error.component';
 
 const appRoutes: Routes = [
     {
@@ -41,6 +42,11 @@ const appRoutes: Routes = [
             loadChildren: () => import('src/app/features/contactus/contactus.module').then(m => m.ContactUsModule),
             canActivate: [AuthGuard]
         }]
+    },
+    {
+        path: 'error',
+        component: ErrorComponent,
+        //loadChildren: () => import('src/app/shared/error/error.module').then(m => m.ErrorModule)
     },
     {
         path: '',

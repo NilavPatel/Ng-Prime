@@ -4,6 +4,7 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
 import { ToastService } from 'src/app/core/services/toast.service';
 import { birthDateValidator } from 'src/app/core/validators/birthdate.validators';
 import { UserDataService } from 'src/app/core/services/user-data.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register-user',
@@ -20,6 +21,8 @@ export class RegisterUserComponent implements OnInit {
 
   password: string;
 
+  version: string;
+
   constructor(private userService: UserDataService, private router: Router, private fb: FormBuilder, private toastService: ToastService) { }
 
   ngOnInit() {
@@ -29,6 +32,8 @@ export class RegisterUserComponent implements OnInit {
       'emailId': new FormControl('', [Validators.required, Validators.email]),
       'birthDate': new FormControl('', [Validators.required, birthDateValidator])
     });
+
+    this.version = environment.version;
   }
 
   onClickRegisterUser() {
