@@ -1,7 +1,6 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouteStateService } from 'src/app/core/services/route-state.service';
 import { SessionService } from 'src/app/core/services/session.service';
-import { ToastService } from 'src/app/core/services/toast.service';
 import { CustomMenuItem } from 'src/app/core/models/menu-item.model';
 import { MenuDataService } from 'src/app/core/services/menu-data.service';
 import { ApplicationStateService } from 'src/app/core/services/application-state.service';
@@ -19,7 +18,6 @@ export class MenuComponent implements OnInit {
 
     constructor(private routeStateService: RouteStateService,
         private sessionService: SessionService,
-        private toastService: ToastService,
         private menuDataService: MenuDataService,
         private applicationStateService: ApplicationStateService) { }
 
@@ -59,7 +57,7 @@ export class MenuComponent implements OnInit {
             return;
         }
         if (menu.RouterLink == undefined || menu.RouterLink == null || menu.RouterLink == "") {
-            this.toastService.addSingle("error", "", "404 Page not found.");
+            this.routeStateService.add("Error 404", "/error", null, false);
             return;
         }
         this.selectedItem = menu.Label;

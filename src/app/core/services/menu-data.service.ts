@@ -30,7 +30,7 @@ export class MenuDataService {
                 Label: 'ContactUs', Icon: 'fa-envelope', RouterLink: '/main/contactus', Childs: null, IsChildVisible: false
             },
             {
-                Label: 'Error', Icon: 'fa-exclamation-triangle', RouterLink: '/error', Childs: null, IsChildVisible: false
+                Label: 'Error 404', Icon: 'fa-exclamation-triangle', RouterLink: '/error', Childs: null, IsChildVisible: false
             },
             {
                 Label: 'Menu Level 1', Icon: 'fa-cart-plus', RouterLink: null, Childs: [

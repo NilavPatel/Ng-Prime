@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
  * Theme provider service
  */
 export class ThemeService {
-    public theme: BehaviorSubject<string> = new BehaviorSubject<string>("theme-dark");
+    public theme: BehaviorSubject<string> = new BehaviorSubject<string>("theme-teal");
 
     /**
      * 

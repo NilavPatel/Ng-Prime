@@ -65,12 +65,10 @@
     --header-footer-bg-color2: #427976;
     --menubar-background: #599592;
     --menubar-color: #f5f5f5;
-    --active-menu-color: #ffffff;
+    --active-menu-color: #003331;
 }
 
-
-html,
-body {
+html, body {
     height: 100%;
     margin: 0;
 }
@@ -80,8 +78,7 @@ body {
     height: 100%;
 }
 
-.ng-header,
-.ng-footer {
+.ng-header, .ng-footer {
     height: 50px;
     background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color)), to(var(--header-footer-bg-color2)));
     color: var(--header-footer-color);
@@ -117,17 +114,6 @@ body {
 
 .hidden-menu-content {
     padding-left: 10px;
-}
-
-.error-content{
-    overflow: auto;
-    height: 100%;
-    padding:30px;
-}
-
-.error-content img{
-    height:50px; 
-    width:200px;
 }
 
 .ng-content .ui-card {
@@ -170,8 +156,7 @@ body {
     margin-bottom: 10px;
 }
 
-.login-panel,
-.user-regisration {
+.login-panel, .user-regisration {
     height: 100%;
     background-image: radial-gradient(var(--header-footer-bg-color) 40%, var(--header-footer-bg-color2));
 }
@@ -200,7 +185,7 @@ body {
     text-align: center;
     height: 50px;
     width: 50px;
-    background-color: var(--menubar-background);    
+    background-color: var(--menubar-background);
 }
 
 .toggle-menu-button .icon {
@@ -265,7 +250,7 @@ body {
     float: right;
 }
 
-.center{
+.text-center {
     text-align: center;
 }
 
@@ -283,8 +268,8 @@ body {
     width: 230px;
 }
 
-.np-sub-menu{
-    padding:0px;
+.np-sub-menu {
+    padding: 0px;
     width: 100%;
     list-style: none;
     position: relative;
@@ -303,8 +288,7 @@ body {
     position: relative;
 }
 
-.np-menu li a:hover,
-.np-menu .active {
+.np-menu li a:hover, .np-menu .active {
     color: var(--active-menu-color);
     cursor: pointer;
 }
@@ -329,34 +313,31 @@ body {
     border-left: 1px solid var(--menubar-color);
 }
 
-.np-menubar{
+.np-menubar {
     box-shadow: none !important;
 }
 
-a{
+a {
     cursor: pointer;
 }
 
-.extra-page-footer{
+.extra-page-footer {
     position: relative;
     bottom: 0px;
     padding: 10px;
-    height:50px;
+    height: 50px;
     text-align: center;
-    width:100%;
-    color:white;
+    width: 100%;
+    color: white;
 }
-
 
 /* Extra large devices (large laptops and desktops, 1200px or more) */
 
 @media only screen and (min-width: 1200px) {}
 
-
 /* Large devices (laptops/desktops, 1200px or less) */
 
 @media only screen and (max-width: 1200px) {}
-
 
 /* Medium devices (landscape tablets, 992px or less) */
 
@@ -380,11 +361,17 @@ a{
     }
 }
 
+.error-box {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100%;
+    overflow: auto;
+    color: var(--header-footer-bg-color2)
+}
 
 /* Small devices (portrait tablets and large phones, 768px or less) */
 
 @media only screen and (max-width: 768px) {}
-
 
 /* Extra small devices (phones, 600px or less) */
 
