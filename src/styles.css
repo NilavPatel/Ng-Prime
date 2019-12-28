@@ -331,6 +331,10 @@ a {
     color: white;
 }
 
+.ui-messages ul{
+    display: inline-block !important;
+}
+
 /* Extra large devices (large laptops and desktops, 1200px or more) */
 
 @media only screen and (min-width: 1200px) {}

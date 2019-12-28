@@ -21,7 +21,9 @@ export class LoginComponent implements OnInit {
 
   locale: string;
 
-  version : string;
+  version: string;
+
+  msgs: any[];
 
   constructor(
     private userService: UserDataService,
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
     this.password = "";
     this.locale = this.sessionService.getItem("ng-prime-language");
     this.version = environment.version;
+    this.msgs = [{ severity: 'info', detail: 'UserName: admin' }, { severity: 'info', detail: 'Password: password' }];
   }
 
   onClickLogin() {
