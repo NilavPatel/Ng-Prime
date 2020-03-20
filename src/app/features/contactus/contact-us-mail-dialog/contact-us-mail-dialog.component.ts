@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DynamicDialogRef } from 'primeng/api';
+import { DynamicDialogRef } from 'primeng';
 
 @Component({
   selector: 'app-contact-us-mail-dialog',
